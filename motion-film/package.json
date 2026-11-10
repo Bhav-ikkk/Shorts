@@ -1,0 +1,22 @@
+{
+  "name": "motion-film",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "score": "node scripts/score.mjs",
+    "dev": "remotion studio src/index.ts",
+    "preview": "remotion render src/index.ts SpectraXLaunch out/spectra-x-launch-preview.mp4 --scale=0.4 --codec=h264 --pixel-format=yuv420p --crf=23",
+    "stills": "remotion still src/index.ts SpectraXLaunch out/frames/f.png --frames=8,24,55,90,150,190,230,260,310,345,400,430",
+    "render": "remotion render src/index.ts SpectraXLaunch out/spectra-x-launch-15s.mp4 --codec=h264 --pixel-format=yuv420p --crf=16 --audio-bitrate=192K",
+    "poster": "remotion still src/index.ts SpectraXLaunch out/spectra-x-launch-poster.png --frame=430",
+    "score:sticker": "node scripts/score-sticker.mjs",
+    "render:sticker": "remotion render src/index.ts SpectraStickerLaunch out/spectra-sticker-launch.mp4 --codec=h264 --pixel-format=yuv420p --video-bitrate=8M --audio-bitrate=192K"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.540",
+    "@remotion/google-fonts": "4.0.540",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.540"
+  }
+}

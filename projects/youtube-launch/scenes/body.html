@@ -1,0 +1,237 @@
+<div id="stage">
+
+  <!-- S1: HOOK -->
+  <div class="scene paper" id="s1">
+    <div id="tA">
+      <div class="ln"><span id="a1">Everything said:</span></div>
+      <div class="ln"><span id="a2">ready to <span class="yt-red">blow up.</span></span></div>
+    </div>
+    
+    <div id="ytStudioCard">
+      <div class="sc-head">
+        <div class="sc-badge">YOUTUBE STUDIO · UPLOAD READY</div>
+        <div class="sc-status ok">✓ CHECKS PASSED</div>
+      </div>
+      <div class="sc-row" id="sr1"><i>✓</i><span>Video format: 4K UHD 60fps ProRes</span><b>PASS</b></div>
+      <div class="sc-row" id="sr2"><i>✓</i><span>Metadata &amp; Tags: 15/15 optimized</span><b>PASS</b></div>
+      <div class="sc-row" id="sr3"><i>✓</i><span>Copyright &amp; Monetization: Green</span><b>PASS</b></div>
+      <div class="sc-row" id="sr4"><i>✓</i><span>Thumbnail: Uploaded (1280x720)</span><b>PASS</b></div>
+    </div>
+
+    <div id="tB">
+      <div class="ln" id="b1w"><span id="b1">But nobody</span></div>
+      <div class="ln" id="b2w"><span id="didnt">clicked.</span></div>
+    </div>
+
+    <div id="cardZero">
+      <div class="cz-head">FIRST 24 HOURS</div>
+      <div class="cz-val">0.4%</div>
+      <div class="cz-sub">CLICK-THROUGH RATE</div>
+      <div class="cz-flag">FLATLINE TRAFFIC</div>
+    </div>
+  </div>
+
+  <!-- S2: THE PAIN / WHAT BROKE -->
+  <div class="scene paper" id="s2">
+    <div class="scene-title" id="h2Pain">The title was cut off. The hook was buried.</div>
+    
+    <div id="ytFeedMock">
+      <div class="fm-bar">
+        <div class="fm-logo">
+          <svg width="28" height="20" viewBox="0 0 28 20" fill="none">
+            <rect width="28" height="20" rx="4" fill="#FF0033"/>
+            <path d="M11 6L18 10L11 14V6Z" fill="#FFFFFF"/>
+          </svg>
+          <span>YouTube Mobile Feed</span>
+        </div>
+        <div class="fm-tag">PREVIEW AT 375px</div>
+      </div>
+      
+      <div class="fm-body">
+        <div class="thumb-wrap" id="painThumb">
+          <div class="thumb-art">
+            <div class="tb-bg"></div>
+            <div class="tb-face"></div>
+            <div class="tb-hook-txt" id="hookBuriedTxt">HOW I SCALED TO $1,000,000</div>
+            <div class="tb-sub-txt">STEP-BY-STEP BLUEPRINT</div>
+            <div class="tb-timestamp">12:44</div>
+          </div>
+          <div id="occludeBox"></div>
+          <div id="occludeTag">HOOK BLOCKED BY TIMESTAMP</div>
+        </div>
+
+        <div class="meta-wrap">
+          <div class="channel-avatar"></div>
+          <div class="video-info">
+            <div class="vt-line full">How I Scaled My SaaS to $1,000,000 in 6 Months (Complete System)</div>
+            <div class="vt-line clipped" id="vtClipped">How I Scaled My SaaS to $1,000... <span class="cutoff-flag">[CUT OFF]</span></div>
+            <div class="v-channel">Creator Studio · 14K views · 2 hours ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: THE CONTRAST -->
+  <div class="scene paper" id="s3">
+    <div class="scene-title" id="h3Left">Normal checks read tags.</div>
+    <div class="scene-title" id="h3Right">They never see what viewers see.</div>
+
+    <div class="split-card" id="cardNormal">
+      <div class="card-tag tag-blue">WHAT STUDIO CHECKS READ</div>
+      <div class="c-list">
+        <div class="c-item" id="ci1"><span class="ci-ico">✓</span><span class="ci-txt">File Container: MP4 (H.264)</span><span class="ci-ok">VALID</span></div>
+        <div class="c-item" id="ci2"><span class="ci-ico">✓</span><span class="ci-txt">Video Bitrate: 45 Mbps</span><span class="ci-ok">VALID</span></div>
+        <div class="c-item" id="ci3"><span class="ci-ico">✓</span><span class="ci-txt">Audio Loudness: -14 LUFS</span><span class="ci-ok">VALID</span></div>
+        <div class="c-item" id="ci4"><span class="ci-ico">✓</span><span class="ci-txt">Tags &amp; Category: Populated</span><span class="ci-ok">VALID</span></div>
+      </div>
+      <div class="c-footer ok">FILE LEVEL: ALL GREEN</div>
+    </div>
+
+    <div class="split-card" id="cardViewer">
+      <div class="card-tag tag-red">WHAT VIEWERS ACTUALLY SEE</div>
+      <div class="viewer-view">
+        <div class="vv-screen">
+          <div class="vv-crop">
+            <div class="vv-feed-item">
+              <div class="vv-thumb-mini">
+                <div class="vv-badge-danger">OCCLUDED</div>
+              </div>
+              <div class="vv-lines">
+                <div class="vvl-1"></div>
+                <div class="vvl-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="vv-reticle" id="reticle">
+            <div class="ret-circle"></div>
+            <div class="ret-cross"></div>
+          </div>
+        </div>
+      </div>
+      <div class="c-footer danger">VIEWER RETENTION: 9.6% DROP</div>
+    </div>
+  </div>
+
+  <!-- S4: THE MECHANISM & DUAL CHECK -->
+  <div class="scene paper" id="s4">
+    <div class="scene-title" id="h4Step1"><span class="step-badge">STEP 1</span>Say a rule.</div>
+    <div class="scene-title" id="h4Step2"><span class="step-badge">STEP 2</span>Two neural models score retention.</div>
+
+    <div id="ruleCard">
+      <div class="rc-header">
+        <span class="rc-label">INVARIANT RULE</span>
+        <span class="rc-status">✓ ACTIVE</span>
+      </div>
+      <div class="rc-rule-text">"The thumbnail hook must always be visible."</div>
+      <div class="rc-sub">Enforced across all mobile &amp; desktop safe areas · .launchpad/rules.json</div>
+    </div>
+
+    <div id="telemetryPanel">
+      <div class="tp-head">
+        <span>YOUTUBE LAUNCHPAD</span>
+        <span class="tp-sub">DUAL RETENTION SCORING</span>
+      </div>
+
+      <div class="model-box" id="mBox1">
+        <div class="mb-top">
+          <span class="mb-name">MODEL 1: RETENTION-AI</span>
+          <span class="mb-val" id="valM1">91.4%</span>
+        </div>
+        <div class="mb-desc">Visual saliency and first 5-second gaze map</div>
+      </div>
+
+      <div class="model-box" id="mBox2">
+        <div class="mb-top">
+          <span class="mb-name">MODEL 2: CTR-PREDICTOR</span>
+          <span class="mb-val" id="valM2">9.6%</span>
+        </div>
+        <div class="mb-desc">Competitive feed thumbnail occlusion model</div>
+      </div>
+
+      <div id="agreeBadge">
+        <i>✓</i><span>BOTH MODELS AGREE</span>
+      </div>
+
+      <div id="gaugeWrap">
+        <div class="gw-label">CTR DROP PREDICTION</div>
+        <div class="gw-number"><span id="gaugeVal">0.0</span><small>%</small></div>
+        <div class="gw-bar"><div id="gwFill"></div></div>
+        <div class="gw-threshold">Safety threshold: &le; 1.5% drop</div>
+      </div>
+
+      <div id="verdictBanner" class="verdict-rej">REJECTED · 9.6% CTR DROP</div>
+    </div>
+  </div>
+
+  <!-- S5: FIX & AGGREGATE PROOF -->
+  <div class="scene dark" id="s5">
+    <div id="h5Head">20 creator uploads. <em>Who catches the drop?</em></div>
+
+    <div class="proof-row" id="rowNormal">
+      <div class="pr-info">
+        <div class="pr-title">Normal checks</div>
+        <div class="pr-sub">Standard file &amp; tag validation</div>
+      </div>
+      <div class="pr-tiles" id="tilesNormal"></div>
+      <div class="pr-stat">
+        <span class="stat-num" id="statNormNum">1</span>
+        <span class="stat-tot">/20</span>
+        <div class="stat-label">CAUGHT</div>
+      </div>
+    </div>
+
+    <div class="proof-row" id="rowLaunchPad">
+      <div class="pr-info">
+        <div class="pr-title yt-red">YouTube LaunchPad</div>
+        <div class="pr-sub">Dual-neural retention inspection</div>
+      </div>
+      <div class="pr-tiles" id="tilesLaunchPad"></div>
+      <div class="pr-stat">
+        <span class="stat-num green-text" id="statLPNum">0</span>
+        <span class="stat-tot">/20</span>
+        <div class="stat-label">CAUGHT</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6: CTA & RESOLUTION -->
+  <div class="scene paper" id="s6">
+    <div id="ctaHead">
+      <div class="ln"><span id="ctaL1">Hook your viewers</span></div>
+      <div class="ln"><span id="ctaL2">before they scroll away.</span></div>
+    </div>
+
+    <div id="heroLockup">
+      <svg id="ytLogoSvg" width="120" height="88" viewBox="0 0 120 88" fill="none">
+        <rect width="120" height="88" rx="20" fill="#FF0033"/>
+        <path d="M48 26L84 44L48 62V26Z" fill="#FFFFFF"/>
+      </svg>
+      <div id="brandTitle">YOUTUBE LAUNCHPAD</div>
+      <div id="brandTagline">See what your viewers see.</div>
+      
+      <div id="urlPill">
+        <span class="url-dot"></span>
+        <span id="urlText"></span>
+        <span id="urlCaret">|</span>
+      </div>
+
+      <div id="badgeRow">
+        <span class="badge-item">4K HDR READY</span>
+        <span class="badge-item">AI HOOK SCORER</span>
+        <span class="badge-item">STUDIO SYNC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Captions -->
+  <div id="capw"><div id="cap"><span id="capT"></span></div></div>
+
+  <!-- Wipes -->
+  <div class="wipe" id="w1"></div>
+  <div class="wipe" id="w2"></div>
+  <div class="wipe" id="w3"></div>
+  <div class="wipe" id="w4"></div>
+  <div class="wipe" id="w5"></div>
+</div>
+

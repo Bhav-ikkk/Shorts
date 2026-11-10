@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "product": {
+    "name": "YourProduct",
+    "tagline": "The intelligent platform for modern engineers.",
+    "url": "yourproduct.io"
+  },
+  "theme": {
+    "tokens": {
+      "paper": "#F2EDE2",
+      "ink": "#0E0F13",
+      "brand": "#2F4BFF",
+      "bad": "#F2432D",
+      "good": "#12A66B"
+    }
+  },
+  "voice": {
+    "provider": "edge-tts",
+    "voice": "en-US-ChristopherNeural",
+    "rate": "-4%"
+  },
+  "badges": [
+    "OPEN SOURCE",
+    "LIGHTNING FAST",
+    "ZERO CONFIGURATION"
+  ],
+  "script": [
+    {
+      "id": "L1",
+      "spoken": "Everything seemed perfectly normal.",
+      "caption": "Everything seemed perfectly normal.",
+      "pause_after": 0.30
+    },
+    {
+      "id": "L2",
+      "spoken": "Until the system failed.",
+      "caption": "Until the system failed.",
+      "pause_after": 0.35
+    },
+    {
+      "id": "L3",
+      "spoken": "A hidden defect was degrading the user experience.",
+      "caption": "A hidden defect was degrading the user experience.",
+      "pause_after": 0.90
+    },
+    {
+      "id": "L4",
+      "spoken": "Legacy tools only checked surface metrics.",
+      "caption": "Legacy tools only checked surface metrics.",
+      "pause_after": 0.30
+    },
+    {
+      "id": "L5",
+      "spoken": "They never inspect what actually matters.",
+      "caption": "They never inspect what actually matters.",
+      "pause_after": 0.90
+    },
+    {
+      "id": "L6",
+      "spoken": "YourProduct monitors the actual reality in real-time.",
+      "caption": "YourProduct monitors the actual reality in real-time.",
+      "pause_after": 0.55
+    },
+    {
+      "id": "L7",
+      "spoken": "Define your invariant in plain English.",
+      "caption": "Define your invariant in plain English.",
+      "pause_after": 0.60
+    },
+    {
+      "id": "L8",
+      "spoken": "Autonomous referees verify every single edge case.",
+      "caption": "Autonomous referees verify every single edge case.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L9",
+      "spoken": "Anomalies are detected before production.",
+      "caption": "Anomalies are detected before production.",
+      "pause_after": 0.40
+    },
+    {
+      "id": "L10",
+      "spoken": "Instant automated repair. Re-verified. Approved.",
+      "caption": "Instant automated repair. Re-verified. Approved.",
+      "pause_after": 1.00
+    },
+    {
+      "id": "L11",
+      "spoken": "Hundred percent coverage across all your services.",
+      "caption": "100% coverage across all your services.",
+      "pause_after": 1.10
+    },
+    {
+      "id": "L12",
+      "spoken": "Catch regressions before your users ever notice.",
+      "caption": "Catch regressions before your users ever notice.",
+      "pause_after": 0.50
+    },
+    {
+      "id": "L13",
+      "spoken": "YourProduct. The intelligent platform for modern engineers.",
+      "caption": "YourProduct. The intelligent platform for modern engineers.",
+      "pause_after": 0.80
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "archetype": "contrast-hook",
+      "lines": ["L1", "L2"],
+      "params": {
+        "positive": "Everything seemed perfectly normal.",
+        "flip": "failed.",
+        "sub": "System Status Check",
+        "items": [
+          { "text": "All services responding", "pass": true },
+          { "text": "Zero error log alerts", "pass": true },
+          { "text": "Heartbeat nominal", "pass": true }
+        ]
+      }
+    },
+    {
+      "id": "evidence",
+      "archetype": "evidence-zoom",
+      "lines": ["L3"],
+      "params": {
+        "title": "A hidden defect was degrading the user experience.",
+        "chip": "DEEP DEFECT FOUND",
+        "sublabel": "Production invariant broken"
+      }
+    },
+    {
+      "id": "why",
+      "archetype": "split-compare",
+      "lines": ["L4", "L5"],
+      "params": {
+        "left": "WHAT LEGACY TOOLS CHECK",
+        "right": "WHAT ACTUALLY HAPPENS",
+        "leftRows": ["Surface health", "Ping response", "Basic uptime", "Port checks"],
+        "leftVerdict": "ALL REPORT GREEN",
+        "rightVerdict": "✕ USERS IMPACTED"
+      }
+    },
+    {
+      "id": "idea",
+      "archetype": "metaphor-icon",
+      "lines": ["L6"],
+      "params": {
+        "icon": "shield",
+        "label": "YourProduct monitors the actual reality in real-time."
+      }
+    },
+    {
+      "id": "step1",
+      "archetype": "type-to-command",
+      "lines": ["L7"],
+      "params": {
+        "step": "STEP 1",
+        "headline": "Define your invariant.",
+        "text": "User workflows must complete without degradation.",
+        "chip": "✓ ACTIVE"
+      }
+    },
+    {
+      "id": "step2",
+      "archetype": "dual-check-gauge",
+      "lines": ["L8", "L9", "L10"],
+      "params": {
+        "checkA": "verifies invariant · ENGINE 1",
+        "checkB": "checks telemetry · ENGINE 2",
+        "tolerance": "0.10%"
+      }
+    },
+    {
+      "id": "proof",
+      "archetype": "tile-proof",
+      "lines": ["L11"],
+      "params": {
+        "total": 20,
+        "headline": "20 critical workflows. Who catches the failure?",
+        "baselineLabel": "Legacy checks",
+        "baselineCount": 2,
+        "oursLabel": "YourProduct",
+        "oursCount": 20
+      }
+    },
+    {
+      "id": "cta",
+      "archetype": "kinetic-cta",
+      "lines": ["L12", "L13"],
+      "params": {
+        "headline1": "Catch regressions before",
+        "headline2": "your users ever notice.",
+        "name": "YourProduct",
+        "tagline": "The intelligent platform for modern engineers.",
+        "url": "yourproduct.io",
+        "chips": ["OPEN SOURCE", "LIGHTNING FAST", "ZERO CONFIGURATION"]
+      }
+    }
+  ]
+}

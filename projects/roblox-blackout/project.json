@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "product": {
+    "name": "The 73-Hour Roblox Blackout",
+    "tagline": "How 50,000 servers collapsed in minutes.",
+    "url": "roblox.com/postmortem"
+  },
+  "theme": {
+    "tokens": {
+      "paper": "#0E1117",
+      "ink": "#FFFFFF",
+      "brand": "#E02424",
+      "bad": "#E02424",
+      "good": "#10B981"
+    }
+  },
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "rate": "+8%"
+  },
+  "badges": [
+    "73 HOURS DARK",
+    "50,000 SERVERS",
+    "ZERO DATA LOST"
+  ],
+  "script": [
+    {
+      "id": "L1",
+      "spoken": "Fifty million gamers were online.",
+      "caption": "50 million gamers were online.",
+      "pause_after": 0.18
+    },
+    {
+      "id": "L2",
+      "spoken": "Then, every Roblox server on Earth died.",
+      "caption": "Then every Roblox server on Earth died.",
+      "pause_after": 0.22
+    },
+    {
+      "id": "L3",
+      "spoken": "Seventy-three hours offline. Forty-three million locked out. Twenty-five million dollars vanished.",
+      "caption": "73 hours dark. 43M locked out. $25M vanished.",
+      "pause_after": 0.25
+    },
+    {
+      "id": "L4",
+      "spoken": "The internet blamed a free burrito giveaway.",
+      "caption": "The internet blamed a free burrito giveaway.",
+      "pause_after": 0.20
+    },
+    {
+      "id": "L5",
+      "spoken": "The real culprit? A hidden thread deadlock inside HashiCorp Consul.",
+      "caption": "The real culprit? A hidden thread deadlock inside Consul.",
+      "pause_after": 0.22
+    },
+    {
+      "id": "L6",
+      "spoken": "Fifty thousand servers flooded each other with circular pings, taking down the entire metaverse.",
+      "caption": "50,000 servers flooded each other with pings, crashing the metaverse.",
+      "pause_after": 0.25
+    },
+    {
+      "id": "L7",
+      "spoken": "Follow for more untold stories of the internet.",
+      "caption": "Follow for more untold stories of the internet.",
+      "pause_after": 0.35
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "archetype": "contrast-hook",
+      "lines": ["L1", "L2"],
+      "params": {
+        "positive": "50 million gamers were online.",
+        "flip": "SERVERS DIED.",
+        "sub": "Global Platform Status",
+        "items": [
+          { "text": "Adopt Me & Brookhaven live", "pass": true },
+          { "text": "Latency under 20ms", "pass": true },
+          { "text": "All gateways responding", "pass": true }
+        ]
+      }
+    },
+    {
+      "id": "metrics",
+      "archetype": "metrics-count",
+      "lines": ["L3"],
+      "params": {
+        "headline": "The Longest Crash in Gaming History",
+        "metrics": [
+          { "label": "Hours Offline", "value": 73, "unit": "hrs" },
+          { "label": "Stranded Players", "value": 43, "unit": "M" },
+          { "label": "Vanished Bookings", "value": 25, "unit": "M", "prefix": "$" }
+        ]
+      }
+    },
+    {
+      "id": "investigation",
+      "archetype": "split-compare",
+      "lines": ["L4", "L5"],
+      "params": {
+        "left": "WHAT THE INTERNET BLAMED",
+        "right": "WHAT ACTUALLY BROKE",
+        "leftRows": [
+          "Chipotle burrito surge",
+          "30,000 coupon redemptions",
+          "Game server overload",
+          "Viral DDoS rumors"
+        ],
+        "leftVerdict": "DEBUNKED BY ENGINEERS",
+        "rightVerdict": "✕ THREAD DEADLOCK"
+      }
+    },
+    {
+      "id": "backend",
+      "archetype": "terminal-run",
+      "lines": ["L6"],
+      "params": {
+        "headline": "Internal Mesh Routing Deadlock",
+        "command": "consul-mesh diag --cluster=dc-core --strict",
+        "lines": [
+          "CRITICAL: Thread contention in gossip handler",
+          "50,000 nodes broadcasting 2,400,000 sync packets/sec",
+          "Gateway CPU pegged at 100%: connection refused",
+          "✕ Global ingress dropped: 0 handshakes"
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "archetype": "kinetic-cta",
+      "lines": ["L7"],
+      "params": {
+        "headline1": "Untold stories",
+        "headline2": "of the internet.",
+        "name": "INTERNET ARCHIVES",
+        "tagline": "The true engineering stories behind the modern web.",
+        "url": "roblox.com/postmortem",
+        "chips": [
+          "73 HOURS DARK",
+          "50,000 SERVERS",
+          "ZERO DATA LOST"
+        ]
+      }
+    }
+  ]
+}

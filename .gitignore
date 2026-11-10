@@ -1,0 +1,52 @@
+# Video outputs & rendered media (DO NOT PUSH)
+out/
+*.mp4
+*.m4v
+*.avi
+*.mov
+*.wav
+*.mp3
+*.png
+*.jpg
+*.jpeg
+
+# Demo & test inspections
+.inspect-demo/
+claudeFiles/
+
+# Build caches & temp files
+build/
+**/build/
+**/audio/*.wav
+**/audio/*.mp3
+**/audio/.cache/
+**/cs_tmp/
+.cache/
+*.tmp.*
+
+# Models & Large Neural Weights (Download via script)
+engine/voice/models/
+*.onnx
+*.bin
+*.tar.bz2
+*.tar.gz
+
+# Node.js dependencies
+node_modules/
+
+# Python & OS caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment & Temp
+*.modified
+.env
+.env.*
+.vscode/
+.idea/
+.gemini/

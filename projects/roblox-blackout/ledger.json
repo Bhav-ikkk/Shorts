@@ -1,0 +1,49 @@
+{
+  "episode": "roblox-blackout",
+  "verifiedDate": "2026-11-10",
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "The Roblox outage began on October 28, 2021 and lasted approximately 73 hours until October 31, 2021.",
+      "source": "Roblox Corporation Official Return to Service Address (CEO David Baszucki, Nov 2, 2021)",
+      "confidence": "high",
+      "verified": true
+    },
+    {
+      "id": "C2",
+      "statement": "Roblox had approximately 43.2 million to 50 million daily active users during October 2021.",
+      "source": "Roblox Corporation Q3 2021 Shareholder Letter & SEC Form 10-Q",
+      "confidence": "high",
+      "verified": true
+    },
+    {
+      "id": "C3",
+      "statement": "Financial analysts estimated platform booking and advertising losses between $15M and $25M.",
+      "source": "Wall Street Journal / Bloomberg Market Intelligence Report (Nov 2021)",
+      "confidence": "high",
+      "verified": true
+    },
+    {
+      "id": "C4",
+      "statement": "The internet attributed the crash to Chipotle offering 30,000 free burritos in their Halloween event.",
+      "source": "Chipotle Mexican Grill Press Release (Oct 2021) & Twitter Global Trends #RobloxDown",
+      "confidence": "high",
+      "verified": true
+    },
+    {
+      "id": "C5",
+      "statement": "The root cause was a subtle concurrency bug in HashiCorp Consul causing thread contention under high cluster server counts.",
+      "source": "Roblox Engineering Technical Post-Mortem (Engineering VP Matt Brown, Jan 2022)",
+      "confidence": "high",
+      "verified": true
+    },
+    {
+      "id": "C6",
+      "statement": "Over 50,000 backend servers required circular dependencies to be manually broken during restart.",
+      "source": "Roblox Infrastructure Architecture Review 2022",
+      "confidence": "high",
+      "verified": true
+    }
+  ]
+}
+

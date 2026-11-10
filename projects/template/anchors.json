@@ -1,0 +1,528 @@
+{
+  "lines": {
+    "L1": {
+      "text": "Everything seemed perfectly normal.",
+      "start": 0.25,
+      "dur": 1.937,
+      "end": 2.187,
+      "segs": [
+        [
+          0.02,
+          1.88
+        ]
+      ],
+      "words": [
+        [
+          "Everything",
+          0.02
+        ],
+        [
+          "seemed",
+          0.606
+        ],
+        [
+          "perfectly",
+          0.958
+        ],
+        [
+          "normal.",
+          1.486
+        ]
+      ],
+      "gap": 0.3
+    },
+    "L2": {
+      "text": "Until the system failed.",
+      "start": 2.487,
+      "dur": 1.543,
+      "end": 4.03,
+      "segs": [
+        [
+          0.02,
+          1.48
+        ]
+      ],
+      "words": [
+        [
+          "Until",
+          0.02
+        ],
+        [
+          "the",
+          0.376
+        ],
+        [
+          "system",
+          0.589
+        ],
+        [
+          "failed.",
+          1.016
+        ]
+      ],
+      "gap": 0.35
+    },
+    "L3": {
+      "text": "A hidden defect was degrading the user experience.",
+      "start": 4.38,
+      "dur": 3.021,
+      "end": 7.401,
+      "segs": [
+        [
+          0.02,
+          2.96
+        ]
+      ],
+      "words": [
+        [
+          "A",
+          0.02
+        ],
+        [
+          "hidden",
+          0.089
+        ],
+        [
+          "defect",
+          0.504
+        ],
+        [
+          "was",
+          0.918
+        ],
+        [
+          "degrading",
+          1.125
+        ],
+        [
+          "the",
+          1.747
+        ],
+        [
+          "user",
+          1.954
+        ],
+        [
+          "experience.",
+          2.23
+        ]
+      ],
+      "gap": 0.9
+    },
+    "L4": {
+      "text": "Legacy tools only checked surface metrics.",
+      "start": 8.301,
+      "dur": 2.728,
+      "end": 11.029,
+      "segs": [
+        [
+          0.02,
+          2.67
+        ]
+      ],
+      "words": [
+        [
+          "Legacy",
+          0.02
+        ],
+        [
+          "tools",
+          0.455
+        ],
+        [
+          "only",
+          0.817
+        ],
+        [
+          "checked",
+          1.107
+        ],
+        [
+          "surface",
+          1.614
+        ],
+        [
+          "metrics.",
+          2.121
+        ]
+      ],
+      "gap": 0.3
+    },
+    "L5": {
+      "text": "They never inspect what actually matters.",
+      "start": 11.329,
+      "dur": 2.248,
+      "end": 13.577,
+      "segs": [
+        [
+          0.02,
+          2.19
+        ]
+      ],
+      "words": [
+        [
+          "They",
+          0.02
+        ],
+        [
+          "never",
+          0.263
+        ],
+        [
+          "inspect",
+          0.567
+        ],
+        [
+          "what",
+          0.993
+        ],
+        [
+          "actually",
+          1.236
+        ],
+        [
+          "matters.",
+          1.722
+        ]
+      ],
+      "gap": 0.9
+    },
+    "L6": {
+      "text": "YourProduct monitors the actual reality in real-time.",
+      "start": 14.477,
+      "dur": 3.175,
+      "end": 17.652,
+      "segs": [
+        [
+          0.02,
+          3.1
+        ]
+      ],
+      "words": [
+        [
+          "YourProduct",
+          0.02
+        ],
+        [
+          "monitors",
+          0.767
+        ],
+        [
+          "the",
+          1.31
+        ],
+        [
+          "actual",
+          1.514
+        ],
+        [
+          "reality",
+          1.921
+        ],
+        [
+          "in",
+          2.396
+        ],
+        [
+          "real-time.",
+          2.532
+        ]
+      ],
+      "gap": 0.55
+    },
+    "L7": {
+      "text": "Define your invariant in plain English.",
+      "start": 18.202,
+      "dur": 2.27,
+      "end": 20.472,
+      "segs": [
+        [
+          0.02,
+          2.22
+        ]
+      ],
+      "words": [
+        [
+          "Define",
+          0.02
+        ],
+        [
+          "your",
+          0.411
+        ],
+        [
+          "invariant",
+          0.672
+        ],
+        [
+          "in",
+          1.258
+        ],
+        [
+          "plain",
+          1.388
+        ],
+        [
+          "English.",
+          1.714
+        ]
+      ],
+      "gap": 0.6
+    },
+    "L8": {
+      "text": "Autonomous referees verify every single edge case.",
+      "start": 21.072,
+      "dur": 3.41,
+      "end": 24.482,
+      "segs": [
+        [
+          0.02,
+          3.35
+        ]
+      ],
+      "words": [
+        [
+          "Autonomous",
+          0.02
+        ],
+        [
+          "referees",
+          0.785
+        ],
+        [
+          "verify",
+          1.397
+        ],
+        [
+          "every",
+          1.856
+        ],
+        [
+          "single",
+          2.239
+        ],
+        [
+          "edge",
+          2.698
+        ],
+        [
+          "case.",
+          3.004
+        ]
+      ],
+      "gap": 0.45
+    },
+    "L9": {
+      "text": "Anomalies are detected before production.",
+      "start": 24.932,
+      "dur": 2.325,
+      "end": 27.257,
+      "segs": [
+        [
+          0.02,
+          2.27
+        ]
+      ],
+      "words": [
+        [
+          "Anomalies",
+          0.02
+        ],
+        [
+          "are",
+          0.571
+        ],
+        [
+          "detected",
+          0.755
+        ],
+        [
+          "before",
+          1.245
+        ],
+        [
+          "production.",
+          1.612
+        ]
+      ],
+      "gap": 0.4
+    },
+    "L10": {
+      "text": "Instant automated repair. Re-verified. Approved.",
+      "start": 27.657,
+      "dur": 5.206,
+      "end": 32.863,
+      "segs": [
+        [
+          0.02,
+          1.48
+        ],
+        [
+          2.51,
+          3.43
+        ],
+        [
+          4.46,
+          5.12
+        ]
+      ],
+      "words": [
+        [
+          "Instant",
+          0.02
+        ],
+        [
+          "automated",
+          0.485
+        ],
+        [
+          "repair.",
+          1.082
+        ],
+        [
+          "Re-verified.",
+          2.51
+        ],
+        [
+          "Approved.",
+          4.46
+        ]
+      ],
+      "gap": 1.0
+    },
+    "L11": {
+      "text": "100% coverage across all your services.",
+      "start": 33.863,
+      "dur": 2.753,
+      "end": 36.616,
+      "segs": [
+        [
+          0.02,
+          2.69
+        ]
+      ],
+      "words": [
+        [
+          "100%",
+          0.02
+        ],
+        [
+          "coverage",
+          0.339
+        ],
+        [
+          "across",
+          0.977
+        ],
+        [
+          "all",
+          1.456
+        ],
+        [
+          "your",
+          1.696
+        ],
+        [
+          "services.",
+          2.015
+        ]
+      ],
+      "gap": 1.1
+    },
+    "L12": {
+      "text": "Catch regressions before your users ever notice.",
+      "start": 37.716,
+      "dur": 2.775,
+      "end": 40.491,
+      "segs": [
+        [
+          0.02,
+          2.71
+        ]
+      ],
+      "words": [
+        [
+          "Catch",
+          0.02
+        ],
+        [
+          "regressions",
+          0.344
+        ],
+        [
+          "before",
+          1.056
+        ],
+        [
+          "your",
+          1.445
+        ],
+        [
+          "users",
+          1.704
+        ],
+        [
+          "ever",
+          2.027
+        ],
+        [
+          "notice.",
+          2.287
+        ]
+      ],
+      "gap": 0.5
+    },
+    "L13": {
+      "text": "YourProduct. The intelligent platform for modern engineers.",
+      "start": 40.991,
+      "dur": 4.438,
+      "end": 45.429,
+      "segs": [
+        [
+          0.03,
+          0.57
+        ],
+        [
+          0.72,
+          0.76
+        ],
+        [
+          1.81,
+          4.38
+        ]
+      ],
+      "words": [
+        [
+          "YourProduct.",
+          0.02
+        ],
+        [
+          "The",
+          0.951
+        ],
+        [
+          "intelligent",
+          1.205
+        ],
+        [
+          "platform",
+          2.137
+        ],
+        [
+          "for",
+          2.814
+        ],
+        [
+          "modern",
+          3.068
+        ],
+        [
+          "engineers.",
+          3.576
+        ]
+      ],
+      "gap": 0.8
+    }
+  },
+  "total": 46.23
+}

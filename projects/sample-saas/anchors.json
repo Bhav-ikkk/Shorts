@@ -1,0 +1,483 @@
+{
+  "lines": {
+    "L1": {
+      "text": "Every metric reported normal health.",
+      "spoken": "Every metric reported normal health.",
+      "start": 0.25,
+      "dur": 1.995,
+      "end": 2.245,
+      "segs": [
+        [
+          0.02,
+          1.92
+        ]
+      ],
+      "words": [
+        [
+          "Every",
+          0.01,
+          0.219
+        ],
+        [
+          "metric",
+          0.232,
+          0.657
+        ],
+        [
+          "reported",
+          0.67,
+          1.147
+        ],
+        [
+          "normal",
+          1.16,
+          1.507
+        ],
+        [
+          "health.",
+          1.52,
+          1.946
+        ]
+      ],
+      "gap": 0.35,
+      "method": "provider-native"
+    },
+    "L2": {
+      "text": "Until worker memory stalled.",
+      "spoken": "Until worker memory stalled.",
+      "start": 2.595,
+      "dur": 1.737,
+      "end": 4.332,
+      "segs": [
+        [
+          0.02,
+          1.67
+        ]
+      ],
+      "words": [
+        [
+          "Until",
+          0.01,
+          0.346
+        ],
+        [
+          "worker",
+          0.359,
+          0.694
+        ],
+        [
+          "memory",
+          0.707,
+          1.119
+        ],
+        [
+          "stalled.",
+          1.132,
+          1.699
+        ]
+      ],
+      "gap": 0.4,
+      "method": "provider-native"
+    },
+    "L3": {
+      "text": "300,000 jobs queued up in 4 seconds.",
+      "spoken": "Three hundred thousand jobs queued up in four seconds.",
+      "start": 4.732,
+      "dur": 3.114,
+      "end": 7.846,
+      "segs": [
+        [
+          0.02,
+          3.05
+        ]
+      ],
+      "words": [
+        [
+          "300,000",
+          0.01,
+          0.661
+        ],
+        [
+          "jobs",
+          0.661,
+          1.094
+        ],
+        [
+          "queued",
+          1.094,
+          1.745
+        ],
+        [
+          "up",
+          1.745,
+          1.962
+        ],
+        [
+          "in",
+          1.962,
+          2.179
+        ],
+        [
+          "4",
+          2.179,
+          2.287
+        ],
+        [
+          "seconds.",
+          2.287,
+          3.046
+        ]
+      ],
+      "gap": 0.85,
+      "method": "provider-native"
+    },
+    "L4": {
+      "text": "Basic alerts only check if the process is running.",
+      "spoken": "Basic alerts only check if the process is running.",
+      "start": 8.696,
+      "dur": 2.777,
+      "end": 11.473,
+      "segs": [
+        [
+          0.02,
+          2.72
+        ]
+      ],
+      "words": [
+        [
+          "Basic",
+          0.01,
+          0.336
+        ],
+        [
+          "alerts",
+          0.349,
+          0.722
+        ],
+        [
+          "only",
+          0.735,
+          0.993
+        ],
+        [
+          "check",
+          1.006,
+          1.367
+        ],
+        [
+          "if",
+          1.379,
+          1.496
+        ],
+        [
+          "the",
+          1.508,
+          1.586
+        ],
+        [
+          "process",
+          1.599,
+          2.14
+        ],
+        [
+          "is",
+          2.153,
+          2.294
+        ],
+        [
+          "running.",
+          2.307,
+          2.733
+        ]
+      ],
+      "gap": 0.35,
+      "method": "provider-native"
+    },
+    "L5": {
+      "text": "They never inspect concurrency or memory saturation.",
+      "spoken": "They never inspect queue concurrency or memory saturation.",
+      "start": 11.823,
+      "dur": 3.574,
+      "end": 15.397,
+      "segs": [
+        [
+          0.02,
+          3.52
+        ]
+      ],
+      "words": [
+        [
+          "They",
+          0.01,
+          0.325
+        ],
+        [
+          "never",
+          0.325,
+          0.718
+        ],
+        [
+          "inspect",
+          0.718,
+          1.269
+        ],
+        [
+          "concurrency",
+          1.269,
+          2.135
+        ],
+        [
+          "or",
+          2.135,
+          2.293
+        ],
+        [
+          "memory",
+          2.293,
+          2.765
+        ],
+        [
+          "saturation.",
+          2.765,
+          3.552
+        ]
+      ],
+      "gap": 0.9,
+      "method": "provider-native"
+    },
+    "L6": {
+      "text": "PulseFlow automatically balances throughput in real time.",
+      "spoken": "PulseFlow automatically balances worker throughput in real time.",
+      "start": 16.297,
+      "dur": 3.714,
+      "end": 20.011,
+      "segs": [
+        [
+          0.02,
+          3.66
+        ]
+      ],
+      "words": [
+        [
+          "PulseFlow",
+          0.01,
+          0.669
+        ],
+        [
+          "automatically",
+          0.669,
+          1.621
+        ],
+        [
+          "balances",
+          1.621,
+          2.207
+        ],
+        [
+          "throughput",
+          2.207,
+          2.94
+        ],
+        [
+          "in",
+          2.94,
+          3.086
+        ],
+        [
+          "real",
+          3.086,
+          3.379
+        ],
+        [
+          "time.",
+          3.379,
+          3.672
+        ]
+      ],
+      "gap": 0.6,
+      "method": "provider-native"
+    },
+    "L7": {
+      "text": "24 worker pools monitored. Standard checks caught 2. PulseFlow stabilized all 24.",
+      "spoken": "Twenty four worker pools monitored. Standard checks caught two. PulseFlow stabilized all twenty four.",
+      "start": 20.611,
+      "dur": 7.902,
+      "end": 28.513,
+      "segs": [
+        [
+          0.02,
+          1.88
+        ],
+        [
+          2.96,
+          4.1
+        ],
+        [
+          4.2,
+          4.52
+        ],
+        [
+          5.57,
+          7.85
+        ]
+      ],
+      "words": [
+        [
+          "24",
+          0.01,
+          0.246
+        ],
+        [
+          "worker",
+          0.246,
+          0.952
+        ],
+        [
+          "pools",
+          0.952,
+          1.541
+        ],
+        [
+          "monitored.",
+          1.541,
+          2.601
+        ],
+        [
+          "Standard",
+          2.601,
+          3.544
+        ],
+        [
+          "checks",
+          3.544,
+          4.25
+        ],
+        [
+          "caught",
+          4.25,
+          4.957
+        ],
+        [
+          "2.",
+          4.957,
+          5.075
+        ],
+        [
+          "PulseFlow",
+          5.075,
+          6.135
+        ],
+        [
+          "stabilized",
+          6.135,
+          7.313
+        ],
+        [
+          "all",
+          7.313,
+          7.666
+        ],
+        [
+          "24.",
+          7.666,
+          7.902
+        ]
+      ],
+      "gap": 1.1,
+      "method": "provider-native"
+    },
+    "L8": {
+      "text": "Keep your background jobs on track.",
+      "spoken": "Keep your background jobs on track.",
+      "start": 29.613,
+      "dur": 2.013,
+      "end": 31.626,
+      "segs": [
+        [
+          0.02,
+          1.81
+        ],
+        [
+          1.9,
+          1.96
+        ]
+      ],
+      "words": [
+        [
+          "Keep",
+          0.01,
+          0.154
+        ],
+        [
+          "your",
+          0.167,
+          0.296
+        ],
+        [
+          "background",
+          0.309,
+          0.837
+        ],
+        [
+          "jobs",
+          0.85,
+          1.25
+        ],
+        [
+          "on",
+          1.263,
+          1.417
+        ],
+        [
+          "track.",
+          1.43,
+          1.958
+        ]
+      ],
+      "gap": 0.5,
+      "method": "provider-native"
+    },
+    "L9": {
+      "text": "PulseFlow. Predictable worker queues.",
+      "spoken": "PulseFlow. Predictable worker queues.",
+      "start": 32.126,
+      "dur": 3.262,
+      "end": 35.388,
+      "segs": [
+        [
+          0.02,
+          0.68
+        ],
+        [
+          1.72,
+          3.2
+        ]
+      ],
+      "words": [
+        [
+          "PulseFlow.",
+          0.01,
+          0.725
+        ],
+        [
+          "Predictable",
+          1.603,
+          2.222
+        ],
+        [
+          "worker",
+          2.235,
+          2.583
+        ],
+        [
+          "queues.",
+          2.595,
+          3.214
+        ]
+      ],
+      "gap": 0.8,
+      "method": "provider-native"
+    }
+  },
+  "total": 36.19
+}

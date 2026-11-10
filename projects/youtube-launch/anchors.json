@@ -1,0 +1,660 @@
+{
+  "lines": {
+    "L1": {
+      "text": "Everything said: ready to blow up.",
+      "start": 0.25,
+      "dur": 2.016,
+      "end": 2.266,
+      "segs": [
+        [
+          0.02,
+          0.85
+        ],
+        [
+          1.09,
+          1.96
+        ]
+      ],
+      "words": [
+        [
+          "Everything",
+          0.02
+        ],
+        [
+          "said:",
+          0.722
+        ],
+        [
+          "ready",
+          1.003
+        ],
+        [
+          "to",
+          1.355
+        ],
+        [
+          "blow",
+          1.495
+        ],
+        [
+          "up.",
+          1.776
+        ]
+      ],
+      "gap": 0.3
+    },
+    "L2": {
+      "text": "But nobody clicked.",
+      "start": 2.566,
+      "dur": 1.139,
+      "end": 3.705,
+      "segs": [
+        [
+          0.02,
+          1.07
+        ]
+      ],
+      "words": [
+        [
+          "But",
+          0.02
+        ],
+        [
+          "nobody",
+          0.211
+        ],
+        [
+          "clicked.",
+          0.593
+        ]
+      ],
+      "gap": 0.35
+    },
+    "L3": {
+      "text": "The title was cut off. The hook was buried.",
+      "start": 4.055,
+      "dur": 3.481,
+      "end": 7.536,
+      "segs": [
+        [
+          0.02,
+          1.29
+        ],
+        [
+          2.36,
+          3.41
+        ]
+      ],
+      "words": [
+        [
+          "The",
+          0.02
+        ],
+        [
+          "title",
+          0.244
+        ],
+        [
+          "was",
+          0.618
+        ],
+        [
+          "cut",
+          0.842
+        ],
+        [
+          "off.",
+          1.066
+        ],
+        [
+          "The",
+          2.36
+        ],
+        [
+          "hook",
+          2.557
+        ],
+        [
+          "was",
+          2.819
+        ],
+        [
+          "buried.",
+          3.016
+        ]
+      ],
+      "gap": 0.9
+    },
+    "L4": {
+      "text": "Normal checks just read file formats and tags.",
+      "start": 8.436,
+      "dur": 3.067,
+      "end": 11.503,
+      "segs": [
+        [
+          0.02,
+          3.01
+        ]
+      ],
+      "words": [
+        [
+          "Normal",
+          0.02
+        ],
+        [
+          "checks",
+          0.485
+        ],
+        [
+          "just",
+          0.951
+        ],
+        [
+          "read",
+          1.261
+        ],
+        [
+          "file",
+          1.571
+        ],
+        [
+          "formats",
+          1.881
+        ],
+        [
+          "and",
+          2.424
+        ],
+        [
+          "tags.",
+          2.657
+        ]
+      ],
+      "gap": 0.3
+    },
+    "L5": {
+      "text": "They never see what viewers see.",
+      "start": 11.803,
+      "dur": 1.777,
+      "end": 13.58,
+      "segs": [
+        [
+          0.02,
+          1.72
+        ]
+      ],
+      "words": [
+        [
+          "They",
+          0.02
+        ],
+        [
+          "never",
+          0.275
+        ],
+        [
+          "see",
+          0.593
+        ],
+        [
+          "what",
+          0.785
+        ],
+        [
+          "viewers",
+          1.039
+        ],
+        [
+          "see.",
+          1.485
+        ]
+      ],
+      "gap": 0.9
+    },
+    "L6": {
+      "text": "YouTube LaunchPad watches the first 5 seconds, like a viewer.",
+      "start": 14.48,
+      "dur": 3.783,
+      "end": 18.263,
+      "segs": [
+        [
+          0.02,
+          2.89
+        ],
+        [
+          3.06,
+          3.73
+        ]
+      ],
+      "words": [
+        [
+          "YouTube",
+          0.02
+        ],
+        [
+          "LaunchPad",
+          0.533
+        ],
+        [
+          "watches",
+          1.192
+        ],
+        [
+          "the",
+          1.705
+        ],
+        [
+          "first",
+          1.925
+        ],
+        [
+          "5",
+          2.291
+        ],
+        [
+          "seconds,",
+          2.365
+        ],
+        [
+          "like",
+          2.877
+        ],
+        [
+          "a",
+          3.17
+        ],
+        [
+          "viewer.",
+          3.244
+        ]
+      ],
+      "gap": 0.55
+    },
+    "L7": {
+      "text": "Say a rule: the thumbnail hook must always be visible.",
+      "start": 18.813,
+      "dur": 3.425,
+      "end": 22.238,
+      "segs": [
+        [
+          0.02,
+          0.85
+        ],
+        [
+          1.17,
+          3.37
+        ]
+      ],
+      "words": [
+        [
+          "Say",
+          0.02
+        ],
+        [
+          "a",
+          0.251
+        ],
+        [
+          "rule:",
+          0.327
+        ],
+        [
+          "the",
+          0.635
+        ],
+        [
+          "thumbnail",
+          0.865
+        ],
+        [
+          "hook",
+          1.557
+        ],
+        [
+          "must",
+          1.865
+        ],
+        [
+          "always",
+          2.172
+        ],
+        [
+          "be",
+          2.633
+        ],
+        [
+          "visible.",
+          2.787
+        ]
+      ],
+      "gap": 0.6
+    },
+    "L8": {
+      "text": "Two independent neural models score retention. Both must agree.",
+      "start": 22.838,
+      "dur": 4.633,
+      "end": 27.471,
+      "segs": [
+        [
+          0.02,
+          2.57
+        ],
+        [
+          3.61,
+          4.58
+        ]
+      ],
+      "words": [
+        [
+          "Two",
+          0.02
+        ],
+        [
+          "independent",
+          0.211
+        ],
+        [
+          "neural",
+          0.912
+        ],
+        [
+          "models",
+          1.295
+        ],
+        [
+          "score",
+          1.677
+        ],
+        [
+          "retention.",
+          1.996
+        ],
+        [
+          "Both",
+          3.61
+        ],
+        [
+          "must",
+          3.908
+        ],
+        [
+          "agree.",
+          4.207
+        ]
+      ],
+      "gap": 0.45
+    },
+    "L9": {
+      "text": "9.6% CTR drop. Rejected, with proof.",
+      "start": 27.921,
+      "dur": 4.99,
+      "end": 32.911,
+      "segs": [
+        [
+          0.02,
+          2.37
+        ],
+        [
+          3.45,
+          4.06
+        ],
+        [
+          4.26,
+          4.41
+        ],
+        [
+          4.49,
+          4.89
+        ]
+      ],
+      "words": [
+        [
+          "9.6%",
+          0.02
+        ],
+        [
+          "CTR",
+          0.561
+        ],
+        [
+          "drop.",
+          1.102
+        ],
+        [
+          "Rejected,",
+          1.824
+        ],
+        [
+          "with",
+          3.267
+        ],
+        [
+          "proof.",
+          3.988
+        ]
+      ],
+      "gap": 0.4
+    },
+    "L10": {
+      "text": "Fix the crop. Test again. Zero drop. Approved.",
+      "start": 33.311,
+      "dur": 6.018,
+      "end": 39.329,
+      "segs": [
+        [
+          0.03,
+          0.71
+        ],
+        [
+          1.81,
+          2.49
+        ],
+        [
+          3.49,
+          4.21
+        ],
+        [
+          5.29,
+          5.95
+        ]
+      ],
+      "words": [
+        [
+          "Fix",
+          0.03
+        ],
+        [
+          "the",
+          0.234
+        ],
+        [
+          "crop.",
+          0.438
+        ],
+        [
+          "Test",
+          1.81
+        ],
+        [
+          "again.",
+          2.112
+        ],
+        [
+          "Zero",
+          3.49
+        ],
+        [
+          "drop.",
+          3.85
+        ],
+        [
+          "Approved.",
+          5.29
+        ]
+      ],
+      "gap": 1.0
+    },
+    "L11": {
+      "text": "20 creator uploads. Normal checks caught 1. LaunchPad caught all 20.",
+      "start": 40.329,
+      "dur": 6.61,
+      "end": 46.939,
+      "segs": [
+        [
+          0.02,
+          1.54
+        ],
+        [
+          2.54,
+          3.87
+        ],
+        [
+          4.88,
+          5.85
+        ],
+        [
+          5.94,
+          6.55
+        ]
+      ],
+      "words": [
+        [
+          "20",
+          0.02
+        ],
+        [
+          "creator",
+          0.256
+        ],
+        [
+          "uploads.",
+          1.082
+        ],
+        [
+          "Normal",
+          1.908
+        ],
+        [
+          "checks",
+          2.616
+        ],
+        [
+          "caught",
+          3.324
+        ],
+        [
+          "1.",
+          4.032
+        ],
+        [
+          "LaunchPad",
+          4.15
+        ],
+        [
+          "caught",
+          5.212
+        ],
+        [
+          "all",
+          5.92
+        ],
+        [
+          "20.",
+          6.274
+        ]
+      ],
+      "gap": 1.1
+    },
+    "L12": {
+      "text": "Hook your viewers before they scroll away.",
+      "start": 48.039,
+      "dur": 2.146,
+      "end": 50.185,
+      "segs": [
+        [
+          0.02,
+          2.08
+        ]
+      ],
+      "words": [
+        [
+          "Hook",
+          0.02
+        ],
+        [
+          "your",
+          0.252
+        ],
+        [
+          "viewers",
+          0.483
+        ],
+        [
+          "before",
+          0.888
+        ],
+        [
+          "they",
+          1.236
+        ],
+        [
+          "scroll",
+          1.467
+        ],
+        [
+          "away.",
+          1.815
+        ]
+      ],
+      "gap": 0.5
+    },
+    "L13": {
+      "text": "YouTube LaunchPad. See what your viewers see.",
+      "start": 50.685,
+      "dur": 3.65,
+      "end": 54.335,
+      "segs": [
+        [
+          0.02,
+          1.15
+        ],
+        [
+          2.24,
+          3.58
+        ]
+      ],
+      "words": [
+        [
+          "YouTube",
+          0.02
+        ],
+        [
+          "LaunchPad.",
+          0.514
+        ],
+        [
+          "See",
+          2.24
+        ],
+        [
+          "what",
+          2.431
+        ],
+        [
+          "your",
+          2.687
+        ],
+        [
+          "viewers",
+          2.942
+        ],
+        [
+          "see.",
+          3.389
+        ]
+      ],
+      "gap": 0.8
+    }
+  },
+  "total": 55.13
+}

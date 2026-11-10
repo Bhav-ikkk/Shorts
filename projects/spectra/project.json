@@ -1,0 +1,195 @@
+{
+  "name": "Spectra",
+  "tagline": "See what your customers see.",
+  "url": "spectra-lyart.vercel.app",
+  "theme": {
+    "paper": "#F2EDE2",
+    "ink": "#0E0F13",
+    "brand": "#2F4BFF",
+    "defect": "#F2432D",
+    "verified": "#12A66B"
+  },
+  "voice": {
+    "provider": "edge-tts",
+    "voice": "en-US-ChristopherNeural",
+    "rate": "-4%"
+  },
+  "badges": [
+    "RUNS IN YOUR CLI",
+    "WORKS IN CI",
+    "MCP FOR CODING AGENTS"
+  ],
+  "script": [
+    {
+      "id": "L1",
+      "spoken": "Everything said: all good.",
+      "caption": "Everything said: all good.",
+      "pause_after": 0.30
+    },
+    {
+      "id": "L2",
+      "spoken": "But customers couldn't pay.",
+      "caption": "But customers couldn't pay.",
+      "pause_after": 0.35
+    },
+    {
+      "id": "L3",
+      "spoken": "A bar was covering part of the pay button.",
+      "caption": "A bar was covering part of the Pay button.",
+      "pause_after": 0.90
+    },
+    {
+      "id": "L4",
+      "spoken": "Normal checks just read a list of parts.",
+      "caption": "Normal checks just read a list of parts.",
+      "pause_after": 0.30
+    },
+    {
+      "id": "L5",
+      "spoken": "They never see what customers see.",
+      "caption": "They never see what customers see.",
+      "pause_after": 0.90
+    },
+    {
+      "id": "L6",
+      "spoken": "Spectra looks at the screen, like a person.",
+      "caption": "Spectra looks at the screen, like a person.",
+      "pause_after": 0.55
+    },
+    {
+      "id": "L7",
+      "spoken": "Say a rule: the pay button must always be visible.",
+      "caption": "Say a rule: the Pay button must always be visible.",
+      "pause_after": 0.60
+    },
+    {
+      "id": "L8",
+      "spoken": "Two different eyes look. Both must agree.",
+      "caption": "Two different eyes look. Both must agree.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L9",
+      "spoken": "Nine point six percent hidden. Rejected, with proof.",
+      "caption": "9.6% hidden. Rejected, with proof.",
+      "pause_after": 0.40
+    },
+    {
+      "id": "L10",
+      "spoken": "Fix it. Check again. Zero hidden. Approved.",
+      "caption": "Fix it. Check again. Zero hidden. Approved.",
+      "pause_after": 1.00
+    },
+    {
+      "id": "L11",
+      "spoken": "Eighteen hidden buttons. Normal checks caught one. Spectra caught all eighteen.",
+      "caption": "18 hidden buttons. Normal checks caught one. Spectra caught all 18.",
+      "pause_after": 1.10
+    },
+    {
+      "id": "L12",
+      "spoken": "Catch it before your customers do.",
+      "caption": "Catch it before your customers do.",
+      "pause_after": 0.50
+    },
+    {
+      "id": "L13",
+      "spoken": "Spectra. See what your customers see.",
+      "caption": "Spectra. See what your customers see.",
+      "pause_after": 0.80
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "archetype": "contrast-hook",
+      "lines": ["L1", "L2"],
+      "params": {
+        "positive": "Everything said: all good.",
+        "flip": "couldn't.",
+        "sub": "Today's automated tests",
+        "items": [
+          { "text": "Page loads", "pass": true },
+          { "text": "Pay button is there", "pass": true },
+          { "text": "No console errors", "pass": true }
+        ]
+      }
+    },
+    {
+      "id": "pain",
+      "archetype": "evidence-zoom",
+      "lines": ["L3"],
+      "params": {
+        "title": "A bar was covering part of the pay button.",
+        "chip": "PAY BUTTON COVERED",
+        "sublabel": "Viewport obstruction detected"
+      }
+    },
+    {
+      "id": "why",
+      "archetype": "split-compare",
+      "lines": ["L4", "L5"],
+      "params": {
+        "left": "WHAT THE SOFTWARE READS",
+        "right": "WHAT THE CUSTOMER SEES",
+        "leftRows": ["Page header", "Product cards", "Pay button", "Footer"],
+        "leftVerdict": "ALL FOUND · ALL PASS",
+        "rightVerdict": "✕ PART IS HIDDEN"
+      }
+    },
+    {
+      "id": "idea",
+      "archetype": "metaphor-icon",
+      "lines": ["L6"],
+      "params": {
+        "icon": "eye",
+        "label": "Spectra looks at the screen, like a person."
+      }
+    },
+    {
+      "id": "step1",
+      "archetype": "type-to-command",
+      "lines": ["L7"],
+      "params": {
+        "step": "STEP 1",
+        "headline": "Say a rule.",
+        "text": "The Pay button must always be visible.",
+        "chip": "✓ ACTIVE"
+      }
+    },
+    {
+      "id": "step2",
+      "archetype": "dual-check-gauge",
+      "lines": ["L8", "L9", "L10"],
+      "params": {
+        "checkA": "finds the shape · SAM 3.1",
+        "checkB": "matches the picture · PIXEL MATCH",
+        "tolerance": "1.35%"
+      }
+    },
+    {
+      "id": "proof",
+      "archetype": "tile-proof",
+      "lines": ["L11"],
+      "params": {
+        "total": 18,
+        "headline": "18 hidden buttons. Who spots them?",
+        "baselineLabel": "Normal checks",
+        "baselineCount": 1,
+        "oursLabel": "Spectra",
+        "oursCount": 18
+      }
+    },
+    {
+      "id": "cta",
+      "archetype": "kinetic-cta",
+      "lines": ["L12", "L13"],
+      "params": {
+        "headline1": "Catch it before",
+        "headline2": "your customers do.",
+        "chips": ["RUNS IN YOUR CLI", "WORKS IN CI", "MCP FOR CODING AGENTS"]
+      }
+    }
+  ]
+}
+

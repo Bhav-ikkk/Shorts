@@ -1,0 +1,103 @@
+{
+  "name": "YouTube LaunchPad",
+  "tagline": "See what your viewers see.",
+  "url": "youtube.com/launchpad",
+  "theme": {
+    "paper": "#F7F4EB",
+    "ink": "#0F0F12",
+    "brand": "#FF0033",
+    "defect": "#E5252A",
+    "verified": "#009955"
+  },
+  "voice": {
+    "provider": "edge-tts",
+    "voice": "en-US-ChristopherNeural",
+    "rate": "-3%"
+  },
+  "badges": [
+    "4K HDR READY",
+    "AI HOOK SCORER",
+    "STUDIO SYNC"
+  ],
+  "script": [
+    {
+      "id": "L1",
+      "spoken": "Everything said: ready to blow up.",
+      "caption": "Everything said: ready to blow up.",
+      "pause_after": 0.30
+    },
+    {
+      "id": "L2",
+      "spoken": "But nobody clicked.",
+      "caption": "But nobody clicked.",
+      "pause_after": 0.35
+    },
+    {
+      "id": "L3",
+      "spoken": "The title was cut off. The hook was buried.",
+      "caption": "The title was cut off. The hook was buried.",
+      "pause_after": 0.90
+    },
+    {
+      "id": "L4",
+      "spoken": "Normal checks just read file formats and tags.",
+      "caption": "Normal checks just read file formats and tags.",
+      "pause_after": 0.30
+    },
+    {
+      "id": "L5",
+      "spoken": "They never see what viewers see.",
+      "caption": "They never see what viewers see.",
+      "pause_after": 0.90
+    },
+    {
+      "id": "L6",
+      "spoken": "YouTube LaunchPad watches the first five seconds, like a viewer.",
+      "caption": "YouTube LaunchPad watches the first 5 seconds, like a viewer.",
+      "pause_after": 0.55
+    },
+    {
+      "id": "L7",
+      "spoken": "Say a rule: the thumbnail hook must always be visible.",
+      "caption": "Say a rule: the thumbnail hook must always be visible.",
+      "pause_after": 0.60
+    },
+    {
+      "id": "L8",
+      "spoken": "Two independent neural models score retention. Both must agree.",
+      "caption": "Two independent neural models score retention. Both must agree.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L9",
+      "spoken": "Nine point six percent CTR drop. Rejected, with proof.",
+      "caption": "9.6% CTR drop. Rejected, with proof.",
+      "pause_after": 0.40
+    },
+    {
+      "id": "L10",
+      "spoken": "Fix the crop. Test again. Zero drop. Approved.",
+      "caption": "Fix the crop. Test again. Zero drop. Approved.",
+      "pause_after": 1.00
+    },
+    {
+      "id": "L11",
+      "spoken": "Twenty creator uploads. Normal checks caught one. LaunchPad caught all twenty.",
+      "caption": "20 creator uploads. Normal checks caught 1. LaunchPad caught all 20.",
+      "pause_after": 1.10
+    },
+    {
+      "id": "L12",
+      "spoken": "Hook your viewers before they scroll away.",
+      "caption": "Hook your viewers before they scroll away.",
+      "pause_after": 0.50
+    },
+    {
+      "id": "L13",
+      "spoken": "YouTube LaunchPad. See what your viewers see.",
+      "caption": "YouTube LaunchPad. See what your viewers see.",
+      "pause_after": 0.80
+    }
+  ]
+}
+

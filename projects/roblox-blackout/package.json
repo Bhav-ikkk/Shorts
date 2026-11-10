@@ -1,0 +1,29 @@
+{
+  "titles": [
+    "The 73-Hour Roblox Blackout: How 50,000 Servers Collapsed",
+    "Did a Burrito Really Crash Roblox for 3 Days?",
+    "Inside the 73-Hour Roblox Server Deadlock"
+  ],
+  "chosenTitle": "The 73-Hour Roblox Blackout: How 50,000 Servers Collapsed",
+  "thumbnail": {
+    "headline": "73 HOURS DARK",
+    "sub": "50,000 SERVERS DEADLOCKED",
+    "visualConcept": "Roblox server status dashboard dropping to zero with red warning sirens and high contrast typography",
+    "colorPalette": ["#0D0F14", "#D8222A", "#FFFFFF"]
+  },
+  "description": "On October 28, 2021, over 43 million players watched Roblox go completely dark for 73 straight hours. The internet blamed a Chipotle burrito giveaway, but the reality inside Roblox engineering was far more terrifying: a distributed systems deadlock that threatened 50,000 servers. Here is the verified truth.\n\nTimestamps:\n0:00 The 50 Million Player Blackout\n0:08 The Staggering Numbers (73 Hours Offline)\n0:16 What the Internet Blamed vs What Actually Broke\n0:24 The Internal Consul Deadlock\n0:32 The 30 Datacenter Manual Restoration\n0:38 Zero Data Lost",
+  "tags": [
+    "roblox",
+    "roblox blackout",
+    "roblox outage",
+    "gaming history",
+    "system architecture",
+    "software engineering",
+    "internet mysteries"
+  ],
+  "compliance": {
+    "alteredOrSyntheticContent": true,
+    "notes": "Narrated with synthetic speech and procedural motion graphics."
+  }
+}
+

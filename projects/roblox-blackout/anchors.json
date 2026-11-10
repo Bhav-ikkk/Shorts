@@ -1,0 +1,434 @@
+{
+  "lines": {
+    "L1": {
+      "text": "50 million gamers were online.",
+      "spoken": "Fifty million gamers were online.",
+      "start": 0.25,
+      "dur": 1.97,
+      "end": 2.22,
+      "segs": [
+        [
+          0.02,
+          1.85
+        ]
+      ],
+      "words": [
+        [
+          "50",
+          0.02,
+          0.17
+        ],
+        [
+          "million",
+          0.17,
+          0.693
+        ],
+        [
+          "gamers",
+          0.693,
+          1.142
+        ],
+        [
+          "were",
+          1.142,
+          1.441
+        ],
+        [
+          "online.",
+          1.441,
+          1.89
+        ]
+      ],
+      "gap": 0.18,
+      "method": "proportional-rms"
+    },
+    "L2": {
+      "text": "Then every Roblox server on Earth died.",
+      "spoken": "Then, every Roblox server on Earth died.",
+      "start": 2.4,
+      "dur": 2.574,
+      "end": 4.974,
+      "segs": [
+        [
+          0.02,
+          0.31
+        ],
+        [
+          0.39,
+          2.52
+        ]
+      ],
+      "words": [
+        [
+          "Then",
+          0.02,
+          0.329
+        ],
+        [
+          "every",
+          0.329,
+          0.716
+        ],
+        [
+          "Roblox",
+          0.716,
+          1.18
+        ],
+        [
+          "server",
+          1.18,
+          1.643
+        ],
+        [
+          "on",
+          1.643,
+          1.798
+        ],
+        [
+          "Earth",
+          1.798,
+          2.185
+        ],
+        [
+          "died.",
+          2.185,
+          2.494
+        ]
+      ],
+      "gap": 0.22,
+      "method": "proportional-rms"
+    },
+    "L3": {
+      "text": "73 hours dark. 43M locked out. $25M vanished.",
+      "spoken": "Seventy-three hours offline. Forty-three million locked out. Twenty-five million dollars vanished.",
+      "start": 5.194,
+      "dur": 5.557,
+      "end": 10.751,
+      "segs": [
+        [
+          0.02,
+          1.64
+        ],
+        [
+          1.85,
+          3.03
+        ],
+        [
+          3.13,
+          3.33
+        ],
+        [
+          3.54,
+          5.43
+        ]
+      ],
+      "words": [
+        [
+          "73",
+          0.02,
+          0.341
+        ],
+        [
+          "hours",
+          0.341,
+          1.143
+        ],
+        [
+          "dark.",
+          1.143,
+          1.785
+        ],
+        [
+          "43M",
+          1.785,
+          2.267
+        ],
+        [
+          "locked",
+          2.267,
+          3.23
+        ],
+        [
+          "out.",
+          3.23,
+          3.711
+        ],
+        [
+          "$25M",
+          3.711,
+          4.193
+        ],
+        [
+          "vanished.",
+          4.193,
+          5.477
+        ]
+      ],
+      "gap": 0.25,
+      "method": "proportional-rms"
+    },
+    "L4": {
+      "text": "The internet blamed a free burrito giveaway.",
+      "spoken": "The internet blamed a free burrito giveaway.",
+      "start": 11.001,
+      "dur": 2.577,
+      "end": 13.578,
+      "segs": [
+        [
+          0.02,
+          2.52
+        ]
+      ],
+      "words": [
+        [
+          "The",
+          0.02,
+          0.221
+        ],
+        [
+          "internet",
+          0.221,
+          0.756
+        ],
+        [
+          "blamed",
+          0.756,
+          1.158
+        ],
+        [
+          "a",
+          1.158,
+          1.225
+        ],
+        [
+          "free",
+          1.225,
+          1.493
+        ],
+        [
+          "burrito",
+          1.493,
+          1.962
+        ],
+        [
+          "giveaway.",
+          1.962,
+          2.497
+        ]
+      ],
+      "gap": 0.2,
+      "method": "proportional-rms"
+    },
+    "L5": {
+      "text": "The real culprit? A hidden thread deadlock inside Consul.",
+      "spoken": "The real culprit? A hidden thread deadlock inside HashiCorp Consul.",
+      "start": 13.778,
+      "dur": 4.24,
+      "end": 18.018,
+      "segs": [
+        [
+          0.02,
+          0.89
+        ],
+        [
+          1.09,
+          2.34
+        ],
+        [
+          2.44,
+          3.66
+        ],
+        [
+          3.75,
+          4.18
+        ]
+      ],
+      "words": [
+        [
+          "The",
+          0.02,
+          0.284
+        ],
+        [
+          "real",
+          0.284,
+          0.637
+        ],
+        [
+          "culprit?",
+          0.637,
+          1.253
+        ],
+        [
+          "A",
+          1.253,
+          1.341
+        ],
+        [
+          "hidden",
+          1.341,
+          1.87
+        ],
+        [
+          "thread",
+          1.87,
+          2.398
+        ],
+        [
+          "deadlock",
+          2.398,
+          3.103
+        ],
+        [
+          "inside",
+          3.103,
+          3.632
+        ],
+        [
+          "Consul.",
+          3.632,
+          4.16
+        ]
+      ],
+      "gap": 0.22,
+      "method": "proportional-rms"
+    },
+    "L6": {
+      "text": "50,000 servers flooded each other with pings, crashing the metaverse.",
+      "spoken": "Fifty thousand servers flooded each other with circular pings, taking down the entire metaverse.",
+      "start": 18.238,
+      "dur": 5.484,
+      "end": 23.722,
+      "segs": [
+        [
+          0.02,
+          3.2
+        ],
+        [
+          3.29,
+          3.35
+        ],
+        [
+          3.43,
+          5.42
+        ]
+      ],
+      "words": [
+        [
+          "50,000",
+          0.02,
+          0.492
+        ],
+        [
+          "servers",
+          0.492,
+          1.153
+        ],
+        [
+          "flooded",
+          1.153,
+          1.815
+        ],
+        [
+          "each",
+          1.815,
+          2.192
+        ],
+        [
+          "other",
+          2.192,
+          2.665
+        ],
+        [
+          "with",
+          2.665,
+          3.042
+        ],
+        [
+          "pings,",
+          3.042,
+          3.515
+        ],
+        [
+          "crashing",
+          3.515,
+          4.27
+        ],
+        [
+          "the",
+          4.27,
+          4.554
+        ],
+        [
+          "metaverse.",
+          4.554,
+          5.404
+        ]
+      ],
+      "gap": 0.25,
+      "method": "proportional-rms"
+    },
+    "L7": {
+      "text": "Follow for more untold stories of the internet.",
+      "spoken": "Follow for more untold stories of the internet.",
+      "start": 23.972,
+      "dur": 2.791,
+      "end": 26.763,
+      "segs": [
+        [
+          0.02,
+          0.8
+        ],
+        [
+          0.89,
+          2.73
+        ]
+      ],
+      "words": [
+        [
+          "Follow",
+          0.02,
+          0.434
+        ],
+        [
+          "for",
+          0.434,
+          0.641
+        ],
+        [
+          "more",
+          0.641,
+          0.917
+        ],
+        [
+          "untold",
+          0.917,
+          1.331
+        ],
+        [
+          "stories",
+          1.331,
+          1.814
+        ],
+        [
+          "of",
+          1.814,
+          1.952
+        ],
+        [
+          "the",
+          1.952,
+          2.159
+        ],
+        [
+          "internet.",
+          2.159,
+          2.711
+        ]
+      ],
+      "gap": 0.35,
+      "method": "proportional-rms"
+    }
+  },
+  "total": 27.11
+}

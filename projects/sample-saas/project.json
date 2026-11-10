@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 2,
+  "product": {
+    "name": "PulseFlow",
+    "tagline": "Predictable worker queues for modern backends.",
+    "url": "pulseflow.internal.test"
+  },
+  "fictional": true,
+  "theme": {
+    "tokens": {
+      "paper": "#F5F3EC",
+      "ink": "#111318",
+      "brand": "#1F51FF",
+      "bad": "#E63946",
+      "good": "#06D6A0"
+    }
+  },
+  "voice": {
+    "provider": "edge-tts",
+    "voice": "en-US-ChristopherNeural",
+    "rate": "-3%"
+  },
+  "badges": [
+    "OPEN TELEMETRY NATIVE",
+    "ZERO AGENT OVERHEAD",
+    "SELF HOSTED CLI"
+  ],
+  "script": [
+    {
+      "id": "L1",
+      "spoken": "Every metric reported normal health.",
+      "caption": "Every metric reported normal health.",
+      "pause_after": 0.35
+    },
+    {
+      "id": "L2",
+      "spoken": "Until worker memory stalled.",
+      "caption": "Until worker memory stalled.",
+      "pause_after": 0.40
+    },
+    {
+      "id": "L3",
+      "spoken": "Three hundred thousand jobs queued up in four seconds.",
+      "caption": "300,000 jobs queued up in 4 seconds.",
+      "pause_after": 0.85
+    },
+    {
+      "id": "L4",
+      "spoken": "Basic alerts only check if the process is running.",
+      "caption": "Basic alerts only check if the process is running.",
+      "pause_after": 0.35
+    },
+    {
+      "id": "L5",
+      "spoken": "They never inspect queue concurrency or memory saturation.",
+      "caption": "They never inspect concurrency or memory saturation.",
+      "pause_after": 0.90
+    },
+    {
+      "id": "L6",
+      "spoken": "PulseFlow automatically balances worker throughput in real time.",
+      "caption": "PulseFlow automatically balances throughput in real time.",
+      "pause_after": 0.60
+    },
+    {
+      "id": "L7",
+      "spoken": "Twenty four worker pools monitored. Standard checks caught two. PulseFlow stabilized all twenty four.",
+      "caption": "24 worker pools monitored. Standard checks caught 2. PulseFlow stabilized all 24.",
+      "pause_after": 1.10
+    },
+    {
+      "id": "L8",
+      "spoken": "Keep your background jobs on track.",
+      "caption": "Keep your background jobs on track.",
+      "pause_after": 0.50
+    },
+    {
+      "id": "L9",
+      "spoken": "PulseFlow. Predictable worker queues.",
+      "caption": "PulseFlow. Predictable worker queues.",
+      "pause_after": 0.80
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "archetype": "contrast-hook",
+      "lines": [
+        "L1",
+        "L2"
+      ],
+      "params": {
+        "positive": "Every metric reported normal health.",
+        "flip": "stalled.",
+        "sub": "Background Queue Health",
+        "items": [
+          {
+            "text": "Redis connection active",
+            "pass": true
+          },
+          {
+            "text": "Worker process running",
+            "pass": true
+          },
+          {
+            "text": "Heartbeat responding",
+            "pass": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "metrics",
+      "archetype": "metrics-count",
+      "lines": [
+        "L3"
+      ],
+      "params": {
+        "headline": "Job Backpressure Under Heavy Load",
+        "metrics": [
+          {
+            "label": "Jobs In Queue",
+            "value": 300,
+            "unit": "k"
+          },
+          {
+            "label": "Spike Latency",
+            "value": 4200,
+            "unit": "ms"
+          },
+          {
+            "label": "Worker Saturation",
+            "value": 98,
+            "unit": "%"
+          }
+        ]
+      }
+    },
+    {
+      "id": "why",
+      "archetype": "split-compare",
+      "lines": [
+        "L4",
+        "L5"
+      ],
+      "params": {
+        "left": "WHAT BASIC MONITORS SEE",
+        "right": "WHAT WORKERS EXPERIENCE",
+        "leftRows": [
+          "Process status: 0",
+          "TCP port bound",
+          "Memory < 80%",
+          "CPU utilization"
+        ],
+        "leftVerdict": "ALL PASSED · FALSE CONFIDENCE",
+        "rightVerdict": "✕ QUEUE SATURATED"
+      }
+    },
+    {
+      "id": "terminal",
+      "archetype": "terminal-run",
+      "lines": [
+        "L6"
+      ],
+      "params": {
+        "headline": "Dynamic auto-balancing via CLI and CI.",
+        "command": "pulseflow drain --adaptive --concurrency=32",
+        "lines": [
+          "Inspecting 24 worker pools across 3 regions...",
+          "Backpressure resolved: concurrency scaled to 32 workers",
+          "Drain rate: 4,800 jobs/sec (0 dropped tasks)",
+          "✓ All queues stabilized at nominal latency"
+        ]
+      }
+    },
+    {
+      "id": "proof",
+      "archetype": "tile-proof",
+      "lines": [
+        "L7"
+      ],
+      "params": {
+        "total": 24,
+        "headline": "24 worker pools. Who prevents the stall?",
+        "baselineLabel": "Standard alerts",
+        "baselineCount": 2,
+        "oursLabel": "PulseFlow",
+        "oursCount": 24
+      }
+    },
+    {
+      "id": "cta",
+      "archetype": "kinetic-cta",
+      "lines": [
+        "L8",
+        "L9"
+      ],
+      "params": {
+        "headline1": "Keep background jobs",
+        "headline2": "on track.",
+        "name": "PulseFlow",
+        "tagline": "Predictable worker queues for modern backends.",
+        "url": "pulseflow.internal.test",
+        "chips": [
+          "OPEN TELEMETRY NATIVE",
+          "ZERO AGENT OVERHEAD",
+          "SELF HOSTED CLI"
+        ]
+      }
+    }
+  ]
+}

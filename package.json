@@ -1,0 +1,31 @@
+{
+  "name": "motion-design-video-pipeline",
+  "version": "1.0.0",
+  "description": "Code-driven motion-design video pipeline for any product",
+  "type": "module",
+  "scripts": {
+    "film:doctor": "node engine/cli.js doctor",
+    "film:voice": "node engine/cli.js voice",
+    "film:build": "node engine/cli.js build",
+    "film:lint": "node engine/cli.js lint",
+    "film:shots": "node engine/cli.js shots",
+    "film:audio": "node engine/cli.js audio",
+    "film:render": "node engine/cli.js render",
+    "film:mux": "node engine/cli.js mux",
+    "film:qa": "node engine/cli.js qa",
+    "film:all": "node engine/cli.js all",
+    "test": "node engine/cli.js doctor"
+  },
+  "dependencies": {
+    "@fontsource/bricolage-grotesque": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "ffmpeg-static": "^5.3.0",
+    "ffprobe-static": "^3.1.0",
+    "gsap": "^3.12.5",
+    "lottie-web": "^5.12.2",
+    "playwright": "^1.49.0"
+  }
+}
