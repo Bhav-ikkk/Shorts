@@ -117,3 +117,4 @@ You can run individual stages or execute the full automated pipeline for any pro
 ## 📄 License
 
 MIT License. Designed and maintained for modern motion design automation.
+

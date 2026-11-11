@@ -1,5 +1,7 @@
 # Video outputs & rendered media (DO NOT PUSH)
 out/
+blocky/out/
+blocky/vo/
 *.mp4
 *.m4v
 *.avi

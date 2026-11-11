@@ -1,0 +1,23 @@
+{
+  "name": "blocky-engine",
+  "private": true,
+  "version": "0.2.0",
+  "scripts": {
+    "bench": "node cli.js bench",
+    "voice": "node cli.js voice",
+    "render": "node cli.js render",
+    "audio": "node cli.js audio",
+    "master": "node cli.js master",
+    "shots": "node cli.js shots",
+    "sheet": "node cli.js sheet",
+    "qa": "node cli.js qa",
+    "all": "node cli.js all"
+  },
+  "dependencies": {
+    "three": "^0.187.0",
+    "@fontsource/bricolage-grotesque": "^5.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.50.0"
+  }
+}

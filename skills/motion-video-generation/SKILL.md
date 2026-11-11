@@ -54,3 +54,4 @@ node engine/cli.js all <projectName>
    - `scenes`: array of archetypes (`contrast-hook`, `metrics-count`, `split-compare`, `terminal-run`, `tile-proof`, `kinetic-cta`, etc.)
 3. Run `node engine/cli.js all <name>`.
 4. Review generated QA metrics in `out/<name>-qa.json` and visual frames in `out/<name>-contact-sheet.png`.
+

@@ -14,6 +14,15 @@
     "film:mux": "node engine/cli.js mux",
     "film:qa": "node engine/cli.js qa",
     "film:all": "node engine/cli.js all",
+    "blocky:bench": "node blocky/cli.js bench",
+    "blocky:voice": "node blocky/cli.js voice",
+    "blocky:render": "node blocky/cli.js render",
+    "blocky:audio": "node blocky/cli.js audio",
+    "blocky:master": "node blocky/cli.js master",
+    "blocky:shots": "node blocky/cli.js shots",
+    "blocky:sheet": "node blocky/cli.js sheet",
+    "blocky:qa": "node blocky/cli.js qa",
+    "blocky:all": "node blocky/cli.js all",
     "test": "node engine/cli.js doctor"
   },
   "dependencies": {
@@ -26,6 +35,7 @@
     "ffprobe-static": "^3.1.0",
     "gsap": "^3.12.5",
     "lottie-web": "^5.12.2",
-    "playwright": "^1.49.0"
+    "playwright": "^1.49.0",
+    "three": "^0.187.0"
   }
 }
