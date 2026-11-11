@@ -20,7 +20,7 @@
 | **B7** | **QA 3D Hardening** | Full spatial/visual regression test suite, occlusion raycasting, camera-in-mesh gates | **COMPLETED** | `455367d` |
 | **B8** | **Publish Pack** | Automated metadata pack: titles, descriptions, hashtags, pinned comments, cover frame, SRT, COPPA & disclosure logs | **COMPLETED** | `fe35e97` |
 | **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets, BlenderMCP guide, deterministic playback | **COMPLETED** | `508e35e` |
-| **B10**| **Hardening & Verification** | Multi-platform verification, docs, DoD checklist, 543 regression tests | **COMPLETED** | Pending commit |
+| **B10**| **Hardening & Verification** | Multi-platform verification, docs, DoD checklist, 543 regression tests | **COMPLETED** | `9932d25` |
 
 ---
 
