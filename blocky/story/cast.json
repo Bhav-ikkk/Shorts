@@ -6,7 +6,7 @@
     "PIP": {
       "name": "Pip",
       "role": "narrator / chief investigator",
-      "voice": { "provider": "kokoro", "sid": 5, "speed": 1.05 },
+      "voice": { "provider": "kokoro", "sid": 5, "speed": 1.05, "pitch": 0.0 },
       "scale": 1.0,
       "look": {
         "skin": "#f2c79b",
@@ -22,7 +22,7 @@
     "MOX": {
       "name": "Mox",
       "role": "dramatic best friend / stunt tester",
-      "voice": { "provider": "kokoro", "sid": 2, "speed": 1.10 },
+      "voice": { "provider": "kokoro", "sid": 2, "speed": 1.10, "pitch": 0.6 },
       "scale": 1.0,
       "look": {
         "skin": "#e9b88e",
@@ -38,7 +38,7 @@
     "JUNE": {
       "name": "June",
       "role": "mastermind younger sibling",
-      "voice": { "provider": "kokoro", "sid": 4, "speed": 1.15 },
+      "voice": { "provider": "kokoro", "sid": 4, "speed": 1.15, "pitch": 3.5 },
       "scale": 0.4,
       "look": {
         "skin": "#f5cfa6",

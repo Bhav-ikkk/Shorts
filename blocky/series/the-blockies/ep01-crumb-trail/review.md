@@ -43,3 +43,4 @@
 - **Pacing**: Event / camera punch every 1.8 seconds.
 - **Clue Payoff**: Crumb trail directly resolves to June hidden under the table.
 - **Continuity Thread**: L8 cliffhanger ("Who ate the chocolate cake?") sets up running season mystery.
+

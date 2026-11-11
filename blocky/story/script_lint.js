@@ -227,3 +227,4 @@ if (require.main === module) {
 }
 
 module.exports = { lintScript, FORBIDDEN_WORDS, VALID_BEATS };
+

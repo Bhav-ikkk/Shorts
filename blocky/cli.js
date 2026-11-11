@@ -219,13 +219,19 @@ async function runStory() {
 }
 
 async function runTest() {
-  console.log('[CLI] Running story, actions, faces, props, sets, and determinism regression tests...');
+  console.log('[CLI] Running story, actions, faces, props, sets, audio, and determinism regression tests...');
   await runCmd('node', ['tests/story.test.js']);
   await runCmd('node', ['tests/actions.test.js']);
   await runCmd('node', ['tests/faces.test.js']);
   await runCmd('node', ['tests/props.test.js']);
   await runCmd('node', ['tests/sets.test.js']);
+  await runCmd('node', ['tests/audio.test.js']);
   await runCmd('node', ['tests/determinism.test.js']);
+}
+
+async function runLoudness() {
+  console.log('[CLI] Running post-encode EBU R128 loudness & true-peak verification...');
+  await runCmd('node', ['qa/loudness.js']);
 }
 
 async function runLint3D() {
@@ -274,7 +280,11 @@ async function main() {
     case 'qa':
       await runLint3D();
       await runLipSync();
+      await runLoudness();
       await runQA();
+      break;
+    case 'loudness':
+      await runLoudness();
       break;
     case 'lint3d':
       await runLint3D();
@@ -297,7 +307,7 @@ async function main() {
       break;
     default:
       console.log(`Unknown command: ${stage}`);
-      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | qa | all');
+      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | loudness | qa | all');
       process.exit(1);
   }
 }

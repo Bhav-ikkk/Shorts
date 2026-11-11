@@ -38,3 +38,4 @@
   - High urgency, dynamic visual camera framing.
 - **Pacing**: Rapid physical action (jump, sprint, slip, bounce) every 1.6 seconds.
 - **Payoff & Button**: Comedic twist saving Mox via a giant duck; button questions duck's heat rating.
+

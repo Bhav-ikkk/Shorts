@@ -37,3 +37,4 @@
   - Immediate audio/visual intrigue.
 - **Pacing**: High shot variety (low angle, over shoulder, closeup chest) with visual punch every 2.1 seconds.
 - **Callback & Series Expansion**: Shows June expanding her territory from under the kitchen table into the attic, bridging Episodes 1 and 3 seamlessly.
+

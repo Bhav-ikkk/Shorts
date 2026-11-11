@@ -55,3 +55,4 @@ function estimateAnchors(lines, options = {}) {
 }
 
 module.exports = { estimateAnchors };
+

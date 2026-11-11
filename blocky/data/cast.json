@@ -1,8 +1,8 @@
 {
-  "series": "KITCHEN MYSTERIES",
+  "series": "THE BLOCKIES",
   "cast": {
-    "PIP":  { "voice": { "sid": 5, "speed": 1.05 }, "scale": 1.0, "look": { "skin": "#f2c79b", "shirt": "#3b6cff", "pants": "#2b2f4a", "hair": "#5a3a22", "hairStyle": "cap" } },
-    "MOX":  { "voice": { "sid": 2, "speed": 1.10 }, "scale": 1.0, "look": { "skin": "#e9b88e", "shirt": "#ff8a2b", "pants": "#3c3f46", "hair": "#2a1a14", "hairStyle": "spiky" } },
-    "JUNE": { "voice": { "sid": 4, "speed": 1.15 }, "scale": 0.4, "look": { "skin": "#f5cfa6", "shirt": "#b36bff", "pants": "#ffd34a", "hair": "#d94f8a", "hairStyle": "pigtails" } }
+    "PIP":  { "voice": { "sid": 5, "speed": 1.05, "pitch": 0.0 }, "scale": 1.0, "look": { "skin": "#f2c79b", "shirt": "#3b6cff", "pants": "#2b2f4a", "hair": "#5a3a22", "hairStyle": "cap" } },
+    "MOX":  { "voice": { "sid": 2, "speed": 1.10, "pitch": 0.6 }, "scale": 1.0, "look": { "skin": "#e9b88e", "shirt": "#ff8a2b", "pants": "#3c3f46", "hair": "#2a1a14", "hairStyle": "spiky" } },
+    "JUNE": { "voice": { "sid": 4, "speed": 1.15, "pitch": 3.5 }, "scale": 0.4, "look": { "skin": "#f5cfa6", "shirt": "#b36bff", "pants": "#ffd34a", "hair": "#d94f8a", "hairStyle": "pigtails" } }
   }
 }

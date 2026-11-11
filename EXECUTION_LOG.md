@@ -217,4 +217,59 @@ Build the complete offline Story Engine for multi-episode script generation, ant
 - **Word Count Limits**: Ep 1 (avg 5.8 w/l), Ep 2 (avg 6.6 w/l), Ep 3 (avg 6.6 w/l) — all well below $\le 9$ words limit.
 - **Trademark Clearance**: 0 forbidden words detected across all titles, lines, and metadata.
 
+---
+
+## [2026-11-11] — Phase B6: Audio v2 (COMPLETED)
+
+### Objective
+Build the Audio v2 subsystem: 25 procedural sound effects, 7 procedural music mood beds, multi-voice character pitch shifting and styling, dynamic sidechain ducking mixer, and automated post-encode EBU R128 loudness / true-peak gate.
+
+### Actions Taken & Technical Solutions
+1. **Procedural SFX Library (`blocky/audio/sfx.py`)**:
+   - Synthesizes 25 procedural sound effects:
+     - Classic: `pop`, `thud`, `whoosh`, `boing`, `step`, `swell`, `impact`, `chime`, `crunch`, `poof`, `gasp`, `sting`, `flicker`, `blackout`.
+     - New: `jump`, `land`, `lava_bubble`, `splash`, `coin`, `trophy_fanfare`, `key_jingle`, `chest_creak`, `switch_click`, `laser`, `alarm`.
+   - Zero audio samples, zero API keys. 100% mathematical synthesis with impulse response reverb convolution.
+2. **Procedural Music Mood Beds (`blocky/audio/music.py`)**:
+   - Engineered 7 distinct procedural mood beds with crossfades and envelopes:
+     - `playful` (104 BPM A-minor arpeggio + bouncing bass)
+     - `sneak` (84 BPM tiptoe minor staccato plucks + wood block steps)
+     - `hush` (70 BPM breathing sub-bass + clock tick)
+     - `drone` (60 BPM tension pad + low-frequency oscillation wobble)
+     - `arcade` / `obby` (132 BPM 8-bit square/triangle chiptune arpeggio + driving bass)
+     - `spooky` (76 BPM gothic D-minor pad + celesta chime)
+     - `sunset` / `warm` (92 BPM mellow lofi chord progression)
+3. **Multi-Voice Pitch Shifting & Formatter (`blocky/audio/pitch_shift.py`)**:
+   - Transposes pitch in semitones while strictly preserving duration and lip-sync alignment via overlap-add resampling.
+   - Assigned character vocal parameters in `cast.json`:
+     - Pip: `sid: 5`, `speed: 1.05`, `pitch: 0.0`
+     - Mox: `sid: 2`, `speed: 1.10`, `pitch: +0.6`
+     - June (0.4 toddler): `sid: 4`, `speed: 1.15`, `pitch: +3.5`
+4. **Vocal Synthesis & Caching (`blocky/vo.py`)**:
+   - Neural Kokoro multi-voice synthesis with SHA-256 caching in `.cache/vo/`.
+   - Delivery styles: `whisper` (breathy high-pass noise), `panic` (presence boost + saturation), `normal` (warm de-essing).
+5. **Master Audio Mixer (`blocky/audio/mixer.py`)**:
+   - Softens dialogue with de-essing and low warmth boost (`soften.py`).
+   - Sidechain ducking: attenuates SFX by -5 dB and music by -8 dB during speech.
+   - Soft-saturation limiter (`np.tanh`) to eliminate harsh digital clipping.
+   - Exports 44.1 kHz stereo `mix.wav` and synchronized SRT subtitles.
+6. **Post-Encode Loudness & Peak Gate (`blocky/qa/loudness.js`)**:
+   - Measures EBU R128 integrated loudness, true peak, and LRA after lossy AAC encoding.
+   - Exports `out/lufs_report.json`.
+   - Integrated into `blocky/cli.js` (`node blocky/cli.js loudness` and `node blocky/cli.js test`).
+
+### Measured Results & Verification Evidence
+- **Procedural SFX**: 25/25 validated with valid signal peaks ($0.15 \le \text{Peak} \le 0.78$) and zero NaN/Inf values.
+- **Procedural Music**: 7/7 mood beds rendered cleanly over test intervals.
+- **Pitch Shifting**: Duration invariance confirmed for $+3.5\text{ st}$ and $-1.5\text{ st}$.
+- **Post-Encode EBU R128 Loudness (Measured after AAC encode on final MP4)**:
+  - **Integrated Loudness**: **-14.0 LUFS** (Target: $-14.0 \pm 0.5$ LUFS) $\to$ **PASS**
+  - **True Peak**: **-1.7 dBFS** (Target: $\le -1.0$ dBFS post-encode ceiling) $\to$ **PASS**
+  - **Loudness Range (LRA)**: **3.8 LU** (Target: $\le 7.0$ LU) $\to$ **PASS**
+  - **Audio Sample Rate**: **48,000 Hz AAC** $\to$ **PASS**
+- **Test Suite Results**:
+  - `node blocky/tests/audio.test.js`: **8/8 passed**.
+  - Total Regression Suite (`node blocky/cli.js test`): **156/156 checks passed** (Story 34, Actions 34, Faces 10, Props 40, Sets 24, Audio 8, Determinism 6).
+
+
 

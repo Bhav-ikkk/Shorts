@@ -61,3 +61,4 @@ flowchart TD
 1. **The Snack Debt**: Snacks mentioned as missing in one episode reappear as props or bartering tools in subsequent episodes (e.g., the missing chocolate cake from Ep 1 becomes June's arcade energy source in Ep 3).
 2. **Mox's Lucky Duck**: Mox's emotional support rubber duck is a recurring talisman across all hazard courses.
 3. **June's Expanding Bases**: June starts with an outpost under the kitchen table, then expands to the attic, and later the backyard doghouse.
+
