@@ -19,8 +19,8 @@
 | **B6** | **Audio v2** | Mood scoring engine, procedural SFX library, pitch/speed variance, post-encode peak gate | **COMPLETED** | `6c28915` |
 | **B7** | **QA 3D Hardening** | Full spatial/visual regression test suite, occlusion raycasting, camera-in-mesh gates | **COMPLETED** | `455367d` |
 | **B8** | **Publish Pack** | Automated metadata pack: titles, descriptions, hashtags, pinned comments, cover frame, SRT, COPPA & disclosure logs | **COMPLETED** | `fe35e97` |
-| **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets, BlenderMCP guide, deterministic playback | **COMPLETED** | `952131a` |
-| **B10**| **Hardening & Verification** | Multi-platform verification, docs, DoD checklist | PENDING | — |
+| **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets, BlenderMCP guide, deterministic playback | **COMPLETED** | `508e35e` |
+| **B10**| **Hardening & Verification** | Multi-platform verification, docs, DoD checklist, 543 regression tests | **COMPLETED** | Pending commit |
 
 ---
 
@@ -409,6 +409,45 @@ Implement the Tier C asset pipeline and headless glTF export workflow (`blocky/t
   - `blocky/runtime/gltf_asset.js`
   - `blocky/docs/blender_mcp.md`
   - `blocky/tests/gltf.test.js`
+
+---
+
+## [2026-11-11] — Phase B10: Hardening & Final Definition of Done (COMPLETED)
+
+### Objective
+Execute the final hardening and compliance verification phase: author an automated Definition of Done audit test suite (`blocky/tests/dod.test.js`) validating all 8 criteria of the master DoD specification programmatically, author the master `CHANGELOG.md`, update `blocky/README.md` and `README.md`, ensure all CLI commands are wired and documented, and verify complete test suite execution on Windows.
+
+### Actions Taken & Technical Solutions
+1. **Automated Definition of Done Verification Suite (`blocky/tests/dod.test.js`)**:
+   - Programmatically evaluates the 8 DoD criteria:
+     - **Criterion 1 (One-Command Publish & Review Gate)**: Validates central and series-local publish bundles for all 3 episodes (`title.txt`, `description.txt`, `hashtags.txt`, `pinned_comment.txt`, `captions.srt`, `checklist.md`, `decision_log.json`, `review.md`).
+     - **Criterion 2 (3 Visibly Different Episodes)**: Validates 3 distinct environments (`kitchen`, `obby`, `spookyHouse`), $\ge 6$ dynamic camera shots per episode, and anti-repetitiveness similarity $J \le 0.038 \le 0.25$.
+     - **Criterion 3 (Zero API Keys & Network)**: Confirms 0 dependencies on external AI SDKs (`openai`, `anthropic`, `@google/genai`, `elevenlabs`, `replicate`) and 0 required `.env` credentials.
+     - **Criterion 4 (Low-RAM / High Throughput)**: Confirms benchmark throughput $\ge 5.0$ fps (measured 11.11–12.5 fps) and memory consumption $\le 3000$ MB (measured 135 MB RSS per worker).
+     - **Criterion 5 (2D + 3D Spatial QA Lint Clean)**: Confirms spatial QA linter evaluated 35 checkpoints and 175 constraints with 0 critical errors.
+     - **Criterion 6 (EBU R128 Broadcast Audio)**: Confirms post-encode integrated loudness $-14.0 \pm 0.5$ LUFS (measured -14.0 LUFS) and True Peak $\le -1.0$ dBFS (measured -1.7 dBFS).
+     - **Criterion 7 (COPPA & Synthetic Media Decision Logs)**: Confirms `"Made for Kids (Primary)"` status, non-photorealistic cartoon disclosure, and 100% original IP clearance recorded for each episode.
+     - **Criterion 8 (Windows-Native & Documentation)**: Confirms Windows platform verification (`win32`), complete traceability logs, BlenderMCP documentation, and asset licensing registries.
+   - Evaluated **73 / 73 checks passed**.
+2. **Master Documentation & Changelog**:
+   - Authored root `CHANGELOG.md` tracking all versions from initial 2D Motion Engine (v1.0.0) through complete Blocky Story Engine (v2.0.0, Phases B0–B10).
+   - Overhauled `blocky/README.md` with full subsystem architectural breakdown, complete CLI command manual, and DoD status table.
+   - Enhanced root `README.md` introducing both the Spectra 2D motion engine and the Blocky 3D story engine.
+3. **Master Regression Test Run**:
+   - Executed all 11 test suites via `node blocky/cli.js test`: Story (34), Actions (34), Faces (14), Props (40), Sets (24), Audio (8), QA 3D (10), Publish (265), glTF (35), DoD (73), Determinism (6).
+   - Achieved **543 / 543 assertions passed (0 failures)**.
+
+### Measured Results & Verification Evidence
+- **DoD Test Suite (`node blocky/cli.js dod`)**: **73 / 73 passed**.
+- **Full Engine Regression Suite (`node blocky/cli.js test`)**: **543 / 543 passed**.
+- **Definition of Done Status**: **100% Complete & Verified**.
+- **Artifacts Generated / Updated**:
+  - `blocky/tests/dod.test.js`
+  - `CHANGELOG.md`
+  - `blocky/README.md`
+  - `README.md`
+  - `EXECUTION_LOG.md`
+
 
 
 

@@ -114,6 +114,39 @@ You can run individual stages or execute the full automated pipeline for any pro
 
 ---
 
+## 🎬 The Blocky Story Engine (`blocky/`)
+
+A dedicated 100% offline, low-RAM animated short film engine for **YouTube Shorts** and **Instagram Reels** (1080×1920 vertical format, 30 fps, broadcast mastered to −14 LUFS, peak $\le -1.0$ dBFS).
+
+### Subsystem Highlights
+- **Rig v2**: Two-bone arm/leg skeletal hierarchy, secondary hair spring inertia, squash-and-stretch ($J.sq$), and 34 validated actions.
+- **Faces & Acting**: 10 emotion presets, 8-viseme phoneme mouth shapes, dynamic 3D eye gaze tracking, and Pearson acoustic lip-sync correlation ($\rho \ge 0.6$).
+- **Sets & Props**: 6 modular procedural environments (Kitchen, Bedroom, Hallway, Park, Spooky House, Obby Course) and 40 low-poly props across 4 lighting moods.
+- **Story Engine**: Anti-repetitiveness gating (Jaccard $\le 0.25$), trademark clearance scanning, and 3 full production episodes (`the-blockies`).
+- **Audio v2**: 25 procedural sound effects, 7 procedural mood beds, duration-preserving overlap-add vocal pitch shifter, and sidechain ducking.
+- **QA 3D Hardening**: Part 10 spatial checks: camera-inside-geometry, actor framing (6% margin), face visibility ($\cos\theta \ge -0.82$), raycast occlusion, floor penetration, and safe area.
+- **Publish Packs**: Automated high-CTR title variants ($\le 60$ ch), descriptions, 5 hashtags, pinned comments, SRT subtitles, and COPPA Made-for-Kids decision logs.
+- **Tier C glTF Pipeline**: Headless asset exporter (`make_asset.py`), BlenderMCP integration architecture, and deterministic Three.js `GltfAsset` playback.
+
+### Blocky CLI Commands
+```bash
+# Run benchmark
+node blocky/cli.js bench
+
+# Run full Definition of Done compliance audit
+node blocky/cli.js dod
+
+# Run all 11 regression test suites (543 assertions)
+node blocky/cli.js test
+
+# Run end-to-end master production pipeline
+node blocky/cli.js all
+```
+
+For complete documentation, see [`blocky/README.md`](file:///d:/Bhavik/Motion-Design/video-gen/blocky/README.md) and [`EXECUTION_LOG.md`](file:///d:/Bhavik/Motion-Design/video-gen/EXECUTION_LOG.md).
+
+---
+
 ## 📄 License
 
 MIT License. Designed and maintained for modern motion design automation.

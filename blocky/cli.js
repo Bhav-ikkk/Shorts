@@ -219,7 +219,7 @@ async function runStory() {
 }
 
 async function runTest() {
-  console.log('[CLI] Running story, actions, faces, props, sets, audio, qa3d, publish, gltf, and determinism regression tests...');
+  console.log('[CLI] Running story, actions, faces, props, sets, audio, qa3d, publish, gltf, dod, and determinism regression tests...');
   await runCmd('node', ['tests/story.test.js']);
   await runCmd('node', ['tests/actions.test.js']);
   await runCmd('node', ['tests/faces.test.js']);
@@ -229,7 +229,13 @@ async function runTest() {
   await runCmd('node', ['tests/qa3d.test.js']);
   await runCmd('node', ['tests/publish.test.js']);
   await runCmd('node', ['tests/gltf.test.js']);
+  await runCmd('node', ['tests/dod.test.js']);
   await runCmd('node', ['tests/determinism.test.js']);
+}
+
+async function runDoD() {
+  console.log('[CLI] Running master Definition of Done (DoD) verification...');
+  await runCmd('node', ['tests/dod.test.js']);
 }
 
 async function runGltf() {
@@ -313,6 +319,9 @@ async function main() {
     case 'gltf':
       await runGltf();
       break;
+    case 'dod':
+      await runDoD();
+      break;
     case 'all':
       await runCompile();
       await runVoice();
@@ -330,7 +339,7 @@ async function main() {
       break;
     default:
       console.log(`Unknown command: ${stage}`);
-      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | loudness | qa | pack | gltf | all');
+      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | loudness | qa | pack | gltf | dod | all');
       process.exit(1);
   }
 }

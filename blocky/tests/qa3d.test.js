@@ -208,9 +208,14 @@ async function runQA3DTests() {
   console.log(`========================================================\n`);
 
   if (testsFailed > 0) process.exit(1);
+  return { testsPassed, testsFailed };
 }
 
-runQA3DTests().catch(err => {
-  console.error('[QA 3D Test Error]', err);
-  process.exit(1);
-});
+if (require.main === module) {
+  runQA3DTests().catch(err => {
+    console.error('[QA 3D Test Error]', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { runQA3DTests };
