@@ -1,0 +1,25 @@
+{
+  "episodeId": "the-blockies-ep2",
+  "series": "THE BLOCKIES",
+  "title": "The Floor is Lava",
+  "generatedAt": "2026-11-11T12:56:16.342Z",
+  "coppaDecision": {
+    "status": "Made for Kids (Primary)",
+    "rationale": "Stylized blocky characters, wholesome comedic themes, zero violence/weapons, no horror, child-friendly."
+  },
+  "syntheticContentDecision": {
+    "declaredInDescription": true,
+    "studioToggle": "Cartoon/Stylized (Non-photorealistic synthetic media)",
+    "rationale": "Visuals and voice are procedural code/AI-generated, but completely stylized."
+  },
+  "ipClearance": {
+    "trademarkViolationCheck": "PASSED (0 forbidden words)",
+    "audioSampleClearance": "100% procedural synthesis (zero copyrighted audio)",
+    "originalIP": true
+  },
+  "retentionEngineering": {
+    "openingHookLine": "The floor just turned into molten lava!",
+    "visualBeatPacing": "≤ 2.5s per event",
+    "averageWordsPerLine": 6.6
+  }
+}

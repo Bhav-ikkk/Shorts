@@ -18,7 +18,7 @@
 | **B5** | **Story Engine** | Multi-episode scripting, continuity callbacks, hook rotation, script-lint, repetitiveness scoring | PENDING | — |
 | **B6** | **Audio v2** | Mood scoring engine, procedural SFX library, pitch/speed variance, post-encode peak gate | PENDING | — |
 | **B7** | **QA 3D Hardening** | Full spatial/visual regression test suite, occlusion raycasting, camera-in-mesh gates | PENDING | — |
-| **B8** | **Publish Pack** | Automated metadata pack: titles, descriptions, hashtags, pinned comments, cover frame, SRT | PENDING | — |
+| **B8** | **Publish Pack** | Automated metadata pack: titles, descriptions, hashtags, pinned comments, cover frame, SRT, COPPA & disclosure logs | **COMPLETED** | Pending commit |
 | **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets | PENDING | — |
 | **B10**| **Hardening & Verification** | Multi-platform verification, docs, DoD checklist | PENDING | — |
 
@@ -307,6 +307,59 @@ Implement the 3D-aware QA validation subsystem enforcing the Part 10 specificati
   - Average Shot Length: $1.95\text{s}$ (ideal for Shorts/Reels retention).
 - **First Frame Verification**: `out/poster.png` captured and confirmed non-empty.
 - **Full Regression Test Suite (`node blocky/cli.js test`)**: **166 / 166 checks passed** (Story 34, Actions 34, Faces 10, Props 40, Sets 24, Audio 8, QA 3D 10, Determinism 6).
+
+---
+
+## [2026-11-11] — Phase B8: Publish Pack (COMPLETED)
+
+### Objective
+Build the multi-episode publish pack automation subsystem (`blocky/publish/pack.js`) assembling platform-compliant, ToS-safe upload packages for YouTube Shorts and Instagram Reels across all production episodes without unofficial bots or external API dependencies. Generate title variants ($\le 60$ chars), formatted descriptions, hashtags (3–5 tags), engaging pinned comments, synchronized SRT captions, upload SOP checklists, high-impact cover frames, and structured COPPA Made-for-Kids and altered/synthetic content decision logs.
+
+### Actions Taken & Technical Solutions
+1. **Publish Pack Assembler (`blocky/publish/pack.js`)**:
+   - Assembles complete distribution packages for both central repository (`blocky/publish/<ep>/`) and series-local (`blocky/series/the-blockies/<ep>/publish/`).
+   - Packages all 3 production episodes: `ep01-crumb-trail`, `ep02-floor-is-lava`, `ep03-secret-attic`.
+   - Integrated robust FFmpeg poster extraction (`-ss 00:00:01.500`) and procedural 1080x1920 lavfi canvas fallback to guarantee valid cover images in headless and pre-render environments.
+2. **High-CTR Title Engineering**:
+   - Engineered 3 distinct CTR title variants per episode:
+     - **Variant A (Direct Hook)**: Immediate curiosity or high-stakes scenario (e.g. *"Two Cookies. One Plate. Now? Nothing. 🍪"* - 40 chars; *"The Floor Just Turned Into Molten Lava! 🔥"* - 41 chars; *"Midnight Scraping Above Our Ceiling! 👻"* - 39 chars).
+     - **Variant B (Character / Drama)**: Relatable comedic tension with episode tag (e.g. *"Who Stole the Last Cookie?! (The Blockies Ep 1)"* - 47 chars).
+     - **Variant C (Loop / Question)**: Piques retention loop (e.g. *"The Crumb Trail Mystery Solved?!"* - 32 chars).
+   - All variants strictly $\le 60$ characters for mobile vertical screen truncations.
+   - 0 trademarked words (100% clean of "Roblox", "Minecraft", "Fortnite", "Lego").
+3. **Platform Compliance & Decision Logs (`decision_log.json` & `checklist.md`)**:
+   - **COPPA Status**: Explicitly evaluated and declared as `"Made for Kids (Primary)"` with comprehensive child-safety rationale (stylized low-poly art, wholesome comedy, zero horror/violence/weapons).
+   - **Synthetic Media Disclosure**: Declared as `"Cartoon/Stylized (Non-photorealistic synthetic media)"`, fully documented in video descriptions.
+   - **Platform Upload SOP**: Step-by-step checklist for YouTube Studio (audience tag, scheduling, pin-to-top pinned comment) and Instagram Reels (9:16 cover frame, short description, hashtags).
+4. **Synchronized Subtitles (`captions.srt`)**:
+   - Generated compliant SRT subtitle files with millisecond precision from dialogue anchor timestamps.
+   - Validated chronological ordering, non-overlap, and 1:1 cue-to-script alignment.
+5. **Unit Test Suite (`blocky/tests/publish.test.js`)**:
+   - Built comprehensive automated verification testing all 3 episode packages across both destination directories.
+   - Evaluates file existence, non-empty bounds, title variant limits, trademark clearance, description elements, hashtag counts, pinned comment engagement, SRT cue timings, COPPA decision structures, and cover image validity.
+   - Achieved **265 / 265 test assertions passed**.
+6. **CLI Integration (`blocky/cli.js`)**:
+   - Added `node blocky/cli.js pack [episode|all]` command.
+   - Integrated publish testing into `node blocky/cli.js test`.
+   - Added packaging step to master pipeline (`node blocky/cli.js all`).
+
+### Measured Results & Verification Evidence
+- **Publish Test Suite (`node blocky/tests/publish.test.js`)**: **265 / 265 passed**.
+- **Full Regression Test Suite (`node blocky/cli.js test`)**: **435 / 435 checks passed** (Story 34, Actions 34, Faces 14, Props 40, Sets 24, Audio 8, QA 3D 10, Publish 265, Determinism 6).
+- **Title Length Metrics**:
+  - Ep 01: Variant A: 40 chars | Variant B: 47 chars | Variant C: 32 chars (All $\le 60$)
+  - Ep 02: Variant A: 41 chars | Variant B: 45 chars | Variant C: 37 chars (All $\le 60$)
+  - Ep 03: Variant A: 39 chars | Variant B: 53 chars | Variant C: 35 chars (All $\le 60$)
+- **Hashtag Counts**: Exactly 5 tags per episode, starting with `#theblockies`.
+- **COPPA Compliance**: 100% verified `"Made for Kids (Primary)"` with 0 trademark or copyright infractions.
+- **Artifacts Generated**:
+  - `blocky/publish/ep01-crumb-trail/`
+  - `blocky/publish/ep02-floor-is-lava/`
+  - `blocky/publish/ep03-secret-attic/`
+  - `blocky/series/the-blockies/ep01-crumb-trail/publish/`
+  - `blocky/series/the-blockies/ep02-floor-is-lava/publish/`
+  - `blocky/series/the-blockies/ep03-secret-attic/publish/`
+
 
 
 

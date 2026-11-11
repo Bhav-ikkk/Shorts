@@ -219,7 +219,7 @@ async function runStory() {
 }
 
 async function runTest() {
-  console.log('[CLI] Running story, actions, faces, props, sets, audio, qa3d, and determinism regression tests...');
+  console.log('[CLI] Running story, actions, faces, props, sets, audio, qa3d, publish, and determinism regression tests...');
   await runCmd('node', ['tests/story.test.js']);
   await runCmd('node', ['tests/actions.test.js']);
   await runCmd('node', ['tests/faces.test.js']);
@@ -227,7 +227,14 @@ async function runTest() {
   await runCmd('node', ['tests/sets.test.js']);
   await runCmd('node', ['tests/audio.test.js']);
   await runCmd('node', ['tests/qa3d.test.js']);
+  await runCmd('node', ['tests/publish.test.js']);
   await runCmd('node', ['tests/determinism.test.js']);
+}
+
+async function runPack(episode) {
+  console.log('[CLI] Generating distribution publish pack(s) for YouTube Shorts & Instagram Reels...');
+  const target = episode || 'all';
+  await runCmd('node', ['publish/pack.js', target]);
 }
 
 async function runLoudness() {
@@ -293,6 +300,9 @@ async function main() {
     case 'sync':
       await runLipSync();
       break;
+    case 'pack':
+      await runPack(process.argv[3]);
+      break;
     case 'all':
       await runCompile();
       await runVoice();
@@ -304,11 +314,12 @@ async function main() {
       await runLint3D();
       await runLipSync();
       await runQA();
+      await runPack();
       await runTest();
       break;
     default:
       console.log(`Unknown command: ${stage}`);
-      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | loudness | qa | all');
+      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | loudness | qa | pack | all');
       process.exit(1);
   }
 }
