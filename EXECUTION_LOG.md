@@ -14,7 +14,7 @@
 | **B1** | **Data-Driven Architecture** | `compile_episode.js`, `vocabulary.json`, `cast.json`, `continuity.json`, relative anchors only, SHA-256 byte-identical determinism test | **COMPLETED** | `081597d` |
 | **B2** | **Rig v2 & Character Actions** | Two-bone limb kinematics (elbows/knees), squash & stretch, inertial hair spring, 34 validated actions, 3D spatial QA lint (`lint3d`), action showcase film | **COMPLETED** | `77f9d55` |
 | **B3** | **Faces & Acting** | 10 emotion presets, 8 phoneme mouth visemes (`A`,`E`,`O`,`U`,`M`,`F`,`L`,`S`), eye gaze tracking (`setLookAt`), Pearson lip-sync correlation gate ($\rho \ge 0.6$), acting showcase film | **COMPLETED** | `5a245c3` |
-| **B4** | **Sets & Props** | 6 procedural sets (Kitchen, Bedroom, Hallway, Park, Spooky House, Obby), 40+ low-poly props, 4 lighting moods, sets showcase film & contact sheet | **COMPLETED** | TBD |
+| **B4** | **Sets & Props** | 6 procedural sets (Kitchen, Bedroom, Hallway, Park, Spooky House, Obby), 40+ low-poly props, 4 lighting moods, sets showcase film & contact sheet | **COMPLETED** | `c714b79` |
 | **B5** | **Story Engine** | Multi-episode scripting, continuity callbacks, hook rotation, script-lint, repetitiveness scoring | PENDING | — |
 | **B6** | **Audio v2** | Mood scoring engine, procedural SFX library, pitch/speed variance, post-encode peak gate | PENDING | — |
 | **B7** | **QA 3D Hardening** | Full spatial/visual regression test suite, occlusion raycasting, camera-in-mesh gates | PENDING | — |
