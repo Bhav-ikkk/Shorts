@@ -208,11 +208,27 @@ async function runSheet() {
   console.log(`[Sheet] Contact sheet saved -> ${sheetPng}`);
 }
 
+async function runCompile() {
+  console.log('[CLI] Running Director episode compiler & validation...');
+  await runCmd('node', ['director/compile_episode.js']);
+}
+
+async function runTest() {
+  console.log('[CLI] Running determinism and regression tests...');
+  await runCmd('node', ['tests/determinism.test.js']);
+}
+
 async function main() {
   const stage = process.argv[2] || 'bench';
   switch (stage) {
     case 'bench':
       await runBench();
+      break;
+    case 'compile':
+      await runCompile();
+      break;
+    case 'test':
+      await runTest();
       break;
     case 'voice':
       await runVoice();
@@ -236,16 +252,18 @@ async function main() {
       await runQA();
       break;
     case 'all':
+      await runCompile();
       await runVoice();
       await runRender();
       await runAudio();
       await runMaster();
       await runShots();
       await runSheet();
+      await runTest();
       break;
     default:
       console.log(`Unknown command: ${stage}`);
-      console.log('Available commands: bench | voice | render | audio | master | shots | sheet | qa | all');
+      console.log('Available commands: bench | compile | test | voice | render | audio | master | shots | sheet | qa | all');
       process.exit(1);
   }
 }

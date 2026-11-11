@@ -1,0 +1,25 @@
+{
+  "series": "KITCHEN MYSTERIES",
+  "establishedFacts": [
+    "Pip considers himself the detective of the house.",
+    "Mox is easily startled, sleeps during daytime, and gets blamed first.",
+    "June is the youngest sibling (scale 0.4) but the smartest strategist.",
+    "The household cookies are always baked in pairs.",
+    "Under the table is June's official secret lab / research base."
+  ],
+  "episodes": [
+    {
+      "id": "kitchen-mysteries-ep1",
+      "title": "The Disappearing Cookie",
+      "culprit": "Pip (accidental)",
+      "status": "resolved"
+    },
+    {
+      "id": "kitchen-mysteries-ep2",
+      "title": "The Crumb Trail",
+      "culprit": "June (taste testing research)",
+      "cliffhanger": "Who ate the second cookie in the dark?",
+      "status": "unresolved"
+    }
+  ]
+}

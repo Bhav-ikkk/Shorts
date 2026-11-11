@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "actions": [
+    "idle",
+    "walk",
+    "talk",
+    "crouch",
+    "sit",
+    "peek",
+    "pointA",
+    "pointB",
+    "pointDown",
+    "pointChest",
+    "beckon",
+    "wave",
+    "shrug",
+    "facepalm",
+    "handsUp",
+    "handsHips",
+    "headHands",
+    "gasp",
+    "eat",
+    "recoil",
+    "lookDown",
+    "look",
+    "shake",
+    "nod",
+    "laugh",
+    "jump"
+  ],
+  "cameraShots": [
+    "closeup-prop",
+    "wide-two",
+    "medium",
+    "chest-closeup",
+    "over-shoulder",
+    "low-angle",
+    "top-down"
+  ],
+  "faces": {
+    "eyes": ["open", "blink", "wide", "squint", "happy"],
+    "browRange": [-1.0, 1.0],
+    "smileRange": [-1.0, 1.0],
+    "mouthShapes": ["A", "E", "O", "M"]
+  },
+  "fx": [
+    "bubble",
+    "toggle",
+    "puff",
+    "sfx",
+    "dark",
+    "eyes",
+    "slam"
+  ],
+  "musicPatterns": [
+    "playful",
+    "sneak",
+    "hush",
+    "drone"
+  ],
+  "soundEffects": [
+    "pop",
+    "thud",
+    "whoosh",
+    "boing",
+    "step",
+    "swell",
+    "impact",
+    "chime",
+    "crunch",
+    "poof",
+    "gasp",
+    "sting",
+    "flicker",
+    "blackout"
+  ]
+}

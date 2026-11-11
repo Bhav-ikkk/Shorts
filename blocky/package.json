@@ -4,6 +4,8 @@
   "version": "0.2.0",
   "scripts": {
     "bench": "node cli.js bench",
+    "compile": "node cli.js compile",
+    "test": "node cli.js test",
     "voice": "node cli.js voice",
     "render": "node cli.js render",
     "audio": "node cli.js audio",
