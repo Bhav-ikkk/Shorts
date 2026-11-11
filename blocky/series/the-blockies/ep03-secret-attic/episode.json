@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "the-blockies-ep3",
+  "title": "The Secret Attic",
+  "series": "THE BLOCKIES",
+  "format": "suspense-comedy",
+  "set": "spookyHouse",
+  "lightingMood": "night",
+  "cut": "short",
+  "lines": [
+    { "id": "L1", "who": "PIP", "text": "Midnight. Strange scraping sounds above our ceiling.", "pause": 0.35 },
+    { "id": "L2", "who": "MOX", "text": "The forbidden attic trunk is glowing green.", "pause": 0.25 },
+    { "id": "L3", "who": "PIP", "text": "Hold the flashlight steady, Mox!", "pause": 0.30 },
+    { "id": "L4", "who": "MOX", "text": "Something with huge glowing eyes is inside!", "pause": 0.25 },
+    { "id": "L5", "who": "PIP", "text": "Turn the rusty brass key now.", "pause": 0.35 },
+    { "id": "L6", "who": "JUNE", "text": "Surprise! I made an arcade in here!", "pause": 0.30 },
+    { "id": "L7", "who": "PIP", "text": "Did you hear footsteps on the roof?", "pause": 0.50 }
+  ],
+  "stage": [
+    { "who": "PIP", "pos": [-0.6, 0, 0.2], "rotY": 0.2, "t": "L1.start" },
+    { "who": "MOX", "pos": [0.8, 0, 0.4], "rotY": -0.3, "t": "L1.start" },
+    { "who": "JUNE", "pos": [0, -0.3, -1.2], "rotY": 0, "t": "L1.start" }
+  ],
+  "shots": [
+    { "from": "L1.start", "to": "L2.start", "cam": "low-angle", "target": "PIP", "punch": ["L1.word(scraping)"] },
+    { "from": "L2.start", "to": "L3.start", "cam": "closeup-prop", "target": "chest", "punch": ["L2.word(glowing)"] },
+    { "from": "L3.start", "to": "L4.start", "cam": "medium", "target": "MOX", "punch": ["L3.word(flashlight)"] },
+    { "from": "L4.start", "to": "L5.start", "cam": "chest-closeup", "target": "MOX", "punch": ["L4.word(eyes)"] },
+    { "from": "L5.start", "to": "L6.start", "cam": "over-shoulder", "target": "PIP" },
+    { "from": "L6.start", "to": "L7.start", "cam": "medium", "target": "JUNE", "punch": ["L6.word(Surprise)"] },
+    { "from": "L7.start", "to": "end", "cam": "wide-two", "punch": ["L7.word(roof)"] }
+  ],
+  "actions": [
+    { "who": "PIP", "do": "look", "from": "L1.start", "to": "L1.end" },
+    { "who": "MOX", "do": "recoil", "from": "L2.start", "to": "L2.end" },
+    { "who": "PIP", "do": "pointA", "from": "L3.start", "to": "L3.end" },
+    { "who": "MOX", "do": "handsUp", "from": "L4.start", "to": "L4.end" },
+    { "who": "PIP", "do": "walk", "from": "L5.start", "to": "L5.end" },
+    { "who": "JUNE", "do": "celebrate", "from": "L6.start", "to": "L6.end" },
+    { "who": "PIP", "do": "gasp", "from": "L7.start", "to": "end" }
+  ],
+  "faces": [
+    { "who": "PIP", "emotion": "suspicious", "from": "L1.start", "to": "L1.end" },
+    { "who": "MOX", "emotion": "panic", "from": "L2.start", "to": "L2.end" },
+    { "who": "PIP", "emotion": "suspicious", "from": "L3.start", "to": "L3.end" },
+    { "who": "MOX", "emotion": "shock", "from": "L4.start", "to": "L4.end" },
+    { "who": "PIP", "emotion": "suspicious", "from": "L5.start", "to": "L5.end" },
+    { "who": "JUNE", "emotion": "happy", "from": "L6.start", "to": "L6.end" },
+    { "who": "PIP", "emotion": "shock", "from": "L7.start", "to": "end" }
+  ],
+  "fx": [
+    { "type": "bubble", "glyph": "?", "at": "L1.word(scraping)" },
+    { "type": "bubble", "glyph": "!", "at": "L2.word(glowing)" },
+    { "type": "bubble", "glyph": "!", "at": "L6.word(Surprise)" },
+    { "type": "slam", "text": "WHO IS ON THE ROOF?", "at": "L7.end+0.1" }
+  ],
+  "props": [
+    { "name": "chest", "who": "stage", "pos": [0, 0.4, -1.2] },
+    { "name": "flashlight", "who": "MOX", "hand": "right" },
+    { "name": "key", "who": "PIP", "hand": "left" }
+  ],
+  "audio": {
+    "mood": "spooky-mystery",
+    "arp": true,
+    "padChords": ["Dm", "Bb", "Gm", "A7"]
+  }
+}

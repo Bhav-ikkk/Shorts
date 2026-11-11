@@ -170,3 +170,51 @@
      - Obby Course (Cyber): 13.4 fps (6.7s)
    - Composed 12-frame contact sheet `set-showcase-sheet.png`.
 
+---
+
+## [2026-11-11] — Phase B5: Story Engine (COMPLETED)
+
+### Objective
+Build the complete offline Story Engine for multi-episode script generation, anti-repetitiveness gating ($J \le 0.25$), trademark compliance scanning, beat sheet validation ($\le 9$ words/line), and author 3 distinct production episode packages with full platform compliance reviews (Made for Kids, synthetic content disclosure).
+
+### Actions Taken & Technical Solutions
+1. **Script Pacing & Trademark Linter (`blocky/story/script_lint.js`)**:
+   - Enforced retention word limit: standard dialogue lines $\le 9$ words, final tag/button lines $\le 12$ words.
+   - Beat sheet validation: verifies narrative sequence starting with `hook` (at $t=0$), through `setup`, `escalation`, `twist`/`reveal`, and concluding with `cliffhanger` or `button`.
+   - Trademark & copyright blacklist scanner: blocked words like `roblox`, `minecraft`, `blox`, `fortnite`, `lego`, `robux`, `v-bucks`, `bacon hair`, etc.
+   - Verified speaker attribution against `cast.json`.
+2. **Anti-Repetitiveness Linter (`blocky/story/repetitiveness.js`)**:
+   - Tokenizes dialogue lines with stop-word filtering.
+   - Computes pairwise vocabulary Jaccard similarity ($J(A, B) \le 0.25$).
+   - Extracts and checks 3-gram overlap ($\le 0.10$).
+   - Detects consecutive hook stem repetitions.
+   - Verifies format diversity and environment rotation.
+3. **Series Bible & Continuity**:
+   - `blocky/story/cast.json`: Enriched character profiles for Pip, Mox, and June with voice IDs, traits, flaws, and signature catchphrases.
+   - `blocky/story/world.json`: Registered all 6 environments (`kitchen`, `bedroom`, `hallway`, `park`, `spookyHouse`, `obby`).
+   - `blocky/story/continuity.json`: Documented 7 established facts, 3 running gags, and episode continuity threads.
+   - `blocky/story/arcs.md`: Defined Season 1 narrative arcs (Kitchen Heists, Living Room Hazard Games, Midnight Attic Expeditions).
+   - `blocky/story/hook_bank.md`: Formulated 6 core retention hook patterns (H1–H6) with rotation schedules.
+4. **Three Production Episode Packages (`blocky/series/the-blockies/`)**:
+   - **EP 01 (`ep01-crumb-trail`)**: Mystery-Comedy set in `kitchen` (Day). Hook: *"Two cookies. One plate. Now? Nothing."* (8 lines, 46 words, 5.8 w/line).
+   - **EP 02 (`ep02-floor-is-lava`)**: Challenge/Obby set in `obby` (Obby/Neon). Hook: *"The floor just turned into molten lava!"* (7 lines, 46 words, 6.6 w/line).
+   - **EP 03 (`ep03-secret-attic`)**: Suspense-Comedy set in `spookyHouse` (Night). Hook: *"Midnight. Strange scraping sounds above our ceiling."* (7 lines, 46 words, 6.6 w/line).
+   - Each package contains complete `script.json`, director-ready `episode.json`, and human sign-off `review.md`.
+5. **Director Integration & Story Engine Coordinator (`blocky/story/story_engine.js`)**:
+   - Created `blocky/story/estimate_anchors.js` for scratch track pre-visualization.
+   - Enhanced `blocky/director/compile_episode.js` to support optional prop durations and `at` triggers.
+   - Unified series validation pipeline compiling all director timelines cleanly.
+   - Added `blocky/tests/story.test.js` with 34 test assertions (positive & negative QA).
+   - Integrated `story` and test commands into `blocky/cli.js`.
+
+### Measured Results & Verification Evidence
+- **Story Test Suite**: 34/34 passed (`node blocky/tests/story.test.js`).
+- **Full Regression Test Suite**: Story (34), Actions (34), Faces (10), Props (40), Sets (24), Determinism (6) — **100% Passed**.
+- **Pairwise Jaccard Similarity**:
+  - Ep 01 vs Ep 02: **0.022** (Limit: 0.25) | Trigram Overlap: **0.0%**
+  - Ep 01 vs Ep 03: **0.000** (Limit: 0.25) | Trigram Overlap: **0.0%**
+  - Ep 02 vs Ep 03: **0.038** (Limit: 0.25) | Trigram Overlap: **0.0%**
+- **Word Count Limits**: Ep 1 (avg 5.8 w/l), Ep 2 (avg 6.6 w/l), Ep 3 (avg 6.6 w/l) — all well below $\le 9$ words limit.
+- **Trademark Clearance**: 0 forbidden words detected across all titles, lines, and metadata.
+
+

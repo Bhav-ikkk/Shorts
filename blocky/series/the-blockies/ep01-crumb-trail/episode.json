@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "the-blockies-ep1",
+  "title": "The Crumb Trail",
+  "series": "THE BLOCKIES",
+  "format": "mystery-comedy",
+  "set": "kitchen",
+  "lightingMood": "day",
+  "cut": "short",
+  "lines": [
+    { "id": "L1", "who": "PIP", "text": "Two cookies. One plate. Now? Nothing.", "pause": 0.35 },
+    { "id": "L2", "who": "MOX", "text": "Don't look at me! I was napping!", "pause": 0.25 },
+    { "id": "L3", "who": "PIP", "text": "Then explain this trail of crumbs.", "pause": 0.30 },
+    { "id": "L4", "who": "MOX", "text": "Maybe the cookies walked away?", "pause": 0.30 },
+    { "id": "L5", "who": "PIP", "text": "Cookies don't walk. Follow me.", "pause": 0.35 },
+    { "id": "L6", "who": "PIP", "text": "June?! You ate both cookies?!", "pause": 0.30 },
+    { "id": "L7", "who": "JUNE", "text": "Only one. The other was research.", "pause": 0.30 },
+    { "id": "L8", "who": "PIP", "text": "Wait. Who ate the chocolate cake?", "pause": 0.50 }
+  ],
+  "stage": [
+    { "who": "PIP", "pos": [0, 0, 0], "rotY": 0, "t": "L1.start" },
+    { "who": "MOX", "pos": [1.4, 0, 0], "rotY": -0.4, "t": "L1.start" },
+    { "who": "JUNE", "pos": [0, -0.4, -1.0], "rotY": 0, "t": "L1.start" }
+  ],
+  "shots": [
+    { "from": "L1.start", "to": "L2.start", "cam": "closeup-prop", "target": "plate" },
+    { "from": "L2.start", "to": "L3.start", "cam": "medium", "target": "MOX", "punch": ["L2.word(napping)"] },
+    { "from": "L3.start", "to": "L4.start", "cam": "wide-two", "punch": ["L3.word(crumbs)"] },
+    { "from": "L4.start", "to": "L5.start", "cam": "medium", "target": "MOX" },
+    { "from": "L5.start", "to": "L6.start", "cam": "over-shoulder", "target": "PIP" },
+    { "from": "L6.start", "to": "L7.start", "cam": "low-angle", "target": "JUNE", "punch": ["L6.word(June)"] },
+    { "from": "L7.start", "to": "L8.start", "cam": "chest-closeup", "target": "JUNE" },
+    { "from": "L8.start", "to": "end", "cam": "wide-two", "punch": ["L8.word(cake)"] }
+  ],
+  "actions": [
+    { "who": "PIP", "do": "lookDown", "from": "L1.start", "to": "L1.end" },
+    { "who": "MOX", "do": "handsUp", "from": "L2.start", "to": "L2.end" },
+    { "who": "MOX", "do": "recoil", "from": "L2.word(napping)", "dur": 0.45 },
+    { "who": "PIP", "do": "pointA", "from": "L3.start", "to": "L3.end" },
+    { "who": "MOX", "do": "shrug", "from": "L4.start", "to": "L4.end" },
+    { "who": "PIP", "do": "walk", "from": "L5.start", "to": "L5.end" },
+    { "who": "PIP", "do": "gasp", "from": "L6.start", "to": "L6.end" },
+    { "who": "PIP", "do": "jump", "at": "L6.word(June)", "height": 0.35 },
+    { "who": "JUNE", "do": "eat", "from": "L7.start", "to": "L7.end" },
+    { "who": "PIP", "do": "headHands", "from": "L8.start", "to": "end" }
+  ],
+  "faces": [
+    { "who": "PIP", "emotion": "shock", "from": "L1.start", "to": "L1.end" },
+    { "who": "MOX", "emotion": "panic", "from": "L2.start", "to": "L2.end" },
+    { "who": "PIP", "emotion": "suspicious", "from": "L3.start", "to": "L5.end" },
+    { "who": "MOX", "emotion": "smug", "from": "L4.start", "to": "L4.end" },
+    { "who": "PIP", "emotion": "shock", "from": "L6.start", "to": "L6.end" },
+    { "who": "JUNE", "emotion": "devious", "from": "L7.start", "to": "L7.end" },
+    { "who": "PIP", "emotion": "panic", "from": "L8.start", "to": "end" }
+  ],
+  "fx": [
+    { "type": "bubble", "glyph": "?", "at": "L1.word(cookies)" },
+    { "type": "bubble", "glyph": "!", "at": "L2.word(napping)" },
+    { "type": "bubble", "glyph": "!", "at": "L6.word(June)" },
+    { "type": "slam", "text": "PART 2", "at": "L8.end+0.1" }
+  ],
+  "props": [
+    { "name": "plate", "who": "stage", "pos": [0, 1.1, -1.0] },
+    { "name": "cookie", "who": "JUNE", "hand": "right" }
+  ],
+  "audio": {
+    "mood": "playful-mystery",
+    "arp": true,
+    "padChords": ["Am", "F", "G", "Am"]
+  }
+}

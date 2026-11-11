@@ -628,3 +628,4 @@ export function spawnProp(name, scale = 1) {
   }
   return factory(scale);
 }
+

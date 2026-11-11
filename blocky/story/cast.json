@@ -1,11 +1,12 @@
 {
-  "series": "KITCHEN MYSTERIES",
-  "tagline": "Two cookies. One plate. Endless suspects.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "series": "THE BLOCKIES",
+  "tagline": "Two best friends. One clever kid. Endless blocky adventures.",
   "cast": {
     "PIP": {
       "name": "Pip",
-      "role": "investigator",
-      "voice": { "sid": 5, "speed": 1.05 },
+      "role": "narrator / chief investigator",
+      "voice": { "provider": "kokoro", "sid": 5, "speed": 1.05 },
       "scale": 1.0,
       "look": {
         "skin": "#f2c79b",
@@ -13,12 +14,15 @@
         "pants": "#2b2f4a",
         "hair": "#5a3a22",
         "hairStyle": "cap"
-      }
+      },
+      "traits": ["honest to a fault", "overthinks small details", "takes notes"],
+      "catchphrase": "Okay, hear me out.",
+      "flaws": ["jumps to conclusions", "gets tunnel vision"]
     },
     "MOX": {
       "name": "Mox",
-      "role": "suspect-turned-ally",
-      "voice": { "sid": 2, "speed": 1.10 },
+      "role": "dramatic best friend / stunt tester",
+      "voice": { "provider": "kokoro", "sid": 2, "speed": 1.10 },
       "scale": 1.0,
       "look": {
         "skin": "#e9b88e",
@@ -26,12 +30,15 @@
         "pants": "#3c3f46",
         "hair": "#2a1a14",
         "hairStyle": "spiky"
-      }
+      },
+      "traits": ["panics fast", "extremely loyal", "sleeps at random moments"],
+      "catchphrase": "I was NOT there!",
+      "flaws": ["easily spooked", "always hungry", "leaps before looking"]
     },
     "JUNE": {
       "name": "June",
-      "role": "the culprit",
-      "voice": { "sid": 4, "speed": 1.15 },
+      "role": "mastermind younger sibling",
+      "voice": { "provider": "kokoro", "sid": 4, "speed": 1.15 },
       "scale": 0.4,
       "look": {
         "skin": "#f5cfa6",
@@ -39,8 +46,10 @@
         "pants": "#ffd34a",
         "hair": "#d94f8a",
         "hairStyle": "pigtails"
-      }
+      },
+      "traits": ["hyper-intelligent", "calm under pressure", "secretive"],
+      "catchphrase": "It was purely for research.",
+      "flaws": ["never admits defeat", "eats the evidence"]
     }
   }
 }
-

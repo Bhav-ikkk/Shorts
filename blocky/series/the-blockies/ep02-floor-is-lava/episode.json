@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "the-blockies-ep2",
+  "title": "The Floor is Lava",
+  "series": "THE BLOCKIES",
+  "format": "challenge-obby",
+  "set": "obby",
+  "lightingMood": "obby",
+  "cut": "short",
+  "lines": [
+    { "id": "L1", "who": "MOX", "text": "The floor just turned into molten lava!", "pause": 0.30 },
+    { "id": "L2", "who": "PIP", "text": "Stage nine is totally impossible to cross!", "pause": 0.25 },
+    { "id": "L3", "who": "MOX", "text": "Watch me jump that glowing neon diamond.", "pause": 0.30 },
+    { "id": "L4", "who": "PIP", "text": "Mox, no! The hazard spinner is moving!", "pause": 0.25 },
+    { "id": "L5", "who": "MOX", "text": "I slipped! I'm falling right in!", "pause": 0.35 },
+    { "id": "L6", "who": "MOX", "text": "Wait, I landed on a giant duck!", "pause": 0.30 },
+    { "id": "L7", "who": "PIP", "text": "Is the duck lava-proof too?", "pause": 0.45 }
+  ],
+  "stage": [
+    { "who": "MOX", "pos": [0, 0, 0], "rotY": 0, "t": "L1.start" },
+    { "who": "PIP", "pos": [-1.3, 0, 0.4], "rotY": 0.3, "t": "L1.start" }
+  ],
+  "shots": [
+    { "from": "L1.start", "to": "L2.start", "cam": "medium", "target": "MOX", "punch": ["L1.word(lava)"] },
+    { "from": "L2.start", "to": "L3.start", "cam": "over-shoulder", "target": "PIP" },
+    { "from": "L3.start", "to": "L4.start", "cam": "wide-two", "punch": ["L3.word(diamond)"] },
+    { "from": "L4.start", "to": "L5.start", "cam": "chest-closeup", "target": "PIP", "punch": ["L4.word(spinner)"] },
+    { "from": "L5.start", "to": "L6.start", "cam": "low-angle", "target": "MOX", "punch": ["L5.word(falling)"] },
+    { "from": "L6.start", "to": "L7.start", "cam": "medium", "target": "MOX", "punch": ["L6.word(duck)"] },
+    { "from": "L7.start", "to": "end", "cam": "wide-two" }
+  ],
+  "actions": [
+    { "who": "MOX", "do": "jump", "at": "L1.word(lava)", "height": 0.45 },
+    { "who": "PIP", "do": "shrug", "from": "L2.start", "to": "L2.end" },
+    { "who": "MOX", "do": "pointA", "from": "L3.start", "to": "L3.end" },
+    { "who": "PIP", "do": "handsUp", "from": "L4.start", "to": "L4.end" },
+    { "who": "MOX", "do": "fall", "from": "L5.start", "to": "L5.end" },
+    { "who": "MOX", "do": "celebrate", "from": "L6.start", "to": "L6.end" },
+    { "who": "PIP", "do": "facepalm", "from": "L7.start", "to": "end" }
+  ],
+  "faces": [
+    { "who": "MOX", "emotion": "panic", "from": "L1.start", "to": "L1.end" },
+    { "who": "PIP", "emotion": "suspicious", "from": "L2.start", "to": "L2.end" },
+    { "who": "MOX", "emotion": "smug", "from": "L3.start", "to": "L3.end" },
+    { "who": "PIP", "emotion": "shock", "from": "L4.start", "to": "L4.end" },
+    { "who": "MOX", "emotion": "panic", "from": "L5.start", "to": "L5.end" },
+    { "who": "MOX", "emotion": "happy", "from": "L6.start", "to": "L6.end" },
+    { "who": "PIP", "emotion": "guilt", "from": "L7.start", "to": "end" }
+  ],
+  "fx": [
+    { "type": "bubble", "glyph": "!", "at": "L1.word(lava)" },
+    { "type": "bubble", "glyph": "!", "at": "L4.word(spinner)" },
+    { "type": "bubble", "glyph": "?", "at": "L6.word(duck)" },
+    { "type": "slam", "text": "STAGE 10?", "at": "L7.end+0.1" }
+  ],
+  "props": [
+    { "name": "checkpointFlag", "who": "stage", "pos": [2.5, 0, -1.0] },
+    { "name": "trophy", "who": "MOX", "hand": "right" }
+  ],
+  "audio": {
+    "mood": "hyper-arcade",
+    "arp": true,
+    "padChords": ["Em", "C", "D", "B7"]
+  }
+}

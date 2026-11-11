@@ -213,8 +213,14 @@ async function runCompile() {
   await runCmd('node', ['director/compile_episode.js']);
 }
 
+async function runStory() {
+  console.log('[CLI] Running Story Engine multi-episode validation & repetitiveness gating...');
+  await runCmd('node', ['story/story_engine.js']);
+}
+
 async function runTest() {
-  console.log('[CLI] Running determinism, rig, action, facial, props, and sets regression tests...');
+  console.log('[CLI] Running story, actions, faces, props, sets, and determinism regression tests...');
+  await runCmd('node', ['tests/story.test.js']);
   await runCmd('node', ['tests/actions.test.js']);
   await runCmd('node', ['tests/faces.test.js']);
   await runCmd('node', ['tests/props.test.js']);
@@ -237,6 +243,9 @@ async function main() {
   switch (stage) {
     case 'bench':
       await runBench();
+      break;
+    case 'story':
+      await runStory();
       break;
     case 'compile':
       await runCompile();
@@ -288,7 +297,7 @@ async function main() {
       break;
     default:
       console.log(`Unknown command: ${stage}`);
-      console.log('Available commands: bench | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | qa | all');
+      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | qa | all');
       process.exit(1);
   }
 }

@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "the-blockies-ep2",
+  "title": "The Floor is Lava",
+  "series": "THE BLOCKIES",
+  "format": "challenge-obby",
+  "set": "obby",
+  "lightingMood": "obby",
+  "hook": "The floor just turned into molten lava!",
+  "lines": [
+    {
+      "id": "L1",
+      "who": "MOX",
+      "text": "The floor just turned into molten lava!",
+      "beat": "hook",
+      "pause": 0.30,
+      "emotion": "panic",
+      "action": "jump"
+    },
+    {
+      "id": "L2",
+      "who": "PIP",
+      "text": "Stage nine is totally impossible to cross!",
+      "beat": "setup",
+      "pause": 0.25,
+      "emotion": "suspicious",
+      "action": "shrug"
+    },
+    {
+      "id": "L3",
+      "who": "MOX",
+      "text": "Watch me jump that glowing neon diamond.",
+      "beat": "escalation",
+      "pause": 0.30,
+      "emotion": "smug",
+      "action": "pointA"
+    },
+    {
+      "id": "L4",
+      "who": "PIP",
+      "text": "Mox, no! The hazard spinner is moving!",
+      "beat": "escalation",
+      "pause": 0.25,
+      "emotion": "shock",
+      "action": "handsUp"
+    },
+    {
+      "id": "L5",
+      "who": "MOX",
+      "text": "I slipped! I'm falling right in!",
+      "beat": "twist",
+      "pause": 0.35,
+      "emotion": "panic",
+      "action": "fall"
+    },
+    {
+      "id": "L6",
+      "who": "MOX",
+      "text": "Wait, I landed on a giant duck!",
+      "beat": "payoff",
+      "pause": 0.30,
+      "emotion": "happy",
+      "action": "celebrate"
+    },
+    {
+      "id": "L7",
+      "who": "PIP",
+      "text": "Is the duck lava-proof too?",
+      "beat": "button",
+      "pause": 0.45,
+      "emotion": "worried",
+      "action": "facepalm"
+    }
+  ]
+}

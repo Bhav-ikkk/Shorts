@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "the-blockies-ep1",
+  "title": "The Crumb Trail",
+  "series": "THE BLOCKIES",
+  "format": "mystery-comedy",
+  "set": "kitchen",
+  "lightingMood": "day",
+  "hook": "Two cookies. One plate. Now? Nothing.",
+  "lines": [
+    {
+      "id": "L1",
+      "who": "PIP",
+      "text": "Two cookies. One plate. Now? Nothing.",
+      "beat": "hook",
+      "pause": 0.35,
+      "emotion": "shock",
+      "action": "lookDown"
+    },
+    {
+      "id": "L2",
+      "who": "MOX",
+      "text": "Don't look at me! I was napping!",
+      "beat": "setup",
+      "pause": 0.25,
+      "emotion": "panic",
+      "action": "handsUp"
+    },
+    {
+      "id": "L3",
+      "who": "PIP",
+      "text": "Then explain this trail of crumbs.",
+      "beat": "escalation",
+      "pause": 0.30,
+      "emotion": "suspicious",
+      "action": "pointA"
+    },
+    {
+      "id": "L4",
+      "who": "MOX",
+      "text": "Maybe the cookies walked away?",
+      "beat": "escalation",
+      "pause": 0.30,
+      "emotion": "smug",
+      "action": "shrug"
+    },
+    {
+      "id": "L5",
+      "who": "PIP",
+      "text": "Cookies don't walk. Follow me.",
+      "beat": "escalation",
+      "pause": 0.35,
+      "emotion": "neutral",
+      "action": "walk"
+    },
+    {
+      "id": "L6",
+      "who": "PIP",
+      "text": "June?! You ate both cookies?!",
+      "beat": "twist",
+      "pause": 0.30,
+      "emotion": "shock",
+      "action": "gasp"
+    },
+    {
+      "id": "L7",
+      "who": "JUNE",
+      "text": "Only one. The other was research.",
+      "beat": "twist",
+      "pause": 0.30,
+      "emotion": "devious",
+      "action": "eat"
+    },
+    {
+      "id": "L8",
+      "who": "PIP",
+      "text": "Wait. Who ate the chocolate cake?",
+      "beat": "cliffhanger",
+      "pause": 0.50,
+      "emotion": "panic",
+      "action": "headHands"
+    }
+  ]
+}

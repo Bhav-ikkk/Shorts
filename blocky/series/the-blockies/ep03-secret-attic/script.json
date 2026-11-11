@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "the-blockies-ep3",
+  "title": "The Secret Attic",
+  "series": "THE BLOCKIES",
+  "format": "suspense-comedy",
+  "set": "spookyHouse",
+  "lightingMood": "night",
+  "hook": "Midnight. Strange scraping sounds above our ceiling.",
+  "lines": [
+    {
+      "id": "L1",
+      "who": "PIP",
+      "text": "Midnight. Strange scraping sounds above our ceiling.",
+      "beat": "hook",
+      "pause": 0.35,
+      "emotion": "suspicious",
+      "action": "look"
+    },
+    {
+      "id": "L2",
+      "who": "MOX",
+      "text": "The forbidden attic trunk is glowing green.",
+      "beat": "setup",
+      "pause": 0.25,
+      "emotion": "panic",
+      "action": "recoil"
+    },
+    {
+      "id": "L3",
+      "who": "PIP",
+      "text": "Hold the flashlight steady, Mox!",
+      "beat": "escalation",
+      "pause": 0.30,
+      "emotion": "suspicious",
+      "action": "pointA"
+    },
+    {
+      "id": "L4",
+      "who": "MOX",
+      "text": "Something with huge glowing eyes is inside!",
+      "beat": "escalation",
+      "pause": 0.25,
+      "emotion": "shock",
+      "action": "handsUp"
+    },
+    {
+      "id": "L5",
+      "who": "PIP",
+      "text": "Turn the rusty brass key now.",
+      "beat": "twist",
+      "pause": 0.35,
+      "emotion": "suspicious",
+      "action": "walk"
+    },
+    {
+      "id": "L6",
+      "who": "JUNE",
+      "text": "Surprise! I made an arcade in here!",
+      "beat": "twist",
+      "pause": 0.30,
+      "emotion": "happy",
+      "action": "celebrate"
+    },
+    {
+      "id": "L7",
+      "who": "PIP",
+      "text": "Did you hear footsteps on the roof?",
+      "beat": "cliffhanger",
+      "pause": 0.50,
+      "emotion": "shock",
+      "action": "gasp"
+    }
+  ]
+}

@@ -1,26 +1,58 @@
 {
-  "series": "KITCHEN MYSTERIES",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "series": "THE BLOCKIES",
   "establishedFacts": [
-    "Pip considers himself the detective of the house.",
-    "Mox is easily startled, sleeps during daytime, and gets blamed first.",
-    "June is the youngest sibling (scale 0.4) but the smartest strategist.",
-    "The household cookies are always baked in pairs.",
-    "Under the table is June's official secret lab / research base."
+    "Pip considers himself the lead detective and plans every mission with serious notebook sketches.",
+    "Mox is easily startled, naps anywhere, and always protests his innocence before knowing the accusation.",
+    "June is the youngest sibling (scale 0.4) who treats the entire house as an obstacle course and secret lab.",
+    "Baked goods, cookies, and pizza slices serve as the de facto household currency.",
+    "Under the kitchen table is June's designated research and tactical outpost.",
+    "The house attic contains locked wooden chests with strange sounds at midnight.",
+    "Mox carries an emotional support yellow rubber duck that somehow survives extreme stunts."
+  ],
+  "runningGags": [
+    "Mox shouting 'I was NOT there!' before Pip even finishes asking a question.",
+    "June justifying snack disappearances as 'controlled scientific sensory trials'.",
+    "Pip dropping his jaw whenever an obvious clue points directly back to him."
   ],
   "episodes": [
     {
-      "id": "kitchen-mysteries-ep1",
-      "title": "The Disappearing Cookie",
-      "culprit": "Pip (accidental)",
-      "status": "resolved"
+      "id": "the-blockies-ep1",
+      "slug": "ep01-crumb-trail",
+      "title": "The Crumb Trail",
+      "format": "mystery-comedy",
+      "set": "kitchen",
+      "mood": "day",
+      "hook": "Two cookies. One plate. Now? Nothing.",
+      "culprit": "June (scientific sensory trials)",
+      "unresolvedThread": "Who ate the chocolate cake in the fridge?",
+      "status": "produced"
     },
     {
-      "id": "kitchen-mysteries-ep2",
-      "title": "The Crumb Trail",
-      "culprit": "June (taste testing research)",
-      "cliffhanger": "Who ate the second cookie in the dark?",
-      "status": "unresolved"
+      "id": "the-blockies-ep2",
+      "slug": "ep02-floor-is-lava",
+      "title": "The Floor is Lava",
+      "format": "challenge-obby",
+      "set": "obby",
+      "mood": "obby",
+      "hook": "The floor just turned into molten lava!",
+      "challenge": "Crossing the spinning neon hazard bridge to reach the checkpoint flag.",
+      "continuityCallback": "Mox invokes his lucky rubber duck.",
+      "unresolvedThread": "Is the duck truly heat-resistant for stage 10?",
+      "status": "produced"
+    },
+    {
+      "id": "the-blockies-ep3",
+      "slug": "ep03-secret-attic",
+      "title": "The Secret Attic",
+      "format": "suspense-comedy",
+      "set": "spookyHouse",
+      "mood": "night",
+      "hook": "Midnight. Strange scraping sounds above our ceiling.",
+      "culprit": "June (secret rooftop gaming arcade)",
+      "continuityCallback": "References June's clandestine lab extending into the ceiling.",
+      "unresolvedThread": "Footsteps still pacing across the exterior roof.",
+      "status": "produced"
     }
   ]
 }
-

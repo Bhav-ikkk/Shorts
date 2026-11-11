@@ -117,7 +117,8 @@ class EpisodeCompiler {
     const resolvedActions = [];
     for (const a of episodeData.actions || []) {
       try {
-        const t0 = this.resolveAnchor(a.from, lines, total);
+        const startExpr = a.from || a.at;
+        const t0 = this.resolveAnchor(startExpr, lines, total);
         const t1 = a.to ? this.resolveAnchor(a.to, lines, total) : +(t0 + (a.dur || 0.6)).toFixed(3);
         if (t1 <= t0) {
           warnings.push(`Action "${a.do}" for ${a.who} has non-positive duration (${t0} -> ${t1})`);
@@ -234,10 +235,9 @@ class EpisodeCompiler {
           a: p.a
         })),
         props: (episodeData.props || []).map(p => ({
-          who: p.who,
-          name: p.name,
-          t0Resolved: this.resolveAnchor(p.from, lines, total),
-          t1Resolved: this.resolveAnchor(p.to, lines, total)
+          ...p,
+          t0Resolved: p.from ? this.resolveAnchor(p.from, lines, total) : 0,
+          t1Resolved: p.to ? this.resolveAnchor(p.to, lines, total) : total + 1
         })),
         show: episodeData.show || {}
       },
