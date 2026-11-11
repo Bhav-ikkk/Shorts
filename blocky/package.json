@@ -13,6 +13,7 @@
     "shots": "node cli.js shots",
     "sheet": "node cli.js sheet",
     "lint3d": "node cli.js lint3d",
+    "sync": "node cli.js sync",
     "qa": "node cli.js qa",
     "all": "node cli.js all"
   },

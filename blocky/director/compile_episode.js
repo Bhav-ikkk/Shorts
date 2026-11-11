@@ -151,12 +151,18 @@ class EpisodeCompiler {
       resolvedShots[i].t1Resolved = i + 1 < resolvedShots.length ? resolvedShots[i + 1].t0Resolved : total + 1;
     }
 
-    // 6. Resolve Facial Expressions
+    // 6. Resolve Facial Expressions & Validate Presets
     const resolvedFaces = [];
     for (const f of episodeData.faces || []) {
       try {
         const t0 = this.resolveAnchor(f.from, lines, total);
         const t1 = this.resolveAnchor(f.to, lines, total);
+        if (f.emotion && !this.vocab.faces.emotions.includes(f.emotion)) {
+          warnings.push(`Face emotion "${f.emotion}" for ${f.who} not in standard vocabulary emotions.`);
+        }
+        if (f.face && typeof f.face === 'string' && !this.vocab.faces.emotions.includes(f.face)) {
+          warnings.push(`Face preset "${f.face}" for ${f.who} not in vocabulary emotions.`);
+        }
         resolvedFaces.push({ ...f, t0Resolved: t0, t1Resolved: t1 });
       } catch (err) {
         errors.push(err.message);

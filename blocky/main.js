@@ -1,7 +1,7 @@
 // Blocky Story Engine: Data-driven runtime conductor.
 // Consumes episode.json + anchors.json. seek(t) is a pure function of time.
 import * as THREE from 'three';
-import { makeChar, compose, win } from './runtime/char.js';
+import { makeChar, compose, win, EMOTIONS } from './runtime/char.js';
 import { buildKitchenSet } from './runtime/world.js';
 import { createCamera, updateCamera } from './runtime/camera.js';
 import { prepareCaptionChunks, updateCaptions } from './runtime/captions.js';
@@ -98,11 +98,30 @@ for (const a of EP.actions) {
   if (a.do === 'gasp') ev('gasp', t0, { a: .5 });
 }
 
-const FACES = (EP.faces || []).map(f => ({ who: f.who, t0: T(f.from), t1: T(f.to), face: f.face }));
-const DEF = { eye: 'open', brow: 0, smile: .4, raise: 0, dx: 0, cheeks: 0 };
+const FACES = (EP.faces || []).map(f => ({
+  who: f.who,
+  t0: T(f.from),
+  t1: T(f.to),
+  face: f.face,
+  emotion: f.emotion,
+  lookAt: f.lookAt
+}));
+const DEF = { eye: 'open', brow: 0, smile: .4, raise: 0, dx: 0, dy: 0, cheeks: 0 };
 const faceOf = (id, t) => {
-  const f = { ...DEF };
-  for (const e of FACES) if (e.who === id && t >= e.t0 && t < e.t1) Object.assign(f, e.face);
+  let f = { ...DEF };
+  for (const e of FACES) {
+    if (e.who === id && t >= e.t0 && t < e.t1) {
+      if (e.emotion && EMOTIONS[e.emotion]) {
+        f = { ...f, ...EMOTIONS[e.emotion] };
+      }
+      if (typeof e.face === 'string' && EMOTIONS[e.face]) {
+        f = { ...f, ...EMOTIONS[e.face] };
+      } else if (e.face && typeof e.face === 'object') {
+        f = { ...f, ...e.face };
+      }
+      if (e.lookAt) f.lookAt = e.lookAt;
+    }
+  }
   return f;
 };
 
@@ -183,6 +202,20 @@ const mouth = (id, t) => {
   return Math.min(1, ((arr[i] || 0) * (1 - f) + (arr[i + 1] || 0) * f) * 1.15);
 };
 
+function phonemeViseme(char, prevChar, nextChar) {
+  const c = char.toLowerCase();
+  const pair = ((prevChar || '') + c).toLowerCase();
+  if (c === 'f' || c === 'v' || pair === 'ph') return 'F';
+  if (c === 'l' || pair === 'th') return 'L';
+  if (c === 's' || c === 'z' || pair === 'sh' || pair === 'ch') return 'S';
+  if (c === 'm' || c === 'b' || c === 'p') return 'M';
+  if (c === 'u' || c === 'w' || pair === 'oo') return 'U';
+  if (c === 'o') return 'O';
+  if (c === 'a') return 'A';
+  if ('eiy'.includes(c)) return 'E';
+  return 'E';
+}
+
 const shapeOf = (id, t) => {
   const k = lineOf(id, t);
   if (!k) return 'A';
@@ -193,8 +226,11 @@ const shapeOf = (id, t) => {
   const p = Math.min(.999, Math.max(0, (loc - w[1]) / Math.max(.05, t1 - w[1])));
   const ls = w[0].toLowerCase().replace(/[^a-z]/g, '');
   if (!ls) return 'A';
-  const c = ls[Math.floor(p * ls.length)];
-  return 'aeiy'.includes(c) ? (c === 'a' ? 'A' : 'E') : 'ouw'.includes(c) ? 'O' : 'mbp'.includes(c) ? 'M' : 'E';
+  const idx = Math.floor(p * ls.length);
+  const c = ls[idx];
+  const prev = idx > 0 ? ls[idx - 1] : '';
+  const next = idx + 1 < ls.length ? ls[idx + 1] : '';
+  return phonemeViseme(c, prev, next);
 };
 
 const blink = (t, ph) => ((t + ph) % 3.1) < .12;
@@ -220,14 +256,39 @@ window.seek = t => {
     ch.apply(J, Jp);
 
     const f = faceOf(id, t);
+
+    // Gaze and Look-At Tracking
+    let lookTarget = null;
+    if (f.lookAt) {
+      if (f.lookAt === 'cam' || f.lookAt === 'camera') {
+        lookTarget = cam.position;
+      } else if (CH[f.lookAt]) {
+        lookTarget = CH[f.lookAt].ch.root.position.clone();
+        lookTarget.y += 1.2 * (CH[f.lookAt].scale || 1);
+      } else if (Array.isArray(f.lookAt)) {
+        lookTarget = new THREE.Vector3(...f.lookAt);
+      }
+    } else {
+      const otherId = id === 'pip' ? 'mox' : id === 'mox' ? 'pip' : null;
+      if (otherId && CH[otherId] && shown(otherId, t)) {
+        lookTarget = CH[otherId].ch.root.position.clone();
+        lookTarget.y += 1.2 * (CH[otherId].scale || 1);
+      }
+    }
+
+    const gaze = ch.setLookAt(lookTarget);
+
     let open = mouth(id, t);
+    CH[id].lastFaceOpen = open;
     const sh = shapeOf(id, t);
     if (!open && f.munch) open = .22 + .22 * Math.sin(t * 13);
     ch.setFace({
       ...f,
       eye: (f.eye === 'open' || f.eye === 'wide') && blink(t, blinkPh) ? 'blink' : f.eye,
       open: sh === 'M' ? open * .2 : open,
-      shape: sh
+      shape: sh,
+      dx: (f.dx || 0) + gaze.dx,
+      dy: (f.dy || 0) + gaze.dy
     });
 
     ch.cookie.visible = PROPS.some(p => p.who === id && p.name === 'cookie' && t >= p.t0 && t <= p.t1);

@@ -214,14 +214,20 @@ async function runCompile() {
 }
 
 async function runTest() {
-  console.log('[CLI] Running determinism, rig, and action regression tests...');
+  console.log('[CLI] Running determinism, rig, action, and facial regression tests...');
   await runCmd('node', ['tests/actions.test.js']);
+  await runCmd('node', ['tests/faces.test.js']);
   await runCmd('node', ['tests/determinism.test.js']);
 }
 
 async function runLint3D() {
   console.log('[CLI] Running 3D spatial QA linter (camera, framing, floor, occlusion)...');
   await runCmd('node', ['qa/lint3d.js']);
+}
+
+async function runLipSync() {
+  console.log('[CLI] Running acoustic lip-sync correlation verification (rho >= 0.6)...');
+  await runCmd('node', ['qa/lip_sync.js']);
 }
 
 async function main() {
@@ -256,10 +262,14 @@ async function main() {
       break;
     case 'qa':
       await runLint3D();
+      await runLipSync();
       await runQA();
       break;
     case 'lint3d':
       await runLint3D();
+      break;
+    case 'sync':
+      await runLipSync();
       break;
     case 'all':
       await runCompile();
@@ -270,12 +280,13 @@ async function main() {
       await runShots();
       await runSheet();
       await runLint3D();
+      await runLipSync();
       await runQA();
       await runTest();
       break;
     default:
       console.log(`Unknown command: ${stage}`);
-      console.log('Available commands: bench | compile | test | voice | render | audio | master | shots | sheet | lint3d | qa | all');
+      console.log('Available commands: bench | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | qa | all');
       process.exit(1);
   }
 }

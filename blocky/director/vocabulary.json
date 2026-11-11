@@ -47,11 +47,24 @@
     "top-down"
   ],
   "faces": {
-    "eyes": ["open", "blink", "wide", "squint", "happy"],
+    "eyes": ["open", "blink", "wide", "squint", "happy", "worried", "angry", "sideEye", "dizzy", "sparkle"],
     "browRange": [-1.0, 1.0],
     "smileRange": [-1.0, 1.0],
-    "mouthShapes": ["A", "E", "O", "M"]
+    "mouthShapes": ["A", "E", "O", "U", "M", "F", "L", "S"],
+    "emotions": [
+      "neutral",
+      "happy",
+      "suspicious",
+      "guilt",
+      "panic",
+      "smug",
+      "shock",
+      "angry",
+      "relief",
+      "devious"
+    ]
   },
+  "lookTargets": ["cam", "camera", "mox", "pip", "june", "prop", "point"],
   "fx": [
     "bubble",
     "toggle",

@@ -38,84 +38,267 @@ const rr = (c, x, y, w, h, r) => {
 
 const INK = '#17171d';
 
-// Face drawing with expressiveness presets
+export const EMOTIONS = {
+  neutral:    { eye: 'open', brow: 0, raise: 0, smile: 0.3, cheeks: 0, dx: 0, dy: 0 },
+  happy:      { eye: 'happy', brow: 0.2, raise: 0.35, smile: 0.85, cheeks: 0.6, dx: 0, dy: 0 },
+  suspicious: { eye: 'squint', brow: 0.65, raise: 0.2, smile: -0.1, asymmetricBrow: true, cheeks: 0, dx: 0.55, dy: -0.1 },
+  guilt:      { eye: 'worried', brow: -0.7, raise: 0.45, smile: -0.45, cheeks: 0.35, sweat: true, dx: -0.45, dy: -0.3 },
+  panic:      { eye: 'wide', brow: -0.85, raise: 0.8, smile: -0.75, sweat: true, open: 0.55, shape: 'O', cheeks: 0.2 },
+  smug:       { eye: 'squint', brow: 0.4, raise: 0.15, smile: 0.8, asymmetricBrow: true, cheeks: 0.15, dx: 0.35 },
+  shock:      { eye: 'wide', brow: 0.8, raise: 0.95, smile: -0.25, open: 0.85, shape: 'O', cheeks: 0 },
+  angry:      { eye: 'angry', brow: 1.0, raise: -0.35, smile: -0.85, cheeks: 0.3, shape: 'S' },
+  relief:     { eye: 'happy', brow: -0.2, raise: -0.1, smile: 0.55, open: 0.18, shape: 'E', cheeks: 0.35 },
+  devious:    { eye: 'squint', brow: 0.85, raise: 0.1, smile: 0.9, dx: 0.55, cheeks: 0.1 }
+};
+
+// Face drawing with expressiveness presets, eye gaze tracking, and 8-viseme phoneme mouths
 export function drawFace(c, f) {
   c.clearRect(0, 0, 256, 256);
-  const ey = 112, dx = (f.dx || 0) * 10;
+  const ey = 112;
+  const dx = (f.dx || 0) * 12;
+  const dy = (f.dy || 0) * 8;
   c.lineCap = 'round';
+  c.lineJoin = 'round';
   c.strokeStyle = INK;
 
-  for (const x0 of [86, 170]) {
+  // 1. Eyes
+  for (const [x0, side] of [[86, -1], [170, 1]]) {
     const x = x0 + dx;
     c.fillStyle = INK;
+    c.strokeStyle = INK;
+
     if (f.eye === 'blink') {
       rr(c, x - 16, ey - 3, 32, 7, 3);
     } else if (f.eye === 'wide') {
       c.fillStyle = '#fff';
       c.beginPath();
-      c.ellipse(x, ey, 27, 34, 0, 0, 7);
+      c.ellipse(x, ey + dy * 0.5, 27, 34, 0, 0, 7);
       c.fill();
       c.lineWidth = 6;
       c.stroke();
       c.fillStyle = INK;
       c.beginPath();
-      c.arc(x + (f.dx || 0) * 8, ey, 9, 0, 7);
+      c.arc(x + dx * 0.6, ey + dy, 9, 0, 7);
+      c.fill();
+      c.fillStyle = '#fff';
+      c.beginPath();
+      c.arc(x + dx * 0.6 + 3, ey + dy - 3, 3, 0, 7);
       c.fill();
     } else if (f.eye === 'squint') {
       c.lineWidth = 9;
       c.beginPath();
-      c.arc(x, ey + 10, 20, Math.PI * 1.1, Math.PI * 1.9);
+      c.arc(x, ey + 10, 21, Math.PI * 1.1, Math.PI * 1.9);
       c.stroke();
     } else if (f.eye === 'happy') {
       c.lineWidth = 9;
       c.beginPath();
-      c.arc(x, ey + 16, 20, Math.PI * 1.12, Math.PI * 1.88);
+      c.arc(x, ey + 16, 21, Math.PI * 1.12, Math.PI * 1.88);
       c.stroke();
+    } else if (f.eye === 'worried') {
+      c.lineWidth = 8;
+      c.beginPath();
+      c.arc(x, ey + 4, 20, Math.PI * 1.15, Math.PI * 1.85);
+      c.stroke();
+      c.fillStyle = INK;
+      c.beginPath();
+      c.arc(x + dx * 0.5, ey - 4 + dy, 7, 0, 7);
+      c.fill();
+    } else if (f.eye === 'angry') {
+      c.lineWidth = 8;
+      c.beginPath();
+      if (side < 0) {
+        c.moveTo(x - 20, ey - 10);
+        c.lineTo(x + 18, ey + 4);
+      } else {
+        c.moveTo(x - 18, ey + 4);
+        c.lineTo(x + 20, ey - 10);
+      }
+      c.stroke();
+      c.fillStyle = INK;
+      c.beginPath();
+      c.arc(x + dx * 0.4, ey + 8 + dy, 8, 0, 7);
+      c.fill();
+    } else if (f.eye === 'sideEye') {
+      rr(c, x - 13, ey - 26, 26, 52, 13);
+      c.fillStyle = '#fff';
+      c.beginPath();
+      c.arc(x + (side < 0 ? 8 : 10), ey - 12 + dy, 5, 0, 7);
+      c.fill();
+    } else if (f.eye === 'dizzy') {
+      c.lineWidth = 7;
+      c.beginPath();
+      c.moveTo(x - 14, ey - 14); c.lineTo(x + 14, ey + 14);
+      c.moveTo(x + 14, ey - 14); c.lineTo(x - 14, ey + 14);
+      c.stroke();
+    } else if (f.eye === 'sparkle') {
+      c.fillStyle = '#fff';
+      c.beginPath();
+      c.ellipse(x, ey, 24, 30, 0, 0, 7);
+      c.fill();
+      c.lineWidth = 5;
+      c.stroke();
+      c.fillStyle = '#ffd152';
+      c.beginPath();
+      c.moveTo(x, ey - 16); c.lineTo(x + 5, ey - 5); c.lineTo(x + 16, ey);
+      c.lineTo(x + 5, ey + 5); c.lineTo(x, ey + 16); c.lineTo(x - 5, ey + 5);
+      c.lineTo(x - 16, ey); c.lineTo(x - 5, ey - 5); c.closePath();
+      c.fill();
     } else {
       rr(c, x - 13, ey - 26, 26, 52, 13);
       c.fillStyle = '#fff';
       c.beginPath();
-      c.arc(x + 4, ey - 12, 6, 0, 7);
+      c.arc(x + 4 + dx * 0.3, ey - 12 + dy * 0.4, 6, 0, 7);
+      c.fill();
+      c.beginPath();
+      c.arc(x - 3 + dx * 0.2, ey + 8 + dy * 0.2, 3, 0, 7);
       c.fill();
     }
   }
 
+  // 2. Eyebrows
   c.strokeStyle = INK;
   c.lineWidth = 9;
   for (const [x, s] of [[86, -1], [170, 1]]) {
-    const r = (f.raise || 0) * 14;
+    let r = (f.raise || 0) * 14;
+    let b = (f.brow || 0);
+    if (f.asymmetricBrow) {
+      if (s < 0) r += 8; else r -= 6;
+    }
     c.beginPath();
-    c.moveTo(x - 24, ey - 52 + f.brow * s * 8 - r);
-    c.lineTo(x + 24, ey - 52 - f.brow * s * 8 - r);
+    c.moveTo(x - 24, ey - 52 + b * s * 8 - r);
+    c.lineTo(x + 24, ey - 52 - b * s * 8 - r);
     c.stroke();
   }
 
-  c.fillStyle = `rgba(255,90,110,${.28 + (f.cheeks || 0) * .3})`;
-  c.beginPath();
-  c.ellipse(52, 158, 20 + (f.cheeks || 0) * 8, 12 + (f.cheeks || 0) * 5, 0, 0, 7);
-  c.ellipse(204, 158, 20 + (f.cheeks || 0) * 8, 12 + (f.cheeks || 0) * 5, 0, 0, 7);
-  c.fill();
-
-  const my = 186, o = f.open, sh = f.shape || 'A';
-  if (o > .07) {
-    const P = { A: [26 + 16 * o, 8 + 44 * o], O: [15 + 9 * o, 10 + 40 * o], E: [34 + 14 * o, 5 + 24 * o], M: [30, 4] }[sh] || [26, 10];
-    c.fillStyle = '#4a1d22';
+  if ((f.brow || 0) > 0.8) {
+    c.lineWidth = 5;
     c.beginPath();
-    c.ellipse(128, my, P[0], P[1], 0, 0, 7);
+    c.moveTo(123, ey - 62); c.lineTo(123, ey - 48);
+    c.moveTo(133, ey - 62); c.lineTo(133, ey - 48);
+    c.stroke();
+  }
+
+  // 3. Cheeks
+  const blush = f.cheeks || 0;
+  if (blush > 0.05) {
+    c.fillStyle = `rgba(255,90,110,${0.25 + blush * 0.4})`;
+    c.beginPath();
+    c.ellipse(52, 158, 20 + blush * 8, 12 + blush * 5, 0, 0, 7);
+    c.ellipse(204, 158, 20 + blush * 8, 12 + blush * 5, 0, 0, 7);
     c.fill();
-    if (sh !== 'M') {
+  }
+
+  // 4. Sweat Drop
+  if (f.sweat) {
+    c.fillStyle = '#4cc9f0';
+    c.strokeStyle = INK;
+    c.lineWidth = 4;
+    c.beginPath();
+    c.moveTo(222, 70);
+    c.bezierCurveTo(232, 85, 230, 95, 222, 98);
+    c.bezierCurveTo(214, 95, 212, 85, 222, 70);
+    c.fill();
+    c.stroke();
+    c.fillStyle = '#ffffff';
+    c.beginPath();
+    c.arc(220, 86, 2.5, 0, 7);
+    c.fill();
+  }
+
+  // 5. Mouth Visemes
+  const my = 186;
+  const o = f.open || 0;
+  const sh = f.shape || 'A';
+
+  if (o > 0.07) {
+    if (sh === 'F') {
+      const mw = 28 + 10 * o;
+      const mh = 10 + 20 * o;
+      c.fillStyle = '#4a1d22';
+      c.beginPath();
+      c.ellipse(128, my, mw, mh, 0, 0, 7);
+      c.fill();
+      c.fillStyle = '#ffffff';
+      c.beginPath();
+      c.roundRect(114, my - mh + 2, 28, 8 + 4 * o, 2);
+      c.fill();
+      c.strokeStyle = INK;
+      c.lineWidth = 4;
+      c.stroke();
+    } else if (sh === 'L') {
+      const mw = 26 + 12 * o;
+      const mh = 12 + 30 * o;
+      c.fillStyle = '#4a1d22';
+      c.beginPath();
+      c.ellipse(128, my, mw, mh, 0, 0, 7);
+      c.fill();
       c.fillStyle = '#e8737f';
       c.beginPath();
-      c.ellipse(128, my + P[1] * .45, P[0] * .5, P[1] * .38, 0, 0, 7);
+      c.ellipse(128, my - mh * 0.2, mw * 0.45, mh * 0.35, 0, 0, 7);
       c.fill();
+    } else if (sh === 'S') {
+      const mw = 32 + 10 * o;
+      const mh = 10 + 14 * o;
+      c.fillStyle = '#ffffff';
+      c.beginPath();
+      c.roundRect(128 - mw, my - mh, mw * 2, mh * 2, 6);
+      c.fill();
+      c.strokeStyle = INK;
+      c.lineWidth = 5;
+      c.stroke();
+      c.lineWidth = 3;
+      c.beginPath();
+      c.moveTo(128 - mw + 4, my);
+      c.lineTo(128 + mw - 4, my);
+      c.stroke();
+    } else if (sh === 'U') {
+      const mw = 13 + 7 * o;
+      const mh = 11 + 18 * o;
+      c.fillStyle = '#4a1d22';
+      c.beginPath();
+      c.ellipse(128, my, mw, mh, 0, 0, 7);
+      c.fill();
+      c.strokeStyle = INK;
+      c.lineWidth = 5;
+      c.stroke();
+    } else if (sh === 'M') {
+      c.lineWidth = 8;
+      c.beginPath();
+      c.moveTo(108, my);
+      c.lineTo(148, my);
+      c.stroke();
+    } else {
+      const P = {
+        A: [26 + 16 * o, 8 + 44 * o],
+        O: [16 + 10 * o, 12 + 40 * o],
+        E: [34 + 14 * o, 6 + 24 * o]
+      }[sh] || [26, 12];
+
+      c.fillStyle = '#4a1d22';
+      c.beginPath();
+      c.ellipse(128, my, P[0], P[1], 0, 0, 7);
+      c.fill();
+
+      c.fillStyle = '#e8737f';
+      c.beginPath();
+      c.ellipse(128, my + P[1] * 0.45, P[0] * 0.5, P[1] * 0.38, 0, 0, 7);
+      c.fill();
+
+      if (sh === 'E') {
+        c.fillStyle = '#ffffff';
+        c.beginPath();
+        c.roundRect(128 - P[0] * 0.65, my - P[1] + 1, P[0] * 1.3, 6, 2);
+        c.fill();
+      }
     }
   } else {
+    const smile = typeof f.smile === 'number' ? f.smile : 0.3;
     c.lineWidth = 9;
     c.beginPath();
-    if (f.smile >= 0) {
-      c.arc(128, my - 14 - f.smile * 6, 30, Math.PI * (.15 + .1 * (1 - f.smile)), Math.PI * (.85 - .1 * (1 - f.smile)));
+    if (smile >= 0) {
+      c.arc(128, my - 14 - smile * 6, 30, Math.PI * (0.15 + 0.1 * (1 - smile)), Math.PI * (0.85 - 0.1 * (1 - smile)));
     } else {
-      c.arc(128, my + 22, 28, Math.PI * (1.15 - .05 * -f.smile), Math.PI * (1.85 + .05 * -f.smile));
+      c.arc(128, my + 22, 28, Math.PI * (1.15 - 0.05 * -smile), Math.PI * (1.85 + 0.05 * -smile));
     }
     c.stroke();
   }
@@ -236,11 +419,52 @@ export function makeChar({ skin, shirt, pants, hair, hairStyle = 'cap', shoe = 0
   let last = '';
   return {
     root, body, head, crumbs, cookie,
+    setLookAt(targetPos) {
+      if (!targetPos) return { dx: 0, dy: 0 };
+      const headPos = new THREE.Vector3();
+      head.getWorldPosition(headPos);
+      const dir = new THREE.Vector3().subVectors(targetPos, headPos);
+      const distXZ = Math.hypot(dir.x, dir.z) || 1;
+
+      const worldYaw = Math.atan2(dir.x, dir.z);
+      let localYaw = worldYaw - root.rotation.y;
+      while (localYaw > Math.PI) localYaw -= Math.PI * 2;
+      while (localYaw < -Math.PI) localYaw += Math.PI * 2;
+
+      const clampedYaw = Math.max(-0.45, Math.min(0.45, localYaw));
+      const pitch = Math.atan2(dir.y, distXZ);
+      const clampedPitch = Math.max(-0.25, Math.min(0.25, pitch));
+
+      head.rotation.y += clampedYaw * 0.55;
+      head.rotation.x += -clampedPitch * 0.55;
+
+      const dx = Math.max(-1, Math.min(1, (localYaw - clampedYaw * 0.55) * 1.5));
+      const dy = Math.max(-1, Math.min(1, (pitch - clampedPitch * 0.55) * 1.5));
+      return { dx, dy };
+    },
     setFace(f) {
-      const k = [f.eye, f.brow.toFixed(1), (f.open * 8 | 0), f.smile.toFixed(1), f.dx || 0, (f.raise || 0).toFixed(1), f.shape || 'A', (f.cheeks || 0).toFixed(1)].join();
+      if (!f) f = EMOTIONS.neutral;
+      if (typeof f === 'string') {
+        f = EMOTIONS[f] || EMOTIONS.neutral;
+      } else if (f.emotion && EMOTIONS[f.emotion]) {
+        f = { ...EMOTIONS[f.emotion], ...f };
+      }
+      const eye = f.eye || 'open';
+      const brow = typeof f.brow === 'number' ? f.brow : 0;
+      const open = typeof f.open === 'number' ? f.open : 0;
+      const smile = typeof f.smile === 'number' ? f.smile : 0.3;
+      const dx = typeof f.dx === 'number' ? f.dx : 0;
+      const dy = typeof f.dy === 'number' ? f.dy : 0;
+      const raise = typeof f.raise === 'number' ? f.raise : 0;
+      const shape = f.shape || 'A';
+      const cheeks = typeof f.cheeks === 'number' ? f.cheeks : 0;
+      const sweat = f.sweat ? 1 : 0;
+      const asym = f.asymmetricBrow ? 1 : 0;
+
+      const k = [eye, brow.toFixed(2), (open * 10 | 0), smile.toFixed(2), dx.toFixed(2), dy.toFixed(2), raise.toFixed(2), shape, cheeks.toFixed(2), sweat, asym].join();
       if (k === last) return;
       last = k;
-      drawFace(cx, f);
+      drawFace(cx, { eye, brow, open, smile, dx, dy, raise, shape, cheeks, sweat: !!sweat, asymmetricBrow: !!asym });
       tex.needsUpdate = true;
     },
     apply(J, Jp) {
