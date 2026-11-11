@@ -19,7 +19,7 @@
 | **B6** | **Audio v2** | Mood scoring engine, procedural SFX library, pitch/speed variance, post-encode peak gate | **COMPLETED** | `6c28915` |
 | **B7** | **QA 3D Hardening** | Full spatial/visual regression test suite, occlusion raycasting, camera-in-mesh gates | **COMPLETED** | `455367d` |
 | **B8** | **Publish Pack** | Automated metadata pack: titles, descriptions, hashtags, pinned comments, cover frame, SRT, COPPA & disclosure logs | **COMPLETED** | `fe35e97` |
-| **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets, BlenderMCP guide, deterministic playback | **COMPLETED** | Pending commit |
+| **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets, BlenderMCP guide, deterministic playback | **COMPLETED** | `952131a` |
 | **B10**| **Hardening & Verification** | Multi-platform verification, docs, DoD checklist | PENDING | — |
 
 ---
