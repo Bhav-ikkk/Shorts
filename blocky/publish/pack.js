@@ -86,12 +86,12 @@ const PUBLISH_METADATA = {
   'the-blockies-ep4': {
     titles: [
       "When the Streetlamp Turns Red... FREEZE! 🚨",
-      "The Town Where Nobody Can Move?! (The Blockies Ep 4)",
-      "Why Did the Streetlamp Flash Purple?!"
+      "The Secret of the Red Streetlamp (Full Story)",
+      "Why Was the Streetlamp Glowing Red?!"
     ],
     hashtags: ["#theblockies", "#shorts", "#reels", "#animation", "#mystery"],
     pinnedComment: "Would YOU be able to freeze without scratching an itch? Tell us below! 🚨🛑",
-    hookSummary: "In this town, when the streetlamp turns red, nobody is allowed to move. While Pip and Mox freeze in suspense, toddler June casually strolls past with snacks.",
+    hookSummary: "In this town, when the streetlamp turns red, nobody is allowed to move. While Pip and Mox freeze in suspense, toddler June reveals the hilarious secret of the red light.",
     videoFile: 'the-blockies-ep4-motion-film.mp4'
   }
 };
@@ -264,11 +264,9 @@ function buildPublishPack(episodeSlug) {
     const masterVideo = path.join(OUT_DIR, meta.videoFile);
     if (fs.existsSync(masterVideo)) {
       const destVideo = path.join(dir, 'video_1080x1920.mp4');
-      if (!fs.existsSync(destVideo)) {
-        try {
-          fs.copyFileSync(masterVideo, destVideo);
-        } catch {}
-      }
+      try {
+        fs.copyFileSync(masterVideo, destVideo);
+      } catch {}
     }
   });
 

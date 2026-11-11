@@ -417,14 +417,23 @@ export function buildParkSet(scene, mood = 'day') {
   cyl(0.06, 0.06, 3.2, 0x0f172a, 0, 1.7, 0, 12, lamp); // pole
   box(0.4, 0.6, 0.4, 0x0f172a, 0, 3.4, 0, lamp, 0.05); // lantern frame
   const glowColor = mood === 'night' ? 0xff2222 : 0xfef08a;
-  box(0.3, 0.45, 0.3, glowColor, 0, 3.4, 0, lamp, 0.02, 0, glowColor); // lantern glow
+  const glowMat = new THREE.MeshBasicMaterial({ color: glowColor });
+  const lanternMesh = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.45, 0.3), glowMat);
+  lanternMesh.position.set(0, 3.4, 0);
+  lamp.add(lanternMesh);
   scene.add(lamp);
 
+  let lampLight = null;
   if (mood === 'night') {
-    const lampLight = new THREE.PointLight(0xff2222, 2.8, 7);
+    lampLight = new THREE.PointLight(0xff2222, 2.8, 7);
     lampLight.position.set(-1.8, 3.4, 0.8);
     scene.add(lampLight);
   }
+
+  const setLampColor = (hex) => {
+    glowMat.color.setHex(hex);
+    if (lampLight) lampLight.color.setHex(hex);
+  };
 
   // Scattered boulders & flowers
   box(0.6, 0.45, 0.7, 0x64748b, -2.8, 0.22, -1.2, scene, 0.1);
@@ -434,7 +443,7 @@ export function buildParkSet(scene, mood = 'day') {
   blob(1.8, 0.5, 2.2, 1.0, 0.6);
   blob(-1.8, 0.8, 0.8, 0.8, 0.65);
 
-  return { blob };
+  return { blob, lamp, lanternMesh, lampLight, setLampColor };
 }
 
 /* =========================================================================

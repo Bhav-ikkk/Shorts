@@ -1,4 +1,4 @@
-# Upload & Compliance Checklist: The Red Streetlamp (ep04-red-streetlamp)
+# Upload & Compliance Checklist: The Secret of the Red Streetlamp (ep04-red-streetlamp)
 
 ## 1. Pre-Flight Verification
 - [x] Script linted: $\le 9$ words/line, beat progression clean

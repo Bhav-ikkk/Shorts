@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "id": "the-blockies-ep4",
-  "title": "The Red Streetlamp",
+  "title": "The Secret of the Red Streetlamp",
   "series": "THE BLOCKIES",
   "format": "suspense-comedy",
   "set": "park",
@@ -21,7 +21,8 @@
     {
       "id": "L2",
       "who": "MOX",
-      "text": "Wait! It is glowing bright red right now!",
+      "text": "Wait, it just turned bright glowing red!",
+      "spoken": "Wait, it just turned bright glowing red!",
       "beat": "setup",
       "pause": 0.25,
       "emotion": "panic",
@@ -30,8 +31,8 @@
     {
       "id": "L3",
       "who": "PIP",
-      "text": "Don't move, Mox! Not even a muscle!",
-      "beat": "escalation",
+      "text": "Do not move a single blocky muscle!",
+      "beat": "setup",
       "pause": 0.30,
       "emotion": "panic",
       "action": "handsUp"
@@ -39,7 +40,7 @@
     {
       "id": "L4",
       "who": "MOX",
-      "text": "My left foot is itching so bad!",
+      "text": "Pip, my left foot is shaking so bad!",
       "beat": "escalation",
       "pause": 0.25,
       "emotion": "guilt",
@@ -48,29 +49,92 @@
     {
       "id": "L5",
       "who": "PIP",
-      "text": "Wait! Who is that walking past the bench?!",
+      "text": "Hold still! The town legend says we freeze forever!",
+      "beat": "escalation",
+      "pause": 0.30,
+      "emotion": "angry",
+      "action": "handsHips"
+    },
+    {
+      "id": "L6",
+      "who": "MOX",
+      "text": "Now my nose is starting to itch too!",
+      "beat": "escalation",
+      "pause": 0.25,
+      "emotion": "panic",
+      "action": "shake"
+    },
+    {
+      "id": "L7",
+      "who": "PIP",
+      "text": "Wait... who is that walking past the trees?!",
       "beat": "twist",
       "pause": 0.30,
       "emotion": "shock",
       "action": "pointA"
     },
     {
-      "id": "L6",
+      "id": "L8",
       "who": "JUNE",
-      "text": "Rules do not count if you have snacks.",
-      "beat": "payoff",
+      "text": "Hey guys, what are you two doing?",
+      "beat": "twist",
       "pause": 0.30,
-      "emotion": "smug",
+      "emotion": "happy",
       "action": "eat"
     },
     {
-      "id": "L7",
-      "who": "MOX",
-      "text": "Why is the light flashing purple now?!",
-      "beat": "cliffhanger",
-      "pause": 0.45,
+      "id": "L9",
+      "who": "PIP",
+      "text": "June, run! The red streetlamp curse is active!",
+      "beat": "reveal",
+      "pause": 0.30,
       "emotion": "panic",
-      "action": "headHands"
+      "action": "handsUp"
+    },
+    {
+      "id": "L10",
+      "who": "JUNE",
+      "text": "There is no curse, you silly blocks.",
+      "beat": "reveal",
+      "pause": 0.30,
+      "emotion": "smug",
+      "action": "shrug"
+    },
+    {
+      "id": "L11",
+      "who": "MOX",
+      "text": "Then why is the park lamp glowing red?!",
+      "beat": "payoff",
+      "pause": 0.25,
+      "emotion": "suspicious",
+      "action": "pointB"
+    },
+    {
+      "id": "L12",
+      "who": "JUNE",
+      "text": "I just taped my red candy wrapper inside!",
+      "beat": "payoff",
+      "pause": 0.35,
+      "emotion": "happy",
+      "action": "wave"
+    },
+    {
+      "id": "L13",
+      "who": "PIP",
+      "text": "Ten minutes frozen... for a candy wrapper?!",
+      "beat": "button",
+      "pause": 0.35,
+      "emotion": "guilt",
+      "action": "facepalm"
+    },
+    {
+      "id": "L14",
+      "who": "JUNE",
+      "text": "Wait until you see what neon green does!",
+      "beat": "button",
+      "pause": 0.45,
+      "emotion": "devious",
+      "action": "celebrate"
     }
   ]
 }

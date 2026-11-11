@@ -1,8 +1,8 @@
 {
   "episodeId": "the-blockies-ep4",
   "series": "THE BLOCKIES",
-  "title": "The Red Streetlamp",
-  "generatedAt": "2026-11-11T18:21:07.182Z",
+  "title": "The Secret of the Red Streetlamp",
+  "generatedAt": "2026-11-11T19:15:52.817Z",
   "coppaDecision": {
     "status": "Made for Kids (Primary)",
     "rationale": "Stylized blocky characters, wholesome comedic themes, zero violence/weapons, no horror, child-friendly."
@@ -20,6 +20,6 @@
   "retentionEngineering": {
     "openingHookLine": "In this town, when the streetlamp turns red... freeze!",
     "visualBeatPacing": "≤ 2.5s per event",
-    "averageWordsPerLine": 7.7
+    "averageWordsPerLine": 7.8
   }
 }

@@ -3,26 +3,54 @@
 In this town, when the streetlamp turns red... freeze!
 
 2
-00:00:02,975 --> 00:00:05,215
-Wait! It is glowing bright red right now!
+00:00:02,975 --> 00:00:05,050
+Wait, it just turned bright glowing red!
 
 3
-00:00:05,315 --> 00:00:07,169
-Don't move, Mox! Not even a muscle!
+00:00:05,150 --> 00:00:07,169
+Do not move a single blocky muscle!
 
 4
-00:00:07,320 --> 00:00:09,175
-My left foot is itching so bad!
+00:00:07,320 --> 00:00:09,394
+Pip, my left foot is shaking so bad!
 
 5
-00:00:09,275 --> 00:00:11,405
-Wait! Who is that walking past the bench?!
+00:00:09,494 --> 00:00:12,064
+Hold still! The town legend says we freeze forever!
 
 6
-00:00:11,554 --> 00:00:13,685
-Rules do not count if you have snacks.
+00:00:12,214 --> 00:00:14,345
+Now my nose is starting to itch too!
 
 7
-00:00:13,835 --> 00:00:15,910
-Why is the light flashing purple now?!
+00:00:14,445 --> 00:00:16,574
+Wait... who is that walking past the trees?!
+
+8
+00:00:16,725 --> 00:00:18,469
+Hey guys, what are you two doing?
+
+9
+00:00:18,620 --> 00:00:21,024
+June, run! The red streetlamp curse is active!
+
+10
+00:00:21,175 --> 00:00:23,139
+There is no curse, you silly blocks.
+
+11
+00:00:23,289 --> 00:00:25,364
+Then why is the park lamp glowing red?!
+
+12
+00:00:25,464 --> 00:00:27,759
+I just taped my red candy wrapper inside!
+
+13
+00:00:27,960 --> 00:00:30,144
+Ten minutes frozen... for a candy wrapper?!
+
+14
+00:00:30,344 --> 00:00:32,365
+Wait until you see what neon green does!
 

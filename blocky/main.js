@@ -90,7 +90,7 @@ const place = (id, t) => {
 
 const SCH = {};
 for (const a of EP.actions) {
-  const t0 = T(a.from), t1 = a.to ? T(a.to) : t0 + (a.dur || .6);
+  const t0 = T(a.from || a.at), t1 = a.to ? T(a.to) : t0 + (a.dur || .6);
   (SCH[a.who] ||= []).push({ a: a.do, t0, t1, fi: a.fi ?? .15, fo: a.fo ?? .2, ob: a.ob, ...(a.o || {}) });
   if (a.do === 'walk' && !(a.o && a.o.sound === false)) {
     const sp = (a.o && a.o.spd) || 2.4, am = a.o && a.o.amp ? a.o.amp : 1;
@@ -303,6 +303,15 @@ window.seek = t => {
   if (world.hMin) world.hMin.rotation.z = -t * .35;
   if (world.hHr) world.hHr.rotation.z = -t * .03;
   if (world.spinner) world.spinner.rotation.y = t * 2.5;
+  if (world.setLampColor && AN.L13 && AN.L14) {
+    if (t >= AN.L14.start) {
+      world.setLampColor(0x22c55e); // Neon green wrapper!
+    } else if (t >= AN.L13.start) {
+      world.setLampColor(0xfef08a); // Returned to warm yellow!
+    } else {
+      world.setLampColor(0xff2222); // Crimson red!
+    }
+  }
 
   // 3. Camera
   updateCamera(cam, t, SHOTS, PUNCH);

@@ -55,68 +55,64 @@
     },
     "L2": {
       "speaker": "MOX",
-      "text": "Wait! It is glowing bright red right now!",
+      "text": "Wait, it just turned bright glowing red!",
       "start": 3.147,
-      "dur": 2.85,
-      "end": 5.997,
+      "dur": 2.573,
+      "end": 5.721,
       "segs": [
         [
           0.02,
-          0.5
+          0.21
         ],
         [
-          0.66,
-          1.38
+          0.3,
+          0.34
         ],
         [
-          1.49,
-          1.79
+          0.43,
+          0.75
         ],
         [
-          1.9,
-          2.15
+          0.86,
+          1.22
         ],
         [
-          2.28,
-          2.45
+          1.3,
+          1.64
         ],
         [
-          2.57,
-          2.84
+          1.72,
+          2.52
         ]
       ],
       "words": [
         [
-          "Wait!",
+          "Wait,",
           0.02
         ],
         [
-          "It",
-          0.364
+          "it",
+          0.329
         ],
         [
-          "is",
-          0.536
+          "just",
+          0.484
         ],
         [
-          "glowing",
-          0.708
+          "turned",
+          0.793
         ],
         [
           "bright",
-          1.309
+          1.257
         ],
         [
-          "red",
-          1.825
+          "glowing",
+          1.721
         ],
         [
-          "right",
-          2.083
-        ],
-        [
-          "now!",
-          2.512
+          "red!",
+          2.262
         ]
       ],
       "gap": 0.25,
@@ -124,48 +120,44 @@
     },
     "L3": {
       "speaker": "PIP",
-      "text": "Don't move, Mox! Not even a muscle!",
-      "start": 6.247,
-      "dur": 2.09,
-      "end": 8.337,
+      "text": "Do not move a single blocky muscle!",
+      "start": 5.971,
+      "dur": 1.777,
+      "end": 7.748,
       "segs": [
         [
           0.02,
-          0.98
-        ],
-        [
-          1.15,
-          2.04
+          1.74
         ]
       ],
       "words": [
         [
-          "Don't",
+          "Do",
           0.02
         ],
         [
-          "move,",
-          0.369
+          "not",
+          0.14
         ],
         [
-          "Mox!",
-          0.718
-        ],
-        [
-          "Not",
-          1.15
-        ],
-        [
-          "even",
-          1.341
+          "move",
+          0.319
         ],
         [
           "a",
-          1.595
+          0.559
+        ],
+        [
+          "single",
+          0.619
+        ],
+        [
+          "blocky",
+          0.978
         ],
         [
           "muscle!",
-          1.659
+          1.338
         ]
       ],
       "gap": 0.3,
@@ -173,44 +165,52 @@
     },
     "L4": {
       "speaker": "MOX",
-      "text": "My left foot is itching so bad!",
-      "start": 8.637,
-      "dur": 2.183,
-      "end": 10.82,
+      "text": "Pip, my left foot is shaking so bad!",
+      "start": 8.048,
+      "dur": 2.742,
+      "end": 10.789,
       "segs": [
         [
           0.02,
-          2.13
+          1.19
+        ],
+        [
+          1.27,
+          2.68
         ]
       ],
       "words": [
         [
-          "My",
+          "Pip,",
           0.02
         ],
         [
+          "my",
+          0.314
+        ],
+        [
           "left",
-          0.194
+          0.509
         ],
         [
           "foot",
-          0.541
+          0.901
         ],
         [
           "is",
-          0.888
+          1.292
         ],
         [
-          "itching",
-          1.062
+          "shaking",
+          1.488
         ],
         [
           "so",
-          1.669
+          2.172
         ],
         [
           "bad!",
-          1.843
+          2.368
         ]
       ],
       "gap": 0.25,
@@ -218,155 +218,514 @@
     },
     "L5": {
       "speaker": "PIP",
-      "text": "Wait! Who is that walking past the bench?!",
-      "start": 11.07,
-      "dur": 2.325,
-      "end": 13.396,
+      "text": "Hold still! The town legend says we freeze forever!",
+      "start": 11.039,
+      "dur": 2.911,
+      "end": 13.95,
       "segs": [
         [
           0.02,
-          0.54
+          0.69
         ],
         [
-          0.72,
-          2.26
+          0.92,
+          2.84
         ]
       ],
       "words": [
         [
-          "Wait!",
+          "Hold",
           0.02
         ],
         [
-          "Who",
-          0.72
+          "still!",
+          0.318
         ],
         [
-          "is",
-          0.885
+          "The",
+          0.92
         ],
         [
-          "that",
-          0.995
+          "town",
+          1.1
         ],
         [
-          "walking",
-          1.215
+          "legend",
+          1.34
         ],
         [
-          "past",
-          1.6
+          "says",
+          1.7
         ],
         [
-          "the",
-          1.82
+          "we",
+          1.94
         ],
         [
-          "bench?!",
-          1.985
+          "freeze",
+          2.06
+        ],
+        [
+          "forever!",
+          2.42
         ]
       ],
       "gap": 0.3,
       "style": ""
     },
     "L6": {
-      "speaker": "JUNE",
-      "text": "Rules do not count if you have snacks.",
-      "start": 13.696,
-      "dur": 1.831,
-      "end": 15.527,
+      "speaker": "MOX",
+      "text": "Now my nose is starting to itch too!",
+      "start": 14.25,
+      "dur": 2.194,
+      "end": 16.445,
       "segs": [
         [
           0.02,
-          1.78
+          2.19
         ]
       ],
       "words": [
         [
-          "Rules",
+          "Now",
           0.02
         ],
         [
-          "do",
-          0.308
+          "my",
+          0.244
         ],
         [
-          "not",
-          0.424
+          "nose",
+          0.394
         ],
         [
-          "count",
-          0.597
+          "is",
+          0.693
         ],
         [
-          "if",
-          0.885
+          "starting",
+          0.843
         ],
         [
-          "you",
-          1.001
+          "to",
+          1.441
         ],
         [
-          "have",
-          1.174
+          "itch",
+          1.591
         ],
         [
-          "snacks.",
-          1.405
+          "too!",
+          1.89
+        ]
+      ],
+      "gap": 0.25,
+      "style": ""
+    },
+    "L7": {
+      "speaker": "PIP",
+      "text": "Wait... who is that walking past the trees?!",
+      "start": 16.695,
+      "dur": 1.959,
+      "end": 18.654,
+      "segs": [
+        [
+          0.02,
+          1.9
+        ]
+      ],
+      "words": [
+        [
+          "Wait...",
+          0.02
+        ],
+        [
+          "who",
+          0.252
+        ],
+        [
+          "is",
+          0.427
+        ],
+        [
+          "that",
+          0.543
+        ],
+        [
+          "walking",
+          0.775
+        ],
+        [
+          "past",
+          1.182
+        ],
+        [
+          "the",
+          1.414
+        ],
+        [
+          "trees?!",
+          1.589
         ]
       ],
       "gap": 0.3,
       "style": ""
     },
-    "L7": {
-      "speaker": "MOX",
-      "text": "Why is the light flashing purple now?!",
-      "start": 15.827,
-      "dur": 2.175,
-      "end": 18.001,
+    "L8": {
+      "speaker": "JUNE",
+      "text": "Hey guys, what are you two doing?",
+      "start": 18.954,
+      "dur": 1.513,
+      "end": 20.467,
       "segs": [
         [
           0.02,
-          0.91
-        ],
-        [
-          1.0,
-          2.17
+          1.51
         ]
       ],
       "words": [
         [
-          "Why",
+          "Hey",
+          0.02
+        ],
+        [
+          "guys,",
+          0.19
+        ],
+        [
+          "what",
+          0.416
+        ],
+        [
+          "are",
+          0.642
+        ],
+        [
+          "you",
+          0.811
+        ],
+        [
+          "two",
+          0.981
+        ],
+        [
+          "doing?",
+          1.15
+        ]
+      ],
+      "gap": 0.3,
+      "style": ""
+    },
+    "L9": {
+      "speaker": "PIP",
+      "text": "June, run! The red streetlamp curse is active!",
+      "start": 20.767,
+      "dur": 2.755,
+      "end": 23.522,
+      "segs": [
+        [
+          0.02,
+          0.8
+        ],
+        [
+          0.97,
+          2.5
+        ],
+        [
+          2.58,
+          2.71
+        ]
+      ],
+      "words": [
+        [
+          "June,",
+          0.02
+        ],
+        [
+          "run!",
+          0.315
+        ],
+        [
+          "The",
+          0.536
+        ],
+        [
+          "red",
+          0.758
+        ],
+        [
+          "streetlamp",
+          0.979
+        ],
+        [
+          "curse",
+          1.716
+        ],
+        [
+          "is",
+          2.085
+        ],
+        [
+          "active!",
+          2.233
+        ]
+      ],
+      "gap": 0.3,
+      "style": ""
+    },
+    "L10": {
+      "speaker": "JUNE",
+      "text": "There is no curse, you silly blocks.",
+      "start": 23.822,
+      "dur": 1.781,
+      "end": 25.603,
+      "segs": [
+        [
+          0.02,
+          1.75
+        ]
+      ],
+      "words": [
+        [
+          "There",
           0.02
         ],
         [
           "is",
-          0.227
+          0.32
+        ],
+        [
+          "no",
+          0.44
+        ],
+        [
+          "curse,",
+          0.56
+        ],
+        [
+          "you",
+          0.861
+        ],
+        [
+          "silly",
+          1.041
+        ],
+        [
+          "blocks.",
+          1.341
+        ]
+      ],
+      "gap": 0.3,
+      "style": ""
+    },
+    "L11": {
+      "speaker": "MOX",
+      "text": "Then why is the park lamp glowing red?!",
+      "start": 25.903,
+      "dur": 2.477,
+      "end": 28.38,
+      "segs": [
+        [
+          0.02,
+          0.24
+        ],
+        [
+          0.34,
+          1.47
+        ],
+        [
+          1.56,
+          2.43
+        ]
+      ],
+      "words": [
+        [
+          "Then",
+          0.02
+        ],
+        [
+          "why",
+          0.337
+        ],
+        [
+          "is",
+          0.575
         ],
         [
           "the",
-          0.366
+          0.733
         ],
         [
-          "light",
-          0.573
+          "park",
+          0.971
         ],
         [
-          "flashing",
-          0.919
+          "lamp",
+          1.288
         ],
         [
-          "purple",
-          1.472
+          "glowing",
+          1.605
         ],
         [
-          "now?!",
-          1.887
+          "red?!",
+          2.159
+        ]
+      ],
+      "gap": 0.25,
+      "style": ""
+    },
+    "L12": {
+      "speaker": "JUNE",
+      "text": "I just taped my red candy wrapper inside!",
+      "start": 28.63,
+      "dur": 2.147,
+      "end": 30.777,
+      "segs": [
+        [
+          0.02,
+          0.44
+        ],
+        [
+          0.53,
+          2.11
+        ]
+      ],
+      "words": [
+        [
+          "I",
+          0.02
+        ],
+        [
+          "just",
+          0.082
+        ],
+        [
+          "taped",
+          0.33
+        ],
+        [
+          "my",
+          0.64
+        ],
+        [
+          "red",
+          0.764
+        ],
+        [
+          "candy",
+          0.95
+        ],
+        [
+          "wrapper",
+          1.261
+        ],
+        [
+          "inside!",
+          1.695
+        ]
+      ],
+      "gap": 0.35,
+      "style": ""
+    },
+    "L13": {
+      "speaker": "PIP",
+      "text": "Ten minutes frozen... for a candy wrapper?!",
+      "start": 31.127,
+      "dur": 1.917,
+      "end": 33.044,
+      "segs": [
+        [
+          0.02,
+          1.88
+        ]
+      ],
+      "words": [
+        [
+          "Ten",
+          0.02
+        ],
+        [
+          "minutes",
+          0.19
+        ],
+        [
+          "frozen...",
+          0.588
+        ],
+        [
+          "for",
+          0.929
+        ],
+        [
+          "a",
+          1.099
+        ],
+        [
+          "candy",
+          1.156
+        ],
+        [
+          "wrapper?!",
+          1.44
+        ]
+      ],
+      "gap": 0.35,
+      "style": ""
+    },
+    "L14": {
+      "speaker": "JUNE",
+      "text": "Wait until you see what neon green does!",
+      "start": 33.394,
+      "dur": 2.199,
+      "end": 35.593,
+      "segs": [
+        [
+          0.02,
+          0.2
+        ],
+        [
+          0.29,
+          2.16
+        ]
+      ],
+      "words": [
+        [
+          "Wait",
+          0.02
+        ],
+        [
+          "until",
+          0.282
+        ],
+        [
+          "you",
+          0.61
+        ],
+        [
+          "see",
+          0.807
+        ],
+        [
+          "what",
+          1.004
+        ],
+        [
+          "neon",
+          1.266
+        ],
+        [
+          "green",
+          1.529
+        ],
+        [
+          "does!",
+          1.857
         ]
       ],
       "gap": 0.45,
       "style": ""
     }
   },
-  "total": 20.75
+  "total": 38.34
 }
