@@ -18,7 +18,7 @@
 | **B5** | **Story Engine** | Multi-episode scripting, continuity callbacks, hook rotation, script-lint, repetitiveness scoring | PENDING | — |
 | **B6** | **Audio v2** | Mood scoring engine, procedural SFX library, pitch/speed variance, post-encode peak gate | PENDING | — |
 | **B7** | **QA 3D Hardening** | Full spatial/visual regression test suite, occlusion raycasting, camera-in-mesh gates | PENDING | — |
-| **B8** | **Publish Pack** | Automated metadata pack: titles, descriptions, hashtags, pinned comments, cover frame, SRT, COPPA & disclosure logs | **COMPLETED** | Pending commit |
+| **B8** | **Publish Pack** | Automated metadata pack: titles, descriptions, hashtags, pinned comments, cover frame, SRT, COPPA & disclosure logs | **COMPLETED** | `fe35e97` |
 | **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets | PENDING | — |
 | **B10**| **Hardening & Verification** | Multi-platform verification, docs, DoD checklist | PENDING | — |
 
