@@ -54,3 +54,4 @@ export function updateCaptions(capEl, chunks, t, state) {
     });
   }
 }
+

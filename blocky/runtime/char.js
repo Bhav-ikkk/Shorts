@@ -1,5 +1,5 @@
-// Blocky character rig v2: two-bone limbs (elbows/knees), outline hull, canvas face with mouth shapes, hair spring.
-// Everything is a pure function of time => deterministic.
+// Blocky Character Rig v2: Two-bone limbs (elbows/knees), outline hull, canvas face with mouth shapes, hair spring & secondary motion.
+// Everything is a pure function of time => 100% deterministic.
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
@@ -38,7 +38,7 @@ const rr = (c, x, y, w, h, r) => {
 
 const INK = '#17171d';
 
-// f: {eye:'open|blink|wide|squint|happy', dx, brow(-1 worried .. +1 angry), raise, open(0..1), shape:'A|O|E|M', smile(-1..1), cheeks}
+// Face drawing with expressiveness presets
 export function drawFace(c, f) {
   c.clearRect(0, 0, 256, 256);
   const ey = 112, dx = (f.dx || 0) * 10;
@@ -48,8 +48,9 @@ export function drawFace(c, f) {
   for (const x0 of [86, 170]) {
     const x = x0 + dx;
     c.fillStyle = INK;
-    if (f.eye === 'blink') rr(c, x - 16, ey - 3, 32, 7, 3);
-    else if (f.eye === 'wide') {
+    if (f.eye === 'blink') {
+      rr(c, x - 16, ey - 3, 32, 7, 3);
+    } else if (f.eye === 'wide') {
       c.fillStyle = '#fff';
       c.beginPath();
       c.ellipse(x, ey, 27, 34, 0, 0, 7);
@@ -111,8 +112,11 @@ export function drawFace(c, f) {
   } else {
     c.lineWidth = 9;
     c.beginPath();
-    if (f.smile >= 0) c.arc(128, my - 14 - f.smile * 6, 30, Math.PI * (.15 + .1 * (1 - f.smile)), Math.PI * (.85 - .1 * (1 - f.smile)));
-    else c.arc(128, my + 22, 28, Math.PI * (1.15 - .05 * -f.smile), Math.PI * (1.85 + .05 * -f.smile));
+    if (f.smile >= 0) {
+      c.arc(128, my - 14 - f.smile * 6, 30, Math.PI * (.15 + .1 * (1 - f.smile)), Math.PI * (.85 - .1 * (1 - f.smile)));
+    } else {
+      c.arc(128, my + 22, 28, Math.PI * (1.15 - .05 * -f.smile), Math.PI * (1.85 + .05 * -f.smile));
+    }
     c.stroke();
   }
 }
@@ -125,6 +129,7 @@ export function makeChar({ skin, shirt, pants, hair, hairStyle = 'cap', shoe = 0
   const torso = new THREE.Group(), head = new THREE.Group(), hairG = new THREE.Group();
   torso.position.y = .8;
 
+  // Two-bone leg setup: hip -> upper thigh -> knee -> lower shin -> foot
   const mkLeg = x => {
     const hip = new THREE.Group(), knee = new THREE.Group();
     hip.position.set(x, .8, 0);
@@ -142,6 +147,7 @@ export function makeChar({ skin, shirt, pants, hair, hairStyle = 'cap', shoe = 0
     return { hip, knee };
   };
 
+  // Two-bone arm setup: shoulder -> upper arm -> elbow -> lower forearm -> hand
   const mkArm = x => {
     const sh = new THREE.Group(), el = new THREE.Group(), hand = new THREE.Group();
     sh.position.set(x, .92, 0);
@@ -243,6 +249,8 @@ export function makeChar({ skin, shirt, pants, hair, hairStyle = 'cap', shoe = 0
       body.scale.set(1 + J.sq * .5, 1 - J.sq, 1 + J.sq * .5);
       torso.rotation.set(J.tx, J.ty, 0);
       head.rotation.set(J.hx, J.hy, J.hz);
+
+      // Two-bone limb joint rotations with physiological clamping
       AA.sh.rotation.set(-J.alx, 0, -J.alz);
       AA.el.rotation.set(-J.ale, 0, -J.alez);
       AB.sh.rotation.set(-J.arx, 0, J.arz);
@@ -251,10 +259,12 @@ export function makeChar({ skin, shirt, pants, hair, hairStyle = 'cap', shoe = 0
       LA.knee.rotation.x = J.lkl;
       LB.hip.rotation.x = -J.lrx;
       LB.knee.rotation.x = J.lkr;
+
+      // Secondary motion: hair/hat inertia & bounce spring
       const cl = (x, m) => Math.max(-m, Math.min(m, x));
       hairG.position.y = cl(-(J.bob - Jp.bob) * 1.1, .06);
       hairG.rotation.x = cl((Jp.hx - J.hx) * 1.2 + (Jp.tx - J.tx), .25);
-      hairG.rotation.z = cl((Jp.hz - J.hz) * 1.2, .2);
+      hairG.rotation.z = cl((Jp.hz - J.hz) * 1.2 - (J.ry - Jp.ry) * 0.4, .2);
     }
   };
 }
@@ -269,10 +279,13 @@ export const J0 = () => ({
 
 const S = Math.sin, C = Math.cos, mx = Math.max, sm = x => x <= 0 ? 0 : x >= 1 ? 1 : x * x * (3 - 2 * x);
 
+// Window function with overshoot / anticipation
 export const win = (t, a, b, fi = .15, fo = .2, ob = 0) => {
   const u = Math.min(1, Math.max(0, (t - a) / fi));
   let r = sm(u);
-  if (ob && u > 0 && u < 1) r = 1 + (1 + 1.7 * ob) * Math.pow(u - 1, 3) + 1.7 * ob * Math.pow(u - 1, 2);
+  if (ob && u > 0 && u < 1) {
+    r = 1 + (1 + 1.7 * ob) * Math.pow(u - 1, 3) + 1.7 * ob * Math.pow(u - 1, 2);
+  }
   return r * (1 - sm((t - (b - fo)) / fo));
 };
 
@@ -283,48 +296,281 @@ const add = (J, o, w = 1) => {
 const crouchD = k => -.82 * (1 - C(k));
 
 export const ACTIONS = {
-  idle: (t, p = 0) => ({ bob: S(t * 2.2 + p) * .012, alz: .07 + S(t * 1.6 + p) * .02, arz: .07 + S(t * 1.6 + p + 1) * .02, ale: .12, are: .12, hy: S(t * .9 + p) * .05 }),
-  walk: (t, o) => {
+  // Idle & basic locomotion
+  idle: (t, p = 0) => ({
+    bob: S(t * 2.2 + p) * .012,
+    alz: .07 + S(t * 1.6 + p) * .02,
+    arz: .07 + S(t * 1.6 + p + 1) * .02,
+    ale: .12, are: .12,
+    hy: S(t * .9 + p) * .05
+  }),
+
+  walk: (t, o = {}) => {
     const sp = o.spd || 2.4, ph = t * sp * Math.PI * 2, s = S(ph), c = C(ph), k = o.crouch || 0, A = o.amp || 1;
-    return { llx: s * .7 * A + k, lrx: -s * .7 * A + k, lkl: mx(0, c) * .9 * A + 2 * k, lkr: mx(0, -c) * .9 * A + 2 * k, alx: -s * .5 * A, arx: s * .5 * A, ale: .35 + mx(0, -s) * .3, are: .35 + mx(0, s) * .3, bob: Math.abs(s) * .06 * A + crouchD(k), lean: o.lean ?? .05, tx: o.tx || 0 };
+    return {
+      llx: s * .7 * A + k,
+      lrx: -s * .7 * A + k,
+      lkl: mx(0, c) * .9 * A + 2 * k,
+      lkr: mx(0, -c) * .9 * A + 2 * k,
+      alx: -s * .5 * A,
+      arx: s * .5 * A,
+      ale: .35 + mx(0, -s) * .3,
+      are: .35 + mx(0, s) * .3,
+      bob: Math.abs(s) * .06 * A + crouchD(k),
+      lean: o.lean ?? .05,
+      tx: o.tx || 0
+    };
   },
-  talk: (t, o) => {
+
+  sneak: (t, o = {}) => {
+    const sp = o.spd || 1.6, ph = t * sp * Math.PI * 2, s = S(ph), c = C(ph);
+    return {
+      llx: s * .45 + .5,
+      lrx: -s * .45 + .5,
+      lkl: mx(0, c) * 1.1 + .9,
+      lkr: mx(0, -c) * 1.1 + .9,
+      alx: .25, arx: .25,
+      alz: .35, arz: .35,
+      ale: .8, are: .8,
+      bob: crouchD(.5) + Math.abs(s) * .03,
+      lean: .15,
+      tx: .2,
+      hy: S(t * 3.5) * .25
+    };
+  },
+
+  tiptoe: (t, o = {}) => {
+    const sp = 2.0, ph = t * sp * Math.PI * 2, s = S(ph), c = C(ph);
+    return {
+      llx: s * .5,
+      lrx: -s * .5,
+      lkl: mx(0, c) * 1.3,
+      lkr: mx(0, -c) * 1.3,
+      alz: .65 + S(t * 4) * .1,
+      arz: .65 - S(t * 4) * .1,
+      ale: .25, are: .25,
+      bob: Math.abs(s) * .08 + .03
+    };
+  },
+
+  run: (t, o = {}) => {
+    const sp = 3.8, ph = t * sp * Math.PI * 2, s = S(ph), c = C(ph);
+    return {
+      llx: s * 1.1,
+      lrx: -s * 1.1,
+      lkl: mx(0, c) * 1.4,
+      lkr: mx(0, -c) * 1.4,
+      alx: -s * .9,
+      arx: s * .9,
+      ale: 1.1, are: 1.1,
+      bob: Math.abs(s) * .12,
+      lean: .22,
+      tx: .18
+    };
+  },
+
+  // Dialogue & Social Gestures
+  talk: (t, o = {}) => {
     const e = o.env || 0;
-    return { hx: e * .07 * S(t * 9), hy: e * .08 * S(t * 5), arx: e * .25 * mx(0, S(t * 6)), alx: e * .2 * mx(0, S(t * 6 + 2)), ale: e * .35 * mx(0, S(t * 6 + 1)), are: e * .4 * mx(0, S(t * 6 + 2.5)), bob: e * .02 };
+    return {
+      hx: e * .07 * S(t * 9),
+      hy: e * .08 * S(t * 5),
+      arx: e * .25 * mx(0, S(t * 6)),
+      alx: e * .2 * mx(0, S(t * 6 + 2)),
+      ale: e * .35 * mx(0, S(t * 6 + 1)),
+      are: e * .4 * mx(0, S(t * 6 + 2.5)),
+      bob: e * .02
+    };
   },
-  crouch: (t, o) => {
-    const k = o.k || .8;
-    return { llx: k, lrx: k, lkl: 2 * k, lkr: 2 * k, bob: crouchD(k), tx: o.tx || 0, hx: o.hx || 0 };
+
+  whisperLean: () => ({
+    tx: .32,
+    hy: -.2,
+    hx: .15,
+    arx: .85,
+    arz: -.3,
+    are: 1.8,
+    lean: .12
+  }),
+
+  wave: t => ({
+    arx: 1.0,
+    arz: .65,
+    are: 1.6 + S(t * 14) * .35,
+    hy: .15
+  }),
+
+  nod: t => ({
+    hx: .28 * S(t * 10),
+    tx: .06 * mx(0, S(t * 10))
+  }),
+
+  shake: t => ({
+    hy: S(t * 22) * .42,
+    alz: .5, arz: .5,
+    hz: S(t * 11) * .08,
+    ry: S(t * 22) * .05
+  }),
+
+  shrug: t => ({
+    alz: .55, arz: .55,
+    ale: 1.1, are: 1.1,
+    alez: .5, arez: .5,
+    hz: .14,
+    bob: .03,
+    hy: S(t * 3) * .1
+  }),
+
+  facepalm: () => ({
+    arx: 1.15,
+    are: 2.45,
+    hx: .28,
+    tx: .1
+  }),
+
+  beckon: t => ({
+    arx: 1.25,
+    arz: .2,
+    are: 1.0 + S(t * 10) * .5,
+    hy: -.2
+  }),
+
+  // Defensive, Posture & Reactions
+  handsUp: () => ({
+    alz: .85, arz: .85,
+    ale: .4, are: .4,
+    alez: -.9, arez: -.9,
+    lean: -.05
+  }),
+
+  handsHips: () => ({
+    alz: .65, arz: .65,
+    alez: -1.55, arez: -1.55,
+    ale: -.1, are: -.1,
+    tx: -.05
+  }),
+
+  headHands: () => ({
+    alz: 2.75, arz: 2.75,
+    alx: -.2, arx: -.2,
+    hx: -.12,
+    ale: .5, are: .5
+  }),
+
+  gasp: () => ({
+    alx: 1.1, arx: 1.1,
+    ale: 2.1, are: 2.1,
+    alz: .2, arz: .2,
+    hx: -.1,
+    lean: -.12,
+    sq: -.08
+  }),
+
+  recoil: () => ({
+    lean: -.24,
+    hx: -.15,
+    bob: .03,
+    alx: .6, arx: .6,
+    ale: 1.2, are: 1.2
+  }),
+
+  laugh: t => ({
+    hx: -.22 + S(t * 20) * .08,
+    bob: Math.abs(S(t * 10)) * .06,
+    tx: -.12,
+    alx: .3, arx: .3,
+    ale: .8, are: .8
+  }),
+
+  cry: t => ({
+    hx: .32 + S(t * 8) * .04,
+    tx: .2,
+    alx: .95, arx: .95,
+    ale: 2.3, are: 2.3,
+    bob: Math.abs(S(t * 8)) * .025
+  }),
+
+  celebrate: t => {
+    const s = S(t * 12);
+    return {
+      alz: 2.3, arz: 2.3,
+      ale: .9, are: .9,
+      hx: -.15,
+      bob: Math.abs(s) * .15,
+      sq: s * .08
+    };
   },
-  sit: () => ({ llx: 1.45, lrx: 1.45, lkl: .25, lkr: .25, bob: -.62, alx: .35, arx: .35, ale: .5, are: .5 }),
-  peek: () => ({ llx: .3, lrx: .3, lkl: .6, lkr: .6, bob: crouchD(.3), tx: .5, hx: .2, alx: .8, arx: .8, ale: .2, are: .2 }),
+
+  dance: t => {
+    const s = S(t * 8), c = C(t * 8);
+    return {
+      ry: s * .35,
+      tx: c * .1,
+      alz: .6 + s * .4,
+      arz: .6 - s * .4,
+      ale: .9, are: .9,
+      bob: Math.abs(c) * .06
+    };
+  },
+
+  // Pointing & Props
   pointA: () => ({ alz: 1.45, alx: .25, ale: .05, hy: -.35 }),
   pointB: () => ({ arz: 1.45, arx: .25, are: .05, hy: .35 }),
   pointDown: () => ({ arx: .95, are: .08, arz: .12, hx: .25, tx: .1 }),
   pointChest: () => ({ arx: .95, arz: -.5, are: 1.3 }),
-  beckon: t => ({ arx: 1.25, arz: .2, are: 1.0 + S(t * 10) * .5, hy: -.2 }),
-  wave: t => ({ arx: 1.0, arz: .55, are: 1.6 + S(t * 14) * .35 }),
-  shrug: t => ({ alz: .5, arz: .5, ale: 1.0, are: 1.0, alez: .5, arez: .5, hz: .12, bob: .03, hy: S(t * 3) * .1 }),
-  facepalm: () => ({ arx: 1.15, are: 2.45, hx: .28, tx: .1 }),
-  handsUp: () => ({ alz: .8, arz: .8, ale: .35, are: .35, alez: -.9, arez: -.9 }),
-  handsHips: () => ({ alz: .65, arz: .65, alez: -1.55, arez: -1.55, ale: -.1, are: -.1 }),
-  headHands: () => ({ alz: 2.75, arz: 2.75, alx: -.2, arx: -.2, hx: -.12, ale: .5, are: .5 }),
-  gasp: () => ({ alx: 1.1, arx: 1.1, ale: 2.1, are: 2.1, alz: .2, arz: .2, hx: -.1, lean: -.1 }),
-  eat: t => ({ arx: 1.25, are: 2.0 + .12 * S(t * 14), arz: .1, hx: .08 + .04 * S(t * 14) }),
-  recoil: () => ({ lean: -.22, hx: -.1, bob: .02 }),
   lookDown: () => ({ hx: .3 }),
-  look: (t, o) => ({ hy: o.hy || 0, hx: o.hx || 0 }),
-  shake: t => ({ hy: S(t * 22) * .42, alz: .5, arz: .5, hz: S(t * 11) * .08, ry: S(t * 22) * .05 }),
-  nod: t => ({ hx: .18 * S(t * 14) }),
-  laugh: t => ({ hx: -.2 + S(t * 20) * .08, bob: Math.abs(S(t * 10)) * .05, tx: -.1, alx: .3, arx: .3, ale: .8, are: .8 }),
-  jump: (t, o) => {
+  look: (t, o = {}) => ({
+    hy: o.hy ?? (S(t * 2.5) * .35),
+    hx: o.hx ?? .12
+  }),
+  eat: t => ({ arx: 1.25, are: 2.0 + .12 * S(t * 14), arz: .1, hx: .08 + .04 * S(t * 14) }),
+
+  // Posing & Jumping
+  crouch: (t, o = {}) => {
+    const k = o.k || .8;
+    return { llx: k, lrx: k, lkl: 2 * k, lkr: 2 * k, bob: crouchD(k), tx: o.tx || 0, hx: o.hx || 0 };
+  },
+
+  sit: () => ({
+    llx: 1.45, lrx: 1.45,
+    lkl: .25, lkr: .25,
+    bob: -.62,
+    alx: .35, arx: .35,
+    ale: .5, are: .5
+  }),
+
+  peek: () => ({
+    llx: .3, lrx: .3,
+    lkl: .6, lkr: .6,
+    bob: crouchD(.3),
+    tx: .5, hx: .2,
+    alx: .8, arx: .8,
+    ale: .2, are: .2
+  }),
+
+  fall: t => {
+    const u = Math.min(1, t);
+    return {
+      lean: u * 1.4,
+      bob: -u * .7,
+      alx: 1.2, arx: 1.2,
+      alz: .6, arz: .6,
+      llx: .8, lrx: .8
+    };
+  },
+
+  jump: (t, o = {}) => {
     const t0 = o.t0 + .12, d = o.dur || .55, u = (t - t0) / d, h = o.h || .4;
     let bob = 0, sq = 0, tk = 0;
-    if (u < 0) sq = .12 * mx(0, 1 + u / .12);
-    else if (u < 1) {
+    if (u < 0) {
+      sq = .12 * mx(0, 1 + u / .12); // anticipation crouch squash
+    } else if (u < 1) {
       bob = 4 * h * u * (1 - u);
       tk = S(Math.PI * u);
-    } else sq = .12 * mx(0, 1 - (u - 1) / .12);
+      sq = -.08 * S(Math.PI * u); // mid-air stretch
+    } else {
+      sq = .14 * mx(0, 1 - (u - 1) / .12); // landing impact squash
+    }
     return { bob, sq, llx: .5 * tk, lrx: .5 * tk, lkl: 1.0 * tk, lkr: 1.0 * tk };
   }
 };

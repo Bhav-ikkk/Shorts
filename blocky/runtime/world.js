@@ -180,3 +180,4 @@ export function buildKitchenSet(scene) {
     puffDirs
   };
 }
+

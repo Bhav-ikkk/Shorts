@@ -12,6 +12,7 @@
     "master": "node cli.js master",
     "shots": "node cli.js shots",
     "sheet": "node cli.js sheet",
+    "lint3d": "node cli.js lint3d",
     "qa": "node cli.js qa",
     "all": "node cli.js all"
   },

@@ -36,3 +36,4 @@ export function updateCamera(cam, t, shots, punchList) {
   cam.lookAt(l);
   cam.rotateZ(lerp(s.roll[0], s.roll[1], u));
 }
+

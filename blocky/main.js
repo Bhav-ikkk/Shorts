@@ -263,6 +263,7 @@ window.seek = t => {
 };
 
 window.TOTAL = TOTAL;
+window.__BLOCKY = { scene, cam, CH, world, SHOTS, TOTAL, AN, place, shown };
 window.ready = document.fonts.load('800 80px BR').then(() => {
   seek(0);
   return true;

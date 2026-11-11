@@ -84,3 +84,4 @@ export function updateFx(t, state) {
     document.getElementById('flash').style.opacity = (t > slam.t && t < slam.t + .1) ? .55 * (1 - (t - slam.t) / .1) : 0;
   }
 }
+

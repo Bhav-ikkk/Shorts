@@ -27,7 +27,15 @@
     "shake",
     "nod",
     "laugh",
-    "jump"
+    "jump",
+    "sneak",
+    "tiptoe",
+    "run",
+    "whisperLean",
+    "celebrate",
+    "dance",
+    "cry",
+    "fall"
   ],
   "cameraShots": [
     "closeup-prop",
