@@ -15,11 +15,11 @@
 | **B2** | **Rig v2 & Character Actions** | Two-bone limb kinematics (elbows/knees), squash & stretch, inertial hair spring, 34 validated actions, 3D spatial QA lint (`lint3d`), action showcase film | **COMPLETED** | `77f9d55` |
 | **B3** | **Faces & Acting** | 10 emotion presets, 8 phoneme mouth visemes (`A`,`E`,`O`,`U`,`M`,`F`,`L`,`S`), eye gaze tracking (`setLookAt`), Pearson lip-sync correlation gate ($\rho \ge 0.6$), acting showcase film | **COMPLETED** | `5a245c3` |
 | **B4** | **Sets & Props** | 6 procedural sets (Kitchen, Bedroom, Hallway, Park, Spooky House, Obby), 40+ low-poly props, 4 lighting moods, sets showcase film & contact sheet | **COMPLETED** | `c714b79` |
-| **B5** | **Story Engine** | Multi-episode scripting, continuity callbacks, hook rotation, script-lint, repetitiveness scoring | PENDING | — |
-| **B6** | **Audio v2** | Mood scoring engine, procedural SFX library, pitch/speed variance, post-encode peak gate | PENDING | — |
-| **B7** | **QA 3D Hardening** | Full spatial/visual regression test suite, occlusion raycasting, camera-in-mesh gates | PENDING | — |
+| **B5** | **Story Engine** | Multi-episode scripting, continuity callbacks, hook rotation, script-lint, repetitiveness scoring | **COMPLETED** | `2fe291d` |
+| **B6** | **Audio v2** | Mood scoring engine, procedural SFX library, pitch/speed variance, post-encode peak gate | **COMPLETED** | `6c28915` |
+| **B7** | **QA 3D Hardening** | Full spatial/visual regression test suite, occlusion raycasting, camera-in-mesh gates | **COMPLETED** | `455367d` |
 | **B8** | **Publish Pack** | Automated metadata pack: titles, descriptions, hashtags, pinned comments, cover frame, SRT, COPPA & disclosure logs | **COMPLETED** | `fe35e97` |
-| **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets | PENDING | — |
+| **B9** | **Blender (Optional)** | Headless `blender -b -P` glTF export pipeline for hero assets, BlenderMCP guide, deterministic playback | **COMPLETED** | Pending commit |
 | **B10**| **Hardening & Verification** | Multi-platform verification, docs, DoD checklist | PENDING | — |
 
 ---
@@ -359,6 +359,57 @@ Build the multi-episode publish pack automation subsystem (`blocky/publish/pack.
   - `blocky/series/the-blockies/ep01-crumb-trail/publish/`
   - `blocky/series/the-blockies/ep02-floor-is-lava/publish/`
   - `blocky/series/the-blockies/ep03-secret-attic/publish/`
+
+---
+
+## [2026-11-11] — Phase B9: Blender Optional & Asset Pipeline (COMPLETED)
+
+### Objective
+Implement the Tier C asset pipeline and headless glTF export workflow (`blocky/tools/make_asset.py`), author BlenderMCP architectural documentation (`blocky/docs/blender_mcp.md`), import and verify 1 hero asset in binary glTF (`hero_trophy.glb`), and establish the deterministic Three.js playback controller (`blocky/runtime/gltf_asset.js`) ensuring `window.seek(t)` is a pure function of time.
+
+### Actions Taken & Technical Solutions
+1. **Headless Asset Generator & Exporter (`blocky/tools/make_asset.py`)**:
+   - Engineered dual-mode export script:
+     - Headless Blender execution: `blender -b -P blocky/tools/make_asset.py -- --asset trophy --out ...`
+     - Standalone Python execution: builds 100% compliant glTF 2.0 binary (`.glb`) containers via native standard library (`struct`, `json`, `math`).
+   - Packaged mesh primitives (PedestalBase, PedestalTier, TrophyStem, TrophyCup, HandleLeft, HandleRight, HeroGemStar) with normals and indices.
+   - Assigned PBR Metallic-Roughness materials: `HeroGold` (metallic 0.95, roughness 0.22), `ObsidianSlate` (slate base), `RubyGemstone` (emissive ruby crystal).
+   - Baked 4.0-second seamless looping animation clip (`TrophyFloat`) containing 3 channels:
+     - Translation: Sinusoidal vertical bob ($y(t) = 0.14 \times \sin(2\pi \cdot t / 4.0)$).
+     - Rotation: Continuous $360^\circ$ yaw rotation around the Y-axis.
+     - Scale: Harmonic breathing pulse ($s(t) = 1.0 + 0.05 \times \sin(4\pi \cdot t / 4.0)$).
+2. **Hero glTF Model & Asset Manifest (`blocky/assets/`)**:
+   - Produced `blocky/assets/models/hero_trophy.glb` (10,332 bytes).
+   - Authored `blocky/assets/LICENSE.md` certifying CC0-1.0 / original procedural IP clearance and trademark cleanliness.
+   - Built `blocky/assets/resolver.js` managing asset paths, file size validations, and licensing audits.
+3. **Deterministic Three.js glTF Asset Controller (`blocky/runtime/gltf_asset.js`)**:
+   - Built `GltfAsset` class wrapping Three.js `GLTFLoader` and `AnimationMixer`.
+   - Enforced deterministic seeking: calls `mixer.setTime(loopT)` instead of delta-time `update(dt)`, eliminating frame drift across forward, reverse, and random seek jumps.
+4. **BlenderMCP Documentation (`blocky/docs/blender_mcp.md`)**:
+   - Documented BlenderMCP socket server protocol (JSON-RPC over TCP on port 9876).
+   - Detailed remote commands (`inspect_scene`, `create_mesh`, `bake_action`, `export_gltf`).
+   - Reaffirmed core rule: *Never render final video frames in Blender for daily Shorts production; model/animate in Blender, export glTF, film in Three.js.*
+5. **Unit & Determinism Test Suite (`blocky/tests/gltf.test.js`)**:
+   - Added 35 test assertions covering headless generation, GLB magic/chunk headers, glTF 2.0 schema, Three.js GLTFLoader parsing, cross-instance multi-pass determinism, kinematics ($y=+0.14$ at $t=1.0\text{s}$, $y=-0.14$ at $t=3.0\text{s}$), and licensing verification.
+   - Achieved **35 / 35 test assertions passed**.
+6. **CLI Integration (`blocky/cli.js`)**:
+   - Added `node blocky/cli.js gltf`.
+   - Integrated glTF tests into `node blocky/cli.js test`.
+   - Integrated glTF asset build into `node blocky/cli.js all`.
+
+### Measured Results & Verification Evidence
+- **glTF Test Suite (`node blocky/tests/gltf.test.js`)**: **35 / 35 passed**.
+- **Determinism Check**: Multi-pass frame pose comparison yielded 0.000 float deviation across all test timestamps.
+- **Full Regression Test Suite (`node blocky/cli.js test`)**: **470 / 470 checks passed** (Story 34, Actions 34, Faces 14, Props 40, Sets 24, Audio 8, QA 3D 10, Publish 265, glTF 35, Determinism 6).
+- **Artifacts Generated**:
+  - `blocky/tools/make_asset.py`
+  - `blocky/assets/models/hero_trophy.glb` (10,332 bytes)
+  - `blocky/assets/LICENSE.md`
+  - `blocky/assets/resolver.js`
+  - `blocky/runtime/gltf_asset.js`
+  - `blocky/docs/blender_mcp.md`
+  - `blocky/tests/gltf.test.js`
+
 
 
 

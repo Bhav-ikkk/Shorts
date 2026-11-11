@@ -219,7 +219,7 @@ async function runStory() {
 }
 
 async function runTest() {
-  console.log('[CLI] Running story, actions, faces, props, sets, audio, qa3d, publish, and determinism regression tests...');
+  console.log('[CLI] Running story, actions, faces, props, sets, audio, qa3d, publish, gltf, and determinism regression tests...');
   await runCmd('node', ['tests/story.test.js']);
   await runCmd('node', ['tests/actions.test.js']);
   await runCmd('node', ['tests/faces.test.js']);
@@ -228,7 +228,14 @@ async function runTest() {
   await runCmd('node', ['tests/audio.test.js']);
   await runCmd('node', ['tests/qa3d.test.js']);
   await runCmd('node', ['tests/publish.test.js']);
+  await runCmd('node', ['tests/gltf.test.js']);
   await runCmd('node', ['tests/determinism.test.js']);
+}
+
+async function runGltf() {
+  console.log('[CLI] Generating glTF hero assets (Tier C) & running determinism verification...');
+  await runCmd('python', ['tools/make_asset.py', '--asset', 'trophy', '--out', 'assets/models/hero_trophy.glb']);
+  await runCmd('node', ['tests/gltf.test.js']);
 }
 
 async function runPack(episode) {
@@ -303,6 +310,9 @@ async function main() {
     case 'pack':
       await runPack(process.argv[3]);
       break;
+    case 'gltf':
+      await runGltf();
+      break;
     case 'all':
       await runCompile();
       await runVoice();
@@ -315,11 +325,12 @@ async function main() {
       await runLipSync();
       await runQA();
       await runPack();
+      await runGltf();
       await runTest();
       break;
     default:
       console.log(`Unknown command: ${stage}`);
-      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | loudness | qa | pack | all');
+      console.log('Available commands: bench | story | compile | test | voice | render | audio | master | shots | sheet | lint3d | sync | loudness | qa | pack | gltf | all');
       process.exit(1);
   }
 }
