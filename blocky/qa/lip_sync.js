@@ -176,3 +176,4 @@ runLipSyncQA().catch(err => {
   console.error('[Lip-Sync QA Error]', err);
   process.exit(1);
 });
+

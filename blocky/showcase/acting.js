@@ -227,3 +227,4 @@ window.ready = document.fonts.load('800 86px BR').then(() => {
   seek(0);
   return true;
 });
+

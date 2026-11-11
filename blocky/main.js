@@ -2,7 +2,7 @@
 // Consumes episode.json + anchors.json. seek(t) is a pure function of time.
 import * as THREE from 'three';
 import { makeChar, compose, win, EMOTIONS } from './runtime/char.js';
-import { buildKitchenSet } from './runtime/world.js';
+import { buildSet } from './runtime/world.js';
 import { createCamera, updateCamera } from './runtime/camera.js';
 import { prepareCaptionChunks, updateCaptions } from './runtime/captions.js';
 import { updateFx, projectToScreen } from './runtime/fx.js';
@@ -52,7 +52,9 @@ const scene = new THREE.Scene();
 const cam = createCamera(W, H);
 
 /* ---------- Procedural Set & World ---------- */
-const world = buildKitchenSet(scene);
+const setName = EP.set || 'kitchen';
+const lightingMood = EP.lightingMood || 'day';
+const world = buildSet(setName, scene, lightingMood);
 
 /* ---------- Cast Initialization ---------- */
 const CH = {};
@@ -296,10 +298,11 @@ window.seek = t => {
 
   // 2. Toggles & World Props
   for (const tg of toggles) {
-    if (tg.target === 'cookies') world.cookies.visible = tg.visible ? t >= tg.t : t < tg.t;
+    if (tg.target === 'cookies' && world.cookies) world.cookies.visible = tg.visible ? t >= tg.t : t < tg.t;
   }
-  world.hMin.rotation.z = -t * .35;
-  world.hHr.rotation.z = -t * .03;
+  if (world.hMin) world.hMin.rotation.z = -t * .35;
+  if (world.hHr) world.hHr.rotation.z = -t * .03;
+  if (world.spinner) world.spinner.rotation.y = t * 2.5;
 
   // 3. Camera
   updateCamera(cam, t, SHOTS, PUNCH);

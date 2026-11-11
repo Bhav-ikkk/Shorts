@@ -197,6 +197,21 @@ class EpisodeCompiler {
       }
     }
 
+    // 9. Validate Set & Lighting Mood
+    if (episodeData.set && this.vocab.sets && !this.vocab.sets.includes(episodeData.set)) {
+      warnings.push(`Set "${episodeData.set}" is not in vocabulary.json sets.`);
+    }
+    if (episodeData.lightingMood && this.vocab.lightingMoods && !this.vocab.lightingMoods.includes(episodeData.lightingMood)) {
+      warnings.push(`Lighting mood "${episodeData.lightingMood}" is not in vocabulary.json lightingMoods.`);
+    }
+
+    // 10. Validate Props
+    for (const p of episodeData.props || []) {
+      if (this.vocab.props && !this.vocab.props.includes(p.name)) {
+        warnings.push(`Prop "${p.name}" held by ${p.who} is not in vocabulary.json props list.`);
+      }
+    }
+
     if (errors.length > 0) {
       const errHeader = `Director Compilation Failed with ${errors.length} error(s):\n`;
       throw new Error(errHeader + errors.map(e => `  - ${e}`).join('\n'));

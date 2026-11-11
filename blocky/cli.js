@@ -214,9 +214,11 @@ async function runCompile() {
 }
 
 async function runTest() {
-  console.log('[CLI] Running determinism, rig, action, and facial regression tests...');
+  console.log('[CLI] Running determinism, rig, action, facial, props, and sets regression tests...');
   await runCmd('node', ['tests/actions.test.js']);
   await runCmd('node', ['tests/faces.test.js']);
+  await runCmd('node', ['tests/props.test.js']);
+  await runCmd('node', ['tests/sets.test.js']);
   await runCmd('node', ['tests/determinism.test.js']);
 }
 
