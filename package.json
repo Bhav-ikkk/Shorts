@@ -15,6 +15,7 @@
     "film:qa": "node engine/cli.js qa",
     "film:all": "node engine/cli.js all",
     "blocky:bench": "node blocky/cli.js bench",
+    "blocky:story": "node blocky/cli.js story",
     "blocky:compile": "node blocky/cli.js compile",
     "blocky:test": "node blocky/cli.js test",
     "blocky:voice": "node blocky/cli.js voice",
@@ -23,9 +24,17 @@
     "blocky:master": "node blocky/cli.js master",
     "blocky:shots": "node blocky/cli.js shots",
     "blocky:sheet": "node blocky/cli.js sheet",
+    "blocky:lint3d": "node blocky/cli.js lint3d",
+    "blocky:sync": "node blocky/cli.js sync",
+    "blocky:loudness": "node blocky/cli.js loudness",
     "blocky:qa": "node blocky/cli.js qa",
+    "blocky:pack": "node blocky/cli.js pack all",
+    "blocky:gltf": "node blocky/cli.js gltf",
+    "blocky:dod": "node blocky/cli.js dod",
     "blocky:all": "node blocky/cli.js all",
-    "test": "node engine/cli.js doctor"
+    "test": "node engine/cli.js doctor",
+    "test:blocky": "node blocky/cli.js test",
+    "test:all": "node engine/cli.js doctor && node blocky/cli.js test"
   },
   "dependencies": {
     "@fontsource/bricolage-grotesque": "^5.3.0",

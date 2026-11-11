@@ -4,6 +4,7 @@
   "version": "0.2.0",
   "scripts": {
     "bench": "node cli.js bench",
+    "story": "node cli.js story",
     "compile": "node cli.js compile",
     "test": "node cli.js test",
     "voice": "node cli.js voice",
@@ -14,7 +15,11 @@
     "sheet": "node cli.js sheet",
     "lint3d": "node cli.js lint3d",
     "sync": "node cli.js sync",
+    "loudness": "node cli.js loudness",
     "qa": "node cli.js qa",
+    "pack": "node cli.js pack all",
+    "gltf": "node cli.js gltf",
+    "dod": "node cli.js dod",
     "all": "node cli.js all"
   },
   "dependencies": {
