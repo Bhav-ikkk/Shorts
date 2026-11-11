@@ -219,13 +219,14 @@ async function runStory() {
 }
 
 async function runTest() {
-  console.log('[CLI] Running story, actions, faces, props, sets, audio, and determinism regression tests...');
+  console.log('[CLI] Running story, actions, faces, props, sets, audio, qa3d, and determinism regression tests...');
   await runCmd('node', ['tests/story.test.js']);
   await runCmd('node', ['tests/actions.test.js']);
   await runCmd('node', ['tests/faces.test.js']);
   await runCmd('node', ['tests/props.test.js']);
   await runCmd('node', ['tests/sets.test.js']);
   await runCmd('node', ['tests/audio.test.js']);
+  await runCmd('node', ['tests/qa3d.test.js']);
   await runCmd('node', ['tests/determinism.test.js']);
 }
 

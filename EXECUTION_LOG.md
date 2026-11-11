@@ -271,5 +271,43 @@ Build the Audio v2 subsystem: 25 procedural sound effects, 7 procedural music mo
   - `node blocky/tests/audio.test.js`: **8/8 passed**.
   - Total Regression Suite (`node blocky/cli.js test`): **156/156 checks passed** (Story 34, Actions 34, Faces 10, Props 40, Sets 24, Audio 8, Determinism 6).
 
+---
+
+## [2026-11-11] — Phase B7: QA 3D (COMPLETED)
+
+### Objective
+Implement the 3D-aware QA validation subsystem enforcing the Part 10 specifications (camera inside geometry, subject framing, face visibility during speech, raycast occlusion, caption overlap, UI safe area, shot rhythm analysis, and first-frame non-empty validation), with fixture testing proving that bad shots fail and valid production shots pass.
+
+### Actions Taken & Technical Solutions
+1. **3D Spatial QA Linter (`blocky/qa/lint3d.js`)**:
+   - Camera-inside-geometry detection: near plane threshold check ($0.38\text{m}$) and bounding box containment.
+   - Speaking subject on-screen framing: projects head center and corners to NDC with 6% safe margins ($[-0.88, 0.88]$).
+   - Face visibility & orientation: computes dot product between character forward vector and camera view vector (flags if character faces away with $\cos\theta < -0.82$).
+   - Raycast occlusion: casts rays from camera to head center through Three.js scene hierarchy; flags if an external mesh blocks line-of-sight.
+   - Platform UI safe area: ensures captions and key visual focus remain within the vertical 10% to 80% screen window ($192\text{px}$ to $1536\text{px}$).
+   - Shot rhythm & event pacing: verifies no static shot exceeds $3.5\text{s}$ and categorizes shot durations into a histogram (fast, optimal, medium, static).
+   - First-frame test: captures frame 0 to `out/poster.png` and confirms non-blank rendering.
+2. **Negative Fixture & Positive Timeline Test Suite (`blocky/tests/qa3d.test.js`)**:
+   - Implemented 5 defective shot fixtures:
+     - Fixture 1 (`CAMERA_INSIDE_GEOMETRY`): Camera placed inside Pip's torso ($0.10\text{m} < 0.38\text{m}$) $\to$ **DETECTED & FAILED**.
+     - Fixture 2 (`SPEAKER_OUT_OF_FRAME`): Pip placed offscreen at $x=20.0$ (projected $x=164.9$) $\to$ **DETECTED & FAILED**.
+     - Fixture 3 (`SPEAKER_FACING_AWAY`): Pip rotated $180^\circ$ away from camera ($\cos\theta = -1.00$) $\to$ **DETECTED & FAILED**.
+     - Fixture 4 (`FLOOR_PENETRATION`): Pip sunken $45\text{cm}$ into ground ($y=-0.45\text{m}$) $\to$ **DETECTED & FAILED**.
+     - Fixture 5 (`SPEAKER_OCCLUDED`): Solid wall placed directly between camera and speaker $\to$ **DETECTED & FAILED**.
+   - Valid production timeline verification: 35 checkpoints sampled, 175 constraints evaluated $\to$ **100% PASS (0 critical errors)**.
+3. **CLI Integration**:
+   - Added `qa3d.test.js` to `node blocky/cli.js test`.
+
+### Measured Results & Verification Evidence
+- **QA 3D Test Suite (`node blocky/tests/qa3d.test.js`)**: **10/10 assertions passed** (5 negative fixtures caught, 5 positive validation checks passed).
+- **Shot Rhythm Distribution**:
+  - Fast ($< 1.5\text{s}$): 7 shots
+  - Optimal ($1.5 - 2.5\text{s}$): 8 shots
+  - Medium ($2.5 - 3.5\text{s}$): 2 shots
+  - Average Shot Length: $1.95\text{s}$ (ideal for Shorts/Reels retention).
+- **First Frame Verification**: `out/poster.png` captured and confirmed non-empty.
+- **Full Regression Test Suite (`node blocky/cli.js test`)**: **166 / 166 checks passed** (Story 34, Actions 34, Faces 10, Props 40, Sets 24, Audio 8, QA 3D 10, Determinism 6).
+
+
 
 
