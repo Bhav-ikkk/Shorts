@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "the-blockies-ep4",
+  "title": "The Red Streetlamp",
+  "series": "THE BLOCKIES",
+  "format": "suspense-comedy",
+  "set": "park",
+  "lightingMood": "night",
+  "hook": "In this town, when the streetlamp turns red... freeze!",
+  "lines": [
+    {
+      "id": "L1",
+      "who": "PIP",
+      "text": "In this town, when the streetlamp turns red... freeze!",
+      "spoken": "In this town, when the streetlamp turns red, freeze!",
+      "beat": "hook",
+      "pause": 0.35,
+      "emotion": "suspicious",
+      "action": "look"
+    },
+    {
+      "id": "L2",
+      "who": "MOX",
+      "text": "Wait! It is glowing bright red right now!",
+      "beat": "setup",
+      "pause": 0.25,
+      "emotion": "panic",
+      "action": "gasp"
+    },
+    {
+      "id": "L3",
+      "who": "PIP",
+      "text": "Don't move, Mox! Not even a muscle!",
+      "beat": "escalation",
+      "pause": 0.30,
+      "emotion": "panic",
+      "action": "handsUp"
+    },
+    {
+      "id": "L4",
+      "who": "MOX",
+      "text": "My left foot is itching so bad!",
+      "beat": "escalation",
+      "pause": 0.25,
+      "emotion": "guilt",
+      "action": "recoil"
+    },
+    {
+      "id": "L5",
+      "who": "PIP",
+      "text": "Wait! Who is that walking past the bench?!",
+      "beat": "twist",
+      "pause": 0.30,
+      "emotion": "shock",
+      "action": "pointA"
+    },
+    {
+      "id": "L6",
+      "who": "JUNE",
+      "text": "Rules do not count if you have snacks.",
+      "beat": "payoff",
+      "pause": 0.30,
+      "emotion": "smug",
+      "action": "eat"
+    },
+    {
+      "id": "L7",
+      "who": "MOX",
+      "text": "Why is the light flashing purple now?!",
+      "beat": "cliffhanger",
+      "pause": 0.45,
+      "emotion": "panic",
+      "action": "headHands"
+    }
+  ]
+}

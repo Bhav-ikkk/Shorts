@@ -33,3 +33,4 @@ Assets modeled in external DCC packages (such as Blender) must be exported throu
 blender -b -P blocky/tools/make_asset.py -- --asset <name> --out blocky/assets/models/<name>.glb
 ```
 No binary frames are rendered in Blender. Only binary glTF containers (`.glb`) containing geometry meshes, PBR materials, and baked animation curves are exported for deterministic playback in Three.js.
+

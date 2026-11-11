@@ -68,3 +68,4 @@ class AssetResolver {
 }
 
 module.exports = { AssetResolver, ASSET_MANIFEST, ASSETS_DIR };
+

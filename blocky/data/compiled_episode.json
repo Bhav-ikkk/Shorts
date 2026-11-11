@@ -1,480 +1,127 @@
 {
-  "id": "kitchen-mysteries-ep2",
-  "title": "The Crumb Trail",
-  "episodeTag": "EP 2",
-  "totalDuration": 35.15,
+  "id": "the-blockies-ep4",
+  "title": "The Red Streetlamp",
+  "episodeTag": "",
+  "totalDuration": 20.75,
   "compiled": {
     "stage": [
       {
         "who": "PIP",
         "t": "L1.start",
-        "x": 0.9,
-        "z": 1,
-        "ry": -0.3,
+        "x": -0.6,
+        "z": 0.9,
+        "ry": 0.2,
         "tResolved": 0.2
-      },
-      {
-        "who": "PIP",
-        "t": "L5.word(Follow)",
-        "x": 0.9,
-        "z": 1,
-        "ry": -0.3,
-        "tResolved": 10.201
-      },
-      {
-        "who": "PIP",
-        "t": "L6.start+1.3",
-        "x": 0.72,
-        "z": 0.35,
-        "ry": 2.9,
-        "tResolved": 12.501
-      },
-      {
-        "who": "PIP",
-        "t": "L10.start+0.2",
-        "x": 0.72,
-        "z": 0.35,
-        "ry": 2.9,
-        "tResolved": 19.149
-      },
-      {
-        "who": "PIP",
-        "t": "L10.end+0.05",
-        "x": 0.9,
-        "z": 0.35,
-        "ry": -0.3,
-        "tResolved": 19.687
       },
       {
         "who": "MOX",
         "t": "L1.start",
-        "x": -5,
-        "z": 1,
-        "ry": 0.6,
+        "x": 0.7,
+        "z": 1.1,
+        "ry": -0.3,
         "tResolved": 0.2
-      },
-      {
-        "who": "MOX",
-        "t": "L2.start-0.05",
-        "x": -5,
-        "z": 1,
-        "ry": 0.6,
-        "tResolved": 3.062
-      },
-      {
-        "who": "MOX",
-        "t": "L2.start+1.0",
-        "x": -0.9,
-        "z": 1,
-        "ry": 0.3,
-        "e": "lin",
-        "tResolved": 4.112
-      },
-      {
-        "who": "MOX",
-        "t": "L5.word(Follow)+0.1",
-        "x": -0.9,
-        "z": 1,
-        "ry": 0.3,
-        "tResolved": 10.301
-      },
-      {
-        "who": "MOX",
-        "t": "L6.start+1.3",
-        "x": -0.72,
-        "z": 0.35,
-        "ry": 3.38,
-        "tResolved": 12.501
-      },
-      {
-        "who": "MOX",
-        "t": "L10.start+0.2",
-        "x": -0.72,
-        "z": 0.35,
-        "ry": 3.38,
-        "tResolved": 19.149
-      },
-      {
-        "who": "MOX",
-        "t": "L10.end+0.05",
-        "x": -0.9,
-        "z": 0.35,
-        "ry": 0.3,
-        "tResolved": 19.687
       },
       {
         "who": "JUNE",
         "t": "L1.start",
-        "x": 0,
-        "z": -0.85,
+        "x": 0.2,
+        "z": -1.6,
         "ry": 0,
         "tResolved": 0.2
       },
       {
         "who": "JUNE",
-        "t": "L11.start+0.6",
-        "x": 0,
-        "z": -0.85,
+        "t": "L5.start",
+        "x": 0.2,
+        "z": -1.6,
         "ry": 0,
-        "tResolved": 20.588
+        "tResolved": 11.07
       },
       {
         "who": "JUNE",
-        "t": "L11.start+1.95",
-        "x": 0,
-        "z": 0.45,
+        "t": "L6.start+0.4",
+        "x": 0.2,
+        "z": 0.5,
         "ry": 0,
         "e": "lin",
-        "tResolved": 21.938
+        "tResolved": 14.096
       }
     ],
     "actions": [
       {
-        "who": "MOX",
-        "do": "walk",
-        "from": "L2.start-0.05",
-        "to": "L2.start+1.05",
-        "o": {
-          "spd": 2.4
-        },
-        "fi": 0.05,
-        "fo": 0.2,
-        "t0Resolved": 3.062,
-        "t1Resolved": 4.162
+        "who": "PIP",
+        "do": "look",
+        "from": "L1.start",
+        "to": "L1.end",
+        "t0Resolved": 0.2,
+        "t1Resolved": 2.797
       },
       {
         "who": "MOX",
-        "do": "handsUp",
-        "from": "L2.start+1.0",
+        "do": "gasp",
+        "from": "L2.start",
         "to": "L2.end",
-        "ob": 0.4,
-        "t0Resolved": 4.112,
-        "t1Resolved": 4.936
+        "t0Resolved": 3.147,
+        "t1Resolved": 5.997
       },
       {
         "who": "PIP",
-        "do": "pointA",
-        "from": "L2.start+0.5",
-        "to": "L3.start-0.1",
-        "ob": 0.5,
-        "t0Resolved": 3.612,
-        "t1Resolved": 5.086
-      },
-      {
-        "who": "PIP",
-        "do": "lookDown",
-        "from": "L3.word(trail)-0.3",
-        "to": "L4.start",
-        "t0Resolved": 5.747,
-        "t1Resolved": 7.157
-      },
-      {
-        "who": "PIP",
-        "do": "pointDown",
-        "from": "L3.word(trail)-0.3",
-        "to": "L4.start",
-        "ob": 0.5,
-        "t0Resolved": 5.747,
-        "t1Resolved": 7.157
+        "do": "handsUp",
+        "from": "L3.start",
+        "to": "L3.end",
+        "t0Resolved": 6.247,
+        "t1Resolved": 8.337
       },
       {
         "who": "MOX",
-        "do": "lookDown",
-        "from": "L3.word(trail)",
-        "to": "L4.start",
-        "t0Resolved": 6.047,
-        "t1Resolved": 7.157
-      },
-      {
-        "who": "MOX",
-        "do": "shrug",
-        "from": "L4.start",
-        "to": "L4.end+0.1",
-        "ob": 0.4,
-        "t0Resolved": 7.157,
-        "t1Resolved": 8.861
-      },
-      {
-        "who": "PIP",
-        "do": "facepalm",
-        "from": "L4.end-0.3",
-        "to": "L5.start+0.5",
-        "ob": 0.5,
-        "t0Resolved": 8.461,
-        "t1Resolved": 9.561
-      },
-      {
-        "who": "PIP",
-        "do": "beckon",
-        "from": "L5.word(Follow)-0.1",
-        "to": "L5.end+0.1",
-        "t0Resolved": 10.101,
-        "t1Resolved": 11.001
-      },
-      {
-        "who": "PIP",
-        "do": "walk",
-        "from": "L5.word(Follow)",
-        "to": "L6.start+1.3",
-        "o": {
-          "spd": 1.5,
-          "amp": 0.6,
-          "crouch": 0.3,
-          "lean": 0.08
-        },
-        "fi": 0.3,
-        "fo": 0.3,
-        "t0Resolved": 10.201,
-        "t1Resolved": 12.501
-      },
-      {
-        "who": "MOX",
-        "do": "walk",
-        "from": "L5.word(Follow)+0.1",
-        "to": "L6.start+1.3",
-        "o": {
-          "spd": 1.5,
-          "amp": 0.6,
-          "crouch": 0.3,
-          "lean": 0.08
-        },
-        "fi": 0.3,
-        "fo": 0.3,
-        "t0Resolved": 10.301,
-        "t1Resolved": 12.501
-      },
-      {
-        "who": "PIP",
-        "do": "peek",
-        "from": "L6.start+1.1",
-        "to": "L10.start-0.1",
-        "fi": 0.4,
-        "fo": 0.2,
-        "t0Resolved": 12.301,
-        "t1Resolved": 18.849
-      },
-      {
-        "who": "MOX",
-        "do": "peek",
-        "from": "L6.start+1.1",
-        "to": "L10.start-0.1",
-        "fi": 0.4,
-        "fo": 0.2,
-        "t0Resolved": 12.301,
-        "t1Resolved": 18.849
-      },
-      {
-        "who": "PIP",
-        "do": "pointA",
-        "from": "L11.word(June)-0.1",
-        "to": "L11.end",
-        "ob": 0.5,
-        "t0Resolved": 19.908,
-        "t1Resolved": 21.991
-      },
-      {
-        "who": "PIP",
         "do": "recoil",
-        "from": "L11.start",
-        "to": "L11.start+0.6",
-        "fi": 0.1,
-        "fo": 0.4,
-        "t0Resolved": 19.988,
-        "t1Resolved": 20.588
-      },
-      {
-        "who": "MOX",
-        "do": "headHands",
-        "from": "L11.word(both)",
-        "to": "L13.end+0.1",
-        "fi": 0.2,
-        "ob": 0.4,
-        "t0Resolved": 21.155,
-        "t1Resolved": 25.353
-      },
-      {
-        "who": "MOX",
-        "do": "jump",
-        "from": "L13.start-0.15",
-        "to": "L13.start+0.9",
-        "fi": 0.001,
-        "fo": 0.001,
-        "o": {
-          "dur": 0.55,
-          "h": 0.45
-        },
-        "t0Resolved": 24.405,
-        "t1Resolved": 25.455
+        "from": "L4.start",
+        "to": "L4.end",
+        "t0Resolved": 8.637,
+        "t1Resolved": 10.82
       },
       {
         "who": "PIP",
-        "do": "shrug",
-        "from": "L14.start",
-        "to": "L14.end",
-        "ob": 0.3,
-        "t0Resolved": 25.553,
-        "t1Resolved": 26.654
-      },
-      {
-        "who": "MOX",
-        "do": "facepalm",
-        "from": "L15.word(Taste)+0.3",
-        "to": "L16.start",
-        "ob": 0.4,
-        "t0Resolved": 27.224,
-        "t1Resolved": 29.395
-      },
-      {
-        "who": "PIP",
-        "do": "lookDown",
-        "from": "L15.start",
-        "to": "L17.start",
-        "t0Resolved": 26.904,
-        "t1Resolved": 31.734
+        "do": "pointA",
+        "from": "L5.start",
+        "to": "L5.end",
+        "t0Resolved": 11.07,
+        "t1Resolved": 13.396
       },
       {
         "who": "JUNE",
-        "do": "sit",
-        "from": "L10.start-0.05",
-        "to": "L11.start+0.8",
-        "fo": 0.4,
-        "t0Resolved": 18.899,
-        "t1Resolved": 20.788
+        "do": "walk",
+        "from": "L5.start",
+        "to": "L6.start+0.4",
+        "o": {
+          "spd": 1.8
+        },
+        "t0Resolved": 11.07,
+        "t1Resolved": 14.096
       },
       {
         "who": "JUNE",
         "do": "eat",
-        "from": "L10.start-0.05",
-        "to": "L11.start+0.7",
-        "fi": 0.2,
-        "t0Resolved": 18.899,
-        "t1Resolved": 20.688
-      },
-      {
-        "who": "JUNE",
-        "do": "walk",
-        "from": "L11.start+0.6",
-        "to": "L11.start+1.5",
-        "o": {
-          "spd": 2.6,
-          "amp": 0.55,
-          "crouch": 0.95,
-          "lean": 0.1
-        },
-        "fi": 0.1,
-        "fo": 0.1,
-        "t0Resolved": 20.588,
-        "t1Resolved": 21.488
-      },
-      {
-        "who": "JUNE",
-        "do": "walk",
-        "from": "L11.start+1.4",
-        "to": "L11.start+1.95",
-        "o": {
-          "spd": 2.6,
-          "amp": 0.8,
-          "crouch": 0.3
-        },
-        "fi": 0.1,
-        "fo": 0.25,
-        "t0Resolved": 21.388,
-        "t1Resolved": 21.938
-      },
-      {
-        "who": "JUNE",
-        "do": "handsHips",
-        "from": "L12.start-0.05",
-        "to": "L16.start",
-        "ob": 0.4,
-        "t0Resolved": 22.241,
-        "t1Resolved": 29.395
-      },
-      {
-        "who": "JUNE",
-        "do": "look",
-        "from": "L15.start",
-        "to": "L15.end",
-        "o": {
-          "hx": -0.18
-        },
-        "t0Resolved": 26.904,
-        "t1Resolved": 29.045
-      },
-      {
-        "who": "JUNE",
-        "do": "shrug",
-        "from": "L16.start",
-        "to": "L16.end",
-        "ob": 0.3,
-        "t0Resolved": 29.395,
-        "t1Resolved": 31.334
-      },
-      {
-        "who": "JUNE",
-        "do": "look",
-        "from": "L16.word(not)-0.2",
-        "to": "L16.end",
-        "o": {
-          "hy": 0.7
-        },
-        "t0Resolved": 29.993,
-        "t1Resolved": 31.334
-      },
-      {
-        "who": "JUNE",
-        "do": "gasp",
-        "from": "L17.word(cake)",
-        "to": "end",
-        "ob": 0.4,
-        "t0Resolved": 32.061,
-        "t1Resolved": 35.15
-      },
-      {
-        "who": "PIP",
-        "do": "gasp",
-        "from": "L17.word(cake)",
-        "to": "end",
-        "ob": 0.4,
-        "t0Resolved": 32.061,
-        "t1Resolved": 35.15
+        "from": "L6.start+0.4",
+        "to": "L6.end",
+        "t0Resolved": 14.096,
+        "t1Resolved": 15.527
       },
       {
         "who": "MOX",
         "do": "headHands",
-        "from": "L17.start",
+        "from": "L7.start",
         "to": "end",
-        "ob": 0.4,
-        "t0Resolved": 31.734,
-        "t1Resolved": 35.15
-      },
-      {
-        "who": "MOX",
-        "do": "jump",
-        "from": "L17.word(cake)-0.15",
-        "to": "L17.word(cake)+0.8",
-        "fi": 0.001,
-        "fo": 0.001,
-        "o": {
-          "dur": 0.5,
-          "h": 0.3
-        },
-        "t0Resolved": 31.911,
-        "t1Resolved": 32.861
+        "t0Resolved": 15.827,
+        "t1Resolved": 20.75
       },
       {
         "who": "PIP",
-        "do": "jump",
-        "from": "L17.word(cake)-0.1",
-        "to": "L17.word(cake)+0.8",
-        "fi": 0.001,
-        "fo": 0.001,
-        "o": {
-          "dur": 0.5,
-          "h": 0.2
-        },
-        "t0Resolved": 31.961,
-        "t1Resolved": 32.861
+        "do": "shake",
+        "from": "L7.start",
+        "to": "end",
+        "t0Resolved": 15.827,
+        "t1Resolved": 20.75
       }
     ],
     "shots": [
@@ -482,1123 +129,375 @@
         "from": "L1.start",
         "a": {
           "p": [
-            0.5,
-            2.9,
-            2.7
+            0,
+            2.8,
+            4.8
           ],
           "l": [
             0,
-            1.3,
-            -1
+            1.4,
+            0.5
           ],
-          "f": 44
+          "f": 50
         },
         "b": {
           "p": [
-            0.1,
-            2.45,
-            1.6
+            -0.4,
+            2.6,
+            4.2
           ],
           "l": [
-            0,
-            1.3,
-            -1
+            -0.2,
+            1.4,
+            0.5
           ],
-          "f": 40
+          "f": 46
         },
         "t0Resolved": 0.2,
-        "t1Resolved": 3.082
+        "t1Resolved": 3.117
       },
       {
         "from": "L2.start-0.03",
         "a": {
           "p": [
-            0,
-            3,
-            8.2
+            0.3,
+            1.7,
+            2.8
           ],
           "l": [
-            0,
-            1.7,
-            0.6
+            0.7,
+            1.25,
+            1.1
           ],
-          "f": 54
+          "f": 38
         },
         "b": {
           "p": [
-            0,
-            2.9,
-            7.4
+            0.4,
+            1.65,
+            2.4
           ],
           "l": [
-            0,
-            1.7,
-            0.6
+            0.7,
+            1.25,
+            1.1
           ],
-          "f": 50
+          "f": 36
         },
-        "t0Resolved": 3.082,
-        "t1Resolved": 5.156
+        "t0Resolved": 3.117,
+        "t1Resolved": 6.217
       },
       {
         "from": "L3.start-0.03",
         "a": {
           "p": [
-            0.2,
-            2.6,
-            5.8
-          ],
-          "l": [
-            0.9,
-            2,
-            1
-          ],
-          "f": 44
-        },
-        "b": {
-          "p": [
-            0.45,
-            2.55,
-            5
-          ],
-          "l": [
-            0.9,
-            2,
-            1
-          ],
-          "f": 40
-        },
-        "t0Resolved": 5.156,
-        "t1Resolved": 5.997
-      },
-      {
-        "from": "L3.word(trail)-0.05",
-        "a": {
-          "p": [
-            -0.1,
-            0.5,
-            3.2
-          ],
-          "l": [
-            -0.1,
-            0.12,
-            1.2
-          ],
-          "f": 40
-        },
-        "b": {
-          "p": [
-            -0.1,
-            0.42,
+            -0.3,
+            1.65,
             2.4
           ],
           "l": [
-            -0.1,
-            0.15,
-            0.3
+            -0.6,
+            1.25,
+            0.9
           ],
           "f": 38
         },
-        "t0Resolved": 5.997,
-        "t1Resolved": 7.127
+        "b": {
+          "p": [
+            -0.4,
+            1.6,
+            2.1
+          ],
+          "l": [
+            -0.6,
+            1.25,
+            0.9
+          ],
+          "f": 35
+        },
+        "t0Resolved": 6.217,
+        "t1Resolved": 8.607
       },
       {
         "from": "L4.start-0.03",
         "a": {
           "p": [
-            -0.2,
-            2.6,
-            5.8
+            0.2,
+            1.5,
+            2.4
           ],
           "l": [
-            -0.9,
-            2,
-            1
+            0.7,
+            1.1,
+            1.1
           ],
-          "f": 44
+          "f": 38
         },
         "b": {
           "p": [
-            -0.45,
-            2.55,
-            5
+            0.3,
+            1.3,
+            2.2
           ],
           "l": [
-            -0.9,
-            2,
-            1
+            0.7,
+            0.9,
+            1.1
           ],
-          "f": 40
+          "f": 35
         },
-        "t0Resolved": 7.127,
-        "t1Resolved": 9.031
+        "roll": [
+          -0.08,
+          -0.05
+        ],
+        "t0Resolved": 8.607,
+        "t1Resolved": 11.04
       },
       {
         "from": "L5.start-0.03",
         "a": {
           "p": [
-            0,
-            3,
-            8
+            -0.8,
+            1.7,
+            2.2
           ],
           "l": [
-            0,
-            1.75,
-            1
+            0.1,
+            0.8,
+            -0.2
           ],
-          "f": 54
+          "f": 45
         },
         "b": {
           "p": [
-            0,
-            2.8,
-            7
+            -0.7,
+            1.65,
+            1.8
           ],
           "l": [
-            0,
-            1.75,
-            0.6
+            0.1,
+            0.7,
+            0.2
           ],
-          "f": 48
+          "f": 42
         },
-        "t0Resolved": 9.031,
-        "t1Resolved": 11.171
+        "t0Resolved": 11.04,
+        "t1Resolved": 13.666
       },
       {
         "from": "L6.start-0.03",
         "a": {
           "p": [
-            0,
-            4.2,
-            8
+            0.1,
+            0.6,
+            1.8
           ],
           "l": [
-            0,
-            0.3,
-            0
+            0.2,
+            0.5,
+            0.6
           ],
-          "f": 40
+          "f": 36
         },
         "b": {
           "p": [
-            0,
-            3.6,
-            6.2
+            0.15,
+            0.65,
+            1.6
           ],
           "l": [
-            0,
-            0.6,
-            -0.3
+            0.2,
+            0.55,
+            0.6
           ],
-          "f": 40
+          "f": 34
         },
-        "t0Resolved": 11.171,
-        "t1Resolved": 13.978
+        "t0Resolved": 13.666,
+        "t1Resolved": 15.797
       },
       {
         "from": "L7.start-0.03",
         "a": {
           "p": [
             0,
-            2.6,
-            6.4
-          ],
-          "l": [
-            0,
-            1.4,
-            -0.4
-          ],
-          "f": 50
-        },
-        "b": {
-          "p": [
-            0,
-            2.4,
-            5.6
-          ],
-          "l": [
-            0,
-            1.4,
-            -0.4
-          ],
-          "f": 46
-        },
-        "t0Resolved": 13.978,
-        "t1Resolved": 15.363
-      },
-      {
-        "from": "L8.start-0.03",
-        "a": {
-          "p": [
-            0,
-            2.3,
-            6.6
-          ],
-          "l": [
-            0,
-            1.1,
-            -0.8
-          ],
-          "f": 38
-        },
-        "b": {
-          "p": [
-            0,
-            1.9,
-            5.2
-          ],
-          "l": [
-            0,
-            1,
-            -0.9
-          ],
-          "f": 34
-        },
-        "t0Resolved": 15.363,
-        "t1Resolved": 16.846
-      },
-      {
-        "from": "L9.start-0.03",
-        "a": {
-          "p": [
-            4.2,
-            3.6,
+            2.2,
             4.6
           ],
           "l": [
-            -0.1,
-            1.2,
-            -0.2
-          ],
-          "f": 46
-        },
-        "b": {
-          "p": [
-            3.6,
-            3.2,
-            4
-          ],
-          "l": [
-            -0.1,
-            1.2,
-            -0.2
-          ],
-          "f": 42
-        },
-        "t0Resolved": 16.846,
-        "t1Resolved": 18.919
-      },
-      {
-        "from": "L10.start-0.03",
-        "a": {
-          "p": [
             0,
-            0.55,
-            3.8
-          ],
-          "l": [
-            0,
-            0.62,
-            -0.85
-          ],
-          "f": 36
-        },
-        "b": {
-          "p": [
-            0,
-            0.58,
-            3.4
-          ],
-          "l": [
-            0,
-            0.62,
-            -0.85
-          ],
-          "f": 32
-        },
-        "t0Resolved": 18.919,
-        "t1Resolved": 19.958
-      },
-      {
-        "from": "L11.start-0.03",
-        "a": {
-          "p": [
-            0,
-            3,
-            8.2
-          ],
-          "l": [
-            0,
-            1.7,
-            0.6
-          ],
-          "f": 54
-        },
-        "b": {
-          "p": [
-            0,
-            2.9,
-            7.4
-          ],
-          "l": [
-            0,
-            1.7,
-            0.6
-          ],
-          "f": 50
-        },
-        "t0Resolved": 19.958,
-        "t1Resolved": 22.261
-      },
-      {
-        "from": "L12.start-0.03",
-        "a": {
-          "p": [
-            0,
-            1.5,
-            3.8
-          ],
-          "l": [
-            0,
-            1.05,
-            0.5
-          ],
-          "f": 36
-        },
-        "b": {
-          "p": [
-            0,
-            1.4,
-            3.3
-          ],
-          "l": [
-            0,
-            1,
-            0.5
-          ],
-          "f": 31
-        },
-        "t0Resolved": 22.261,
-        "t1Resolved": 24.525
-      },
-      {
-        "from": "L13.start-0.03",
-        "a": {
-          "p": [
-            -0.3,
-            2.4,
-            5.2
-          ],
-          "l": [
-            -0.9,
-            2,
-            0.35
-          ],
-          "f": 42
-        },
-        "b": {
-          "p": [
-            -0.5,
-            2.35,
-            4.6
-          ],
-          "l": [
-            -0.9,
-            2,
-            0.35
-          ],
-          "f": 36
-        },
-        "t0Resolved": 24.525,
-        "t1Resolved": 25.523
-      },
-      {
-        "from": "L14.start-0.03",
-        "a": {
-          "p": [
-            0.3,
-            2.5,
-            5.2
-          ],
-          "l": [
-            0.9,
-            2,
-            0.35
-          ],
-          "f": 42
-        },
-        "b": {
-          "p": [
-            0.5,
-            2.45,
-            4.6
-          ],
-          "l": [
-            0.9,
-            2,
-            0.35
-          ],
-          "f": 37
-        },
-        "t0Resolved": 25.523,
-        "t1Resolved": 26.874
-      },
-      {
-        "from": "L15.start-0.03",
-        "a": {
-          "p": [
-            0.3,
-            1.4,
-            3.6
-          ],
-          "l": [
-            0,
-            1.1,
-            0.5
-          ],
-          "f": 34
-        },
-        "b": {
-          "p": [
-            0.1,
             1.3,
-            3.2
+            0.8
           ],
-          "l": [
-            0,
-            1,
-            0.5
-          ],
-          "f": 30
-        },
-        "roll": [
-          0,
-          0.04
-        ],
-        "t0Resolved": 26.874,
-        "t1Resolved": 29.365
-      },
-      {
-        "from": "L16.start-0.03",
-        "a": {
-          "p": [
-            0,
-            1.5,
-            3.7
-          ],
-          "l": [
-            -0.2,
-            1.15,
-            -0.1
-          ],
-          "f": 38
+          "f": 52
         },
         "b": {
           "p": [
             0,
-            1.4,
-            3.2
-          ],
-          "l": [
-            -0.2,
-            1.1,
-            -0.1
-          ],
-          "f": 32
-        },
-        "roll": [
-          0.03,
-          0.07
-        ],
-        "t0Resolved": 29.365,
-        "t1Resolved": 31.704
-      },
-      {
-        "from": "L17.start-0.03",
-        "a": {
-          "p": [
-            0,
-            3,
-            8
+            2.4,
+            5.2
           ],
           "l": [
             0,
-            1.75,
-            0.6
+            1.3,
+            0.8
           ],
-          "f": 54
+          "f": 56
         },
-        "b": {
-          "p": [
-            0,
-            2.6,
-            5.8
-          ],
-          "l": [
-            0,
-            1.7,
-            0.2
-          ],
-          "f": 40
-        },
-        "roll": [
-          0,
-          0.07
-        ],
-        "t0Resolved": 31.704,
-        "t1Resolved": 36.15
+        "t0Resolved": 15.797,
+        "t1Resolved": 21.75
       }
     ],
     "faces": [
       {
         "who": "PIP",
+        "emotion": "suspicious",
         "from": "L1.start",
-        "to": "L2.start",
-        "face": {
-          "brow": -0.4,
-          "raise": 0.3,
-          "smile": 0.1
-        },
+        "to": "L1.end",
         "t0Resolved": 0.2,
-        "t1Resolved": 3.112
-      },
-      {
-        "who": "PIP",
-        "from": "L2.start+0.3",
-        "to": "L3.start",
-        "face": {
-          "eye": "squint",
-          "brow": 0.7,
-          "smile": 0
-        },
-        "t0Resolved": 3.412,
-        "t1Resolved": 5.186
-      },
-      {
-        "who": "PIP",
-        "from": "L3.start",
-        "to": "L4.start",
-        "face": {
-          "brow": 0.6,
-          "smile": -0.2
-        },
-        "t0Resolved": 5.186,
-        "t1Resolved": 7.157
-      },
-      {
-        "who": "PIP",
-        "from": "L4.end-0.3",
-        "to": "L5.start+0.5",
-        "face": {
-          "eye": "squint",
-          "brow": 0.3,
-          "smile": -0.5
-        },
-        "t0Resolved": 8.461,
-        "t1Resolved": 9.561
-      },
-      {
-        "who": "PIP",
-        "from": "L5.start+0.5",
-        "to": "L6.start",
-        "face": {
-          "brow": 0.4,
-          "smile": 0.1
-        },
-        "t0Resolved": 9.561,
-        "t1Resolved": 11.201
-      },
-      {
-        "who": "PIP",
-        "from": "L6.start",
-        "to": "L9.start",
-        "face": {
-          "eye": "wide",
-          "brow": -0.5,
-          "raise": 0.5,
-          "smile": -0.2
-        },
-        "t0Resolved": 11.201,
-        "t1Resolved": 16.876
-      },
-      {
-        "who": "PIP",
-        "from": "L11.start",
-        "to": "L12.start",
-        "face": {
-          "eye": "wide",
-          "brow": -0.9,
-          "raise": 1,
-          "smile": 0
-        },
-        "t0Resolved": 19.988,
-        "t1Resolved": 22.291
-      },
-      {
-        "who": "PIP",
-        "from": "L12.start",
-        "to": "L14.start",
-        "face": {
-          "eye": "squint",
-          "brow": 0.5,
-          "smile": -0.3
-        },
-        "t0Resolved": 22.291,
-        "t1Resolved": 25.553
-      },
-      {
-        "who": "PIP",
-        "from": "L14.start",
-        "to": "L15.start",
-        "face": {
-          "brow": -0.2,
-          "raise": 0.6,
-          "smile": 0.2
-        },
-        "t0Resolved": 25.553,
-        "t1Resolved": 26.904
-      },
-      {
-        "who": "PIP",
-        "from": "L15.start",
-        "to": "L17.start",
-        "face": {
-          "eye": "squint",
-          "brow": 0.5,
-          "smile": -0.4
-        },
-        "t0Resolved": 26.904,
-        "t1Resolved": 31.734
-      },
-      {
-        "who": "PIP",
-        "from": "L17.start",
-        "to": "end",
-        "face": {
-          "eye": "wide",
-          "brow": -0.9,
-          "raise": 1
-        },
-        "t0Resolved": 31.734,
-        "t1Resolved": 35.15
+        "t1Resolved": 2.797
       },
       {
         "who": "MOX",
+        "emotion": "panic",
         "from": "L2.start",
-        "to": "L3.start",
-        "face": {
-          "eye": "wide",
-          "brow": 0.9,
-          "smile": -0.2
-        },
-        "t0Resolved": 3.112,
-        "t1Resolved": 5.186
+        "to": "L2.end",
+        "t0Resolved": 3.147,
+        "t1Resolved": 5.997
       },
       {
-        "who": "MOX",
+        "who": "PIP",
+        "emotion": "panic",
         "from": "L3.start",
-        "to": "L4.start",
-        "face": {
-          "brow": -0.3,
-          "smile": -0.3
-        },
-        "t0Resolved": 5.186,
-        "t1Resolved": 7.157
+        "to": "L3.end",
+        "t0Resolved": 6.247,
+        "t1Resolved": 8.337
       },
       {
         "who": "MOX",
+        "emotion": "guilt",
         "from": "L4.start",
-        "to": "L5.start",
-        "face": {
-          "eye": "happy",
-          "smile": 0.9
-        },
-        "t0Resolved": 7.157,
-        "t1Resolved": 9.061
+        "to": "L4.end",
+        "t0Resolved": 8.637,
+        "t1Resolved": 10.82
       },
       {
-        "who": "MOX",
+        "who": "PIP",
+        "emotion": "shock",
         "from": "L5.start",
-        "to": "L7.start",
-        "face": {
-          "smile": 0.3
-        },
-        "t0Resolved": 9.061,
-        "t1Resolved": 14.008
-      },
-      {
-        "who": "MOX",
-        "from": "L7.start",
-        "to": "L11.start",
-        "face": {
-          "eye": "wide",
-          "brow": -0.6,
-          "raise": 0.6,
-          "smile": -0.3
-        },
-        "t0Resolved": 14.008,
-        "t1Resolved": 19.988
-      },
-      {
-        "who": "MOX",
-        "from": "L11.word(both)",
-        "to": "L13.start",
-        "face": {
-          "eye": "wide",
-          "brow": -0.9,
-          "raise": 1,
-          "smile": -0.2
-        },
-        "t0Resolved": 21.155,
-        "t1Resolved": 24.555
-      },
-      {
-        "who": "MOX",
-        "from": "L13.start",
-        "to": "L14.start",
-        "face": {
-          "eye": "wide",
-          "brow": 0.2,
-          "raise": 1
-        },
-        "t0Resolved": 24.555,
-        "t1Resolved": 25.553
-      },
-      {
-        "who": "MOX",
-        "from": "L15.start",
-        "to": "L17.start",
-        "face": {
-          "eye": "squint",
-          "brow": 0.4,
-          "smile": -0.4
-        },
-        "t0Resolved": 26.904,
-        "t1Resolved": 31.734
-      },
-      {
-        "who": "MOX",
-        "from": "L17.start",
-        "to": "end",
-        "face": {
-          "eye": "wide",
-          "brow": -0.8,
-          "raise": 1
-        },
-        "t0Resolved": 31.734,
-        "t1Resolved": 35.15
+        "to": "L5.end",
+        "t0Resolved": 11.07,
+        "t1Resolved": 13.396
       },
       {
         "who": "JUNE",
-        "from": "L10.start-0.05",
-        "to": "L11.start+0.8",
+        "emotion": "smug",
         "face": {
-          "eye": "happy",
-          "smile": 0.9,
-          "cheeks": 1,
           "munch": true
         },
-        "t0Resolved": 18.899,
-        "t1Resolved": 20.788
+        "from": "L6.start",
+        "to": "L6.end",
+        "t0Resolved": 13.696,
+        "t1Resolved": 15.527
       },
       {
-        "who": "JUNE",
-        "from": "L11.start+0.8",
-        "to": "L12.start",
-        "face": {
-          "smile": 0.4
-        },
-        "t0Resolved": 20.788,
-        "t1Resolved": 22.291
-      },
-      {
-        "who": "JUNE",
-        "from": "L12.start",
-        "to": "L15.start",
-        "face": {
-          "brow": 0.3,
-          "smile": 0.7,
-          "cheeks": 0.4
-        },
-        "t0Resolved": 22.291,
-        "t1Resolved": 26.904
-      },
-      {
-        "who": "JUNE",
-        "from": "L15.start",
-        "to": "L16.start",
-        "face": {
-          "eye": "happy",
-          "smile": 0.9
-        },
-        "t0Resolved": 26.904,
-        "t1Resolved": 29.395
-      },
-      {
-        "who": "JUNE",
-        "from": "L16.start",
-        "to": "L17.start",
-        "face": {
-          "dx": -1,
-          "brow": -0.3,
-          "smile": 0.1
-        },
-        "t0Resolved": 29.395,
-        "t1Resolved": 31.734
-      },
-      {
-        "who": "JUNE",
-        "from": "L17.start",
+        "who": "MOX",
+        "emotion": "panic",
+        "from": "L7.start",
         "to": "end",
-        "face": {
-          "eye": "wide",
-          "brow": -0.9,
-          "raise": 1
-        },
-        "t0Resolved": 31.734,
-        "t1Resolved": 35.15
+        "t0Resolved": 15.827,
+        "t1Resolved": 20.75
+      },
+      {
+        "who": "PIP",
+        "emotion": "shock",
+        "from": "L7.start",
+        "to": "end",
+        "t0Resolved": 15.827,
+        "t1Resolved": 20.75
       }
     ],
     "fx": [
       {
         "type": "bubble",
         "glyph": "?",
-        "at": "L1.word(Nothing)+0.05",
-        "dur": 1,
-        "anchor": [
-          0,
-          2.1,
-          -1
-        ],
-        "tResolved": 2.116
-      },
-      {
-        "type": "bubble",
-        "glyph": "!",
-        "at": "L2.word(Don't)+0.1",
-        "dur": 0.9,
-        "anchor": "MOX.head",
-        "tResolved": 3.222
-      },
-      {
-        "type": "bubble",
-        "glyph": "?",
-        "at": "L7.word(crunching)",
-        "dur": 1,
-        "anchor": "MOX.head",
-        "tResolved": 14.471
-      },
-      {
-        "type": "bubble",
-        "glyph": "?",
-        "at": "L9.word(hides)",
-        "dur": 1.1,
-        "anchor": "MOX.head",
-        "tResolved": 17.113
-      },
-      {
-        "type": "bubble",
-        "glyph": "!",
-        "at": "L10.start+0.1",
-        "dur": 0.9,
-        "anchor": "JUNE.head",
-        "tResolved": 19.049
-      },
-      {
-        "type": "bubble",
-        "glyph": "!",
-        "at": "L11.word(June)+0.1",
+        "at": "L1.word(freeze)",
         "dur": 1,
         "anchor": "PIP.head",
-        "tResolved": 20.108
+        "tResolved": 2.352
       },
       {
         "type": "bubble",
-        "glyph": "?!",
-        "at": "L13.start+0.05",
-        "dur": 1,
+        "glyph": "!",
+        "at": "L2.word(glowing)",
+        "dur": 0.9,
         "anchor": "MOX.head",
-        "tResolved": 24.605
+        "tResolved": 3.855
       },
       {
         "type": "bubble",
-        "glyph": "?",
-        "at": "L14.word(kind)",
+        "glyph": "!",
+        "at": "L5.word(walking)",
         "dur": 0.9,
         "anchor": "PIP.head",
-        "tResolved": 25.795
+        "tResolved": 12.285
       },
       {
         "type": "bubble",
         "glyph": "?",
-        "at": "L17.word(cake)+0.1",
+        "at": "L7.word(purple)",
         "dur": 1,
         "anchor": "MOX.head",
-        "tResolved": 32.161
-      },
-      {
-        "type": "toggle",
-        "target": "cookies",
-        "at": "L1.word(Now)",
-        "visible": false,
-        "tResolved": 1.803
-      },
-      {
-        "type": "puff",
-        "at": "L1.word(Now)",
-        "anchor": [
-          0,
-          1.4,
-          -1
-        ],
-        "tResolved": 1.803
-      },
-      {
-        "type": "sfx",
-        "name": "crunch",
-        "at": "L7.start+0.2",
-        "rep": 3,
-        "dt": 0.33,
-        "tResolved": 14.208
-      },
-      {
-        "type": "sfx",
-        "name": "crunch",
-        "at": "L8.start+0.1",
-        "rep": 2,
-        "dt": 0.34,
-        "a": 0.8,
-        "tResolved": 15.493
-      },
-      {
-        "type": "sfx",
-        "name": "crunch",
-        "at": "L9.start+0.2",
-        "rep": 2,
-        "dt": 0.32,
-        "a": 0.8,
-        "tResolved": 17.076
-      },
-      {
-        "type": "sfx",
-        "name": "sting",
-        "at": "L10.start-0.03",
-        "tResolved": 18.919
-      },
-      {
-        "type": "dark",
-        "at": "L17.word(cake)+0.55",
-        "tResolved": 32.611
-      },
-      {
-        "type": "eyes",
-        "at": "L17.word(cake)+1.3",
-        "tResolved": 33.361
-      },
-      {
-        "type": "sfx",
-        "name": "crunch",
-        "at": "L17.word(cake)+1.4",
-        "rep": 4,
-        "dt": 0.3,
-        "tResolved": 33.461
+        "tResolved": 17.299
       },
       {
         "type": "slam",
         "text": "PART 2",
-        "at": "L17.end+0.9",
-        "tResolved": 33.349
+        "at": "L7.end+0.1",
+        "tResolved": 18.101
       }
     ],
-    "music": [
-      {
-        "pattern": "playful",
-        "at": "L1.start",
-        "tResolved": 0.2
-      },
-      {
-        "pattern": "sneak",
-        "at": "L5.word(Follow)",
-        "tResolved": 10.201
-      },
-      {
-        "pattern": "hush",
-        "at": "L7.start",
-        "tResolved": 14.008
-      },
-      {
-        "pattern": "playful",
-        "at": "L10.start+0.4",
-        "tResolved": 19.349
-      },
-      {
-        "pattern": "drone",
-        "at": "L17.word(cake)+0.5",
-        "tResolved": 32.561
-      }
-    ],
+    "music": [],
     "punch": [
       {
-        "atResolved": 1.803,
-        "a": 0.1
-      },
-      {
-        "atResolved": 6.047,
+        "atResolved": 2.352,
         "a": 0.08
       },
       {
-        "atResolved": 17.113,
+        "atResolved": 3.855,
         "a": 0.08
       },
       {
-        "atResolved": 18.999,
+        "atResolved": 7.906,
+        "a": 0.09
+      },
+      {
+        "atResolved": 9.699,
+        "a": 0.07
+      },
+      {
+        "atResolved": 12.285,
+        "a": 0.08
+      },
+      {
+        "atResolved": 15.101,
+        "a": 0.08
+      },
+      {
+        "atResolved": 17.299,
         "a": 0.12
-      },
-      {
-        "atResolved": 20.008,
-        "a": 0.1
-      },
-      {
-        "atResolved": 24.605,
-        "a": 0.12
-      },
-      {
-        "atResolved": 30.971,
-        "a": 0.1
-      },
-      {
-        "atResolved": 32.061,
-        "a": 0.14
       }
     ],
     "props": [
       {
+        "name": "cake",
         "who": "JUNE",
-        "name": "cookie",
-        "t0Resolved": 18.919,
-        "t1Resolved": 35.15
+        "from": "L5.start",
+        "to": "end",
+        "t0Resolved": 11.07,
+        "t1Resolved": 20.75
       }
     ],
-    "show": {
-      "PIP": [
-        [
-          "L2.start-0.03",
-          "end"
-        ]
-      ],
-      "MOX": [
-        [
-          "L2.start-0.6",
-          "end"
-        ]
-      ],
-      "JUNE": [
-        [
-          "L10.start-0.03",
-          "end"
-        ]
-      ]
-    }
+    "show": {}
   },
   "warnings": []
 }

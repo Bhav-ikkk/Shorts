@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "the-blockies-ep4",
+  "title": "The Red Streetlamp",
+  "series": "THE BLOCKIES",
+  "format": "suspense-comedy",
+  "set": "park",
+  "lightingMood": "night",
+  "cut": "short",
+  "lines": [
+    { "id": "L1", "who": "PIP", "text": "In this town, when the streetlamp turns red... freeze!", "spoken": "In this town, when the streetlamp turns red, freeze!", "pause": 0.35 },
+    { "id": "L2", "who": "MOX", "text": "Wait! It is glowing bright red right now!", "pause": 0.25 },
+    { "id": "L3", "who": "PIP", "text": "Don't move, Mox! Not even a muscle!", "pause": 0.30 },
+    { "id": "L4", "who": "MOX", "text": "My left foot is itching so bad!", "pause": 0.25 },
+    { "id": "L5", "who": "PIP", "text": "Wait! Who is that walking past the bench?!", "pause": 0.30 },
+    { "id": "L6", "who": "JUNE", "text": "Rules do not count if you have snacks.", "pause": 0.30 },
+    { "id": "L7", "who": "MOX", "text": "Why is the light flashing purple now?!", "pause": 0.45 }
+  ],
+  "stage": [
+    { "who": "PIP", "t": "L1.start", "x": -0.6, "z": 0.9, "ry": 0.2 },
+    { "who": "MOX", "t": "L1.start", "x": 0.7, "z": 1.1, "ry": -0.3 },
+    { "who": "JUNE", "t": "L1.start", "x": 0.2, "z": -1.6, "ry": 0 },
+    { "who": "JUNE", "t": "L5.start", "x": 0.2, "z": -1.6, "ry": 0 },
+    { "who": "JUNE", "t": "L6.start+0.4", "x": 0.2, "z": 0.5, "ry": 0, "e": "lin" }
+  ],
+  "shots": [
+    {
+      "from": "L1.start",
+      "a": { "p": [0, 2.8, 4.8], "l": [0, 1.4, 0.5], "f": 50 },
+      "b": { "p": [-0.4, 2.6, 4.2], "l": [-0.2, 1.4, 0.5], "f": 46 }
+    },
+    {
+      "from": "L2.start-0.03",
+      "a": { "p": [0.3, 1.7, 2.8], "l": [0.7, 1.25, 1.1], "f": 38 },
+      "b": { "p": [0.4, 1.65, 2.4], "l": [0.7, 1.25, 1.1], "f": 36 }
+    },
+    {
+      "from": "L3.start-0.03",
+      "a": { "p": [-0.3, 1.65, 2.4], "l": [-0.6, 1.25, 0.9], "f": 38 },
+      "b": { "p": [-0.4, 1.6, 2.1], "l": [-0.6, 1.25, 0.9], "f": 35 }
+    },
+    {
+      "from": "L4.start-0.03",
+      "a": { "p": [0.2, 1.5, 2.4], "l": [0.7, 1.1, 1.1], "f": 38 },
+      "b": { "p": [0.3, 1.3, 2.2], "l": [0.7, 0.9, 1.1], "f": 35 },
+      "roll": [-0.08, -0.05]
+    },
+    {
+      "from": "L5.start-0.03",
+      "a": { "p": [-0.8, 1.7, 2.2], "l": [0.1, 0.8, -0.2], "f": 45 },
+      "b": { "p": [-0.7, 1.65, 1.8], "l": [0.1, 0.7, 0.2], "f": 42 }
+    },
+    {
+      "from": "L6.start-0.03",
+      "a": { "p": [0.1, 0.6, 1.8], "l": [0.2, 0.5, 0.6], "f": 36 },
+      "b": { "p": [0.15, 0.65, 1.6], "l": [0.2, 0.55, 0.6], "f": 34 }
+    },
+    {
+      "from": "L7.start-0.03",
+      "a": { "p": [0, 2.2, 4.6], "l": [0, 1.3, 0.8], "f": 52 },
+      "b": { "p": [0, 2.4, 5.2], "l": [0, 1.3, 0.8], "f": 56 }
+    }
+  ],
+  "punch": [
+    { "at": "L1.word(freeze)", "a": 0.08 },
+    { "at": "L2.word(glowing)", "a": 0.08 },
+    { "at": "L3.word(muscle)", "a": 0.09 },
+    { "at": "L4.word(itching)", "a": 0.07 },
+    { "at": "L5.word(walking)", "a": 0.08 },
+    { "at": "L6.word(snacks)", "a": 0.08 },
+    { "at": "L7.word(purple)", "a": 0.12 }
+  ],
+  "actions": [
+    { "who": "PIP", "do": "look", "from": "L1.start", "to": "L1.end" },
+    { "who": "MOX", "do": "gasp", "from": "L2.start", "to": "L2.end" },
+    { "who": "PIP", "do": "handsUp", "from": "L3.start", "to": "L3.end" },
+    { "who": "MOX", "do": "recoil", "from": "L4.start", "to": "L4.end" },
+    { "who": "PIP", "do": "pointA", "from": "L5.start", "to": "L5.end" },
+    { "who": "JUNE", "do": "walk", "from": "L5.start", "to": "L6.start+0.4", "o": { "spd": 1.8 } },
+    { "who": "JUNE", "do": "eat", "from": "L6.start+0.4", "to": "L6.end" },
+    { "who": "MOX", "do": "headHands", "from": "L7.start", "to": "end" },
+    { "who": "PIP", "do": "shake", "from": "L7.start", "to": "end" }
+  ],
+  "faces": [
+    { "who": "PIP", "emotion": "suspicious", "from": "L1.start", "to": "L1.end" },
+    { "who": "MOX", "emotion": "panic", "from": "L2.start", "to": "L2.end" },
+    { "who": "PIP", "emotion": "panic", "from": "L3.start", "to": "L3.end" },
+    { "who": "MOX", "emotion": "guilt", "from": "L4.start", "to": "L4.end" },
+    { "who": "PIP", "emotion": "shock", "from": "L5.start", "to": "L5.end" },
+    { "who": "JUNE", "emotion": "smug", "face": { "munch": true }, "from": "L6.start", "to": "L6.end" },
+    { "who": "MOX", "emotion": "panic", "from": "L7.start", "to": "end" },
+    { "who": "PIP", "emotion": "shock", "from": "L7.start", "to": "end" }
+  ],
+  "fx": [
+    { "type": "bubble", "glyph": "?", "at": "L1.word(freeze)", "dur": 1.0, "anchor": "PIP.head" },
+    { "type": "bubble", "glyph": "!", "at": "L2.word(glowing)", "dur": 0.9, "anchor": "MOX.head" },
+    { "type": "bubble", "glyph": "!", "at": "L5.word(walking)", "dur": 0.9, "anchor": "PIP.head" },
+    { "type": "bubble", "glyph": "?", "at": "L7.word(purple)", "dur": 1.0, "anchor": "MOX.head" },
+    { "type": "slam", "text": "PART 2", "at": "L7.end+0.1" }
+  ],
+  "props": [
+    { "name": "cake", "who": "JUNE", "from": "L5.start", "to": "end" }
+  ],
+  "audio": {
+    "mood": "sneak",
+    "arp": true,
+    "padChords": ["Dm", "Bb", "Gm", "A7"]
+  }
+}

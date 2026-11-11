@@ -215,3 +215,4 @@ if __name__ == '__main__':
         assert not np.isnan(buf).any()
         peak = np.abs(buf).max()
         print(f"  ✓ {name:<12} : 0.5s -> 9.5s | Peak: {peak:.3f}")
+

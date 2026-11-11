@@ -129,7 +129,7 @@ const faceOf = (id, t) => {
 
 const speechSpans = id => Object.values(AN).filter(l => l.speaker === id).map(l => [l.start, l.end + .05]);
 for (const e of FACES) {
-  if (e.face.munch) {
+  if (e.face && e.face.munch) {
     const sp = speechSpans(e.who);
     for (let t = e.t0 + .2; t < e.t1; t += .3) {
       if (!sp.some(([a, b]) => t >= a && t <= b)) ev('crunch', t, { a: .6 });

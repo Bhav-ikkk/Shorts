@@ -69,3 +69,4 @@ if __name__ == '__main__':
     shifted = pitch_shift(sig, 3.0, sr)   # Shift up 3 semitones (to C5 ~523 Hz)
     assert len(shifted) == len(sig), f"Length mismatch: {len(shifted)} vs {len(sig)}"
     print(f"Pitch shift verified: {len(sig)} samples in -> {len(shifted)} samples out.")
+

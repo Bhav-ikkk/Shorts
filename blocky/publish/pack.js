@@ -82,6 +82,17 @@ const PUBLISH_METADATA = {
     pinnedComment: "Who do you think was making the strange footsteps on the roof? Part 2 is coming soon! 👻⬇️",
     hookSummary: "Pip and Mox investigate mysterious midnight noises in the dark attic and find a glowing locked chest with an unexpected secret inside.",
     videoFile: 'blocky-ep2-motion-film.mp4'
+  },
+  'the-blockies-ep4': {
+    titles: [
+      "When the Streetlamp Turns Red... FREEZE! 🚨",
+      "The Town Where Nobody Can Move?! (The Blockies Ep 4)",
+      "Why Did the Streetlamp Flash Purple?!"
+    ],
+    hashtags: ["#theblockies", "#shorts", "#reels", "#animation", "#mystery"],
+    pinnedComment: "Would YOU be able to freeze without scratching an itch? Tell us below! 🚨🛑",
+    hookSummary: "In this town, when the streetlamp turns red, nobody is allowed to move. While Pip and Mox freeze in suspense, toddler June casually strolls past with snacks.",
+    videoFile: 'the-blockies-ep4-motion-film.mp4'
   }
 };
 
@@ -283,7 +294,7 @@ function buildAllPacks() {
   console.log('\n======================================================');
   console.log('  BLOCKY STORY ENGINE: BUILDING ALL PUBLISH PACKS');
   console.log('======================================================');
-  const episodes = ['ep01-crumb-trail', 'ep02-floor-is-lava', 'ep03-secret-attic'];
+  const episodes = ['ep01-crumb-trail', 'ep02-floor-is-lava', 'ep03-secret-attic', 'ep04-red-streetlamp'];
   const results = [];
 
   for (const ep of episodes) {

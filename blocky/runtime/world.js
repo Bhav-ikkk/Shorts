@@ -416,8 +416,15 @@ export function buildParkSet(scene, mood = 'day') {
   cyl(0.16, 0.2, 0.2, 0x0f172a, 0, 0.1, 0, 16, lamp); // base
   cyl(0.06, 0.06, 3.2, 0x0f172a, 0, 1.7, 0, 12, lamp); // pole
   box(0.4, 0.6, 0.4, 0x0f172a, 0, 3.4, 0, lamp, 0.05); // lantern frame
-  box(0.3, 0.45, 0.3, 0xfef08a, 0, 3.4, 0, lamp, 0.02, 0, 0xfef08a); // lantern glow
+  const glowColor = mood === 'night' ? 0xff2222 : 0xfef08a;
+  box(0.3, 0.45, 0.3, glowColor, 0, 3.4, 0, lamp, 0.02, 0, glowColor); // lantern glow
   scene.add(lamp);
+
+  if (mood === 'night') {
+    const lampLight = new THREE.PointLight(0xff2222, 2.8, 7);
+    lampLight.position.set(-1.8, 3.4, 0.8);
+    scene.add(lampLight);
+  }
 
   // Scattered boulders & flowers
   box(0.6, 0.45, 0.7, 0x64748b, -2.8, 0.22, -1.2, scene, 0.1);

@@ -454,3 +454,42 @@ Execute the final hardening and compliance verification phase: author an automat
 
 
 
+
+---
+
+## Run 12: Phase B11 — Viral Story Production ("The Red Streetlamp") & Master Render Verification
+
+### Objective
+Conceive, author, direct, voice, render, and master a complete, broadcast-ready viral Instagram / YouTube Shorts episode around the urban folklore premise: *"In this town, when the streetlamp turns red, nobody is allowed to move."* Validate end-to-end rendering pipeline on Windows, produce high-resolution contact sheets and final video, assemble full distribution publish packs, and evaluate what remains across the broader system.
+
+### Actions Taken & Technical Solutions
+1. **Story Conception & Scripting (`blocky/series/the-blockies/ep04-red-streetlamp/`)**:
+   - Authored `script.json` obeying all Shorts pacing rules (avg 7.7 words/line $\le 9$, 0 forbidden trademark words, beat sequence: `hook -> setup -> escalation -> escalation -> twist -> payoff -> cliffhanger`).
+   - Hook: *"In this town, when the streetlamp turns red... freeze!"*
+   - Escalation: Mox's foot starts itching unbearably while the light glows crimson.
+   - Comedic Twist: Toddler June casually strolls past the park bench munching cake: *"Rules do not count if you have snacks."*
+   - Cliffhanger: The streetlamp suddenly starts flashing purple, prompting panic and a "PART 2" slam title.
+   - Authored `review.md` certifying COPPA Made-for-Kids, synthetic non-photorealistic cartoon disclosure, and original IP clearance.
+2. **Director Timeline & Procedural Set Enhancements**:
+   - Authored `episode.json` with 7 anchor-driven camera shots (wide establishing park, low Dutch angle for Mox's trembling foot, over-shoulder for June's reveal, snap-zoom out for the purple flashing cliffhanger).
+   - Enhanced `buildParkSet` in `blocky/runtime/world.js` with an ominous crimson red glowing lantern and dynamic red PointLight during `night` mood.
+3. **Offline Audio Synthesis & Sound Design**:
+   - Executed `python blocky/vo.py` to synthesize 7 dialogue lines using local Kokoro v0.19 neural TTS with pitch shifting (June: +3.5 semitones), generating `data/anchors.json` (precise millisecond word timestamps) and `data/lip.json` (8-viseme phoneme opening envelopes). Total dialogue duration: 20.75s.
+   - Executed `python blocky/audio.py` generating procedural SFX (footsteps, gasps, punch thuds, whooshes, pops, crunches) and dynamic `sneak` music bed with sidechain dialogue ducking into `out/mix.wav`.
+4. **Deterministic WebGL Frame Rendering & Two-Pass Mastering**:
+   - Executed `node blocky/render.js` utilizing 2 Chromium workers with GPU flags, rendering 623 frames (1080×1920 @ 30 fps) in 75.1s into `out/silent.mp4` and emitting `data/events.json`.
+   - Executed `node blocky/cli.js master` with `$env:NAME='the-blockies-ep4'` performing two-pass EBU R128 loudness normalization, head/tail audio fades, and 48 kHz AAC muxing into `out/the-blockies-ep4-motion-film.mp4` (7.07 MB).
+   - Automated QA Gate: Integrated Loudness $-14.2$ LUFS (target $-14.0 \pm 0.5$), True Peak $-1.9$ dBFS (gate $\le -1.0$), Black frames: 0. Broadcast QA: **PASSED**.
+5. **Visual Contact Sheet & Distribution Packaging**:
+   - Executed `node blocky/shots.js` at 7 key timestamps (1.5s, 4.2s, 7.5s, 10.2s, 13.0s, 16.5s, 19.5s) and `python blocky/sheet.py` to create `out/the-blockies-ep4-contact-sheet.png`. Copied to conversation artifacts.
+   - Updated `blocky/publish/pack.js` with metadata for `the-blockies-ep4` and generated complete publish bundle in `blocky/publish/ep04-red-streetlamp/` (`title.txt`, `description.txt`, `hashtags.txt`, `pinned_comment.txt`, `captions.srt`, `checklist.md`, `decision_log.json`, `cover.png`, `video_1080x1920.mp4`).
+6. **Full Regression & DoD Test Suite Verification**:
+   - Updated `story.test.js` and `publish.test.js` to cover 4 production episodes.
+   - Executed `npm run test:all`: **All 11 test suites and 73/73 DoD checks PASSED**.
+
+### Measured Results & Verification Evidence
+- **Episode Master Video**: `blocky/out/the-blockies-ep4-motion-film.mp4` (20.77s, 1080×1920, 30 fps, H.264/AAC, 7.07 MB).
+- **Loudness**: $-14.2$ LUFS (pass), True Peak: $-1.9$ dBFS (pass), Black Frames: 0 (pass).
+- **Contact Sheet**: `the-blockies-ep4-contact-sheet.png` (7 key narrative beats).
+- **Publish Pack**: `blocky/publish/ep04-red-streetlamp/` (100% complete with COPPA decision log, high-CTR titles, hashtags, SRT subtitles, and SOP checklist).
+- **Master Regression Suite (`npm run test:all`)**: **100% PASS across all suites**.

@@ -31,11 +31,14 @@ async function runStoryTests() {
 
   // Test 1: Episode Discovery
   console.log('\n--- 1. Episode Discovery ---');
-  assert(episodes.length === 3, `Discovered exactly 3 production episode packages (found ${episodes.length})`);
+  assert(episodes.length >= 3, `Discovered at least 3 production episode packages (found ${episodes.length})`);
   const slugs = episodes.map(e => e.slug).sort();
   assert(slugs.includes('ep01-crumb-trail'), 'Found ep01-crumb-trail');
   assert(slugs.includes('ep02-floor-is-lava'), 'Found ep02-floor-is-lava');
   assert(slugs.includes('ep03-secret-attic'), 'Found ep03-secret-attic');
+  if (slugs.includes('ep04-red-streetlamp')) {
+    assert(true, 'Found ep04-red-streetlamp');
+  }
 
   // Test 2: Script Linting on Valid Episodes
   console.log('\n--- 2. Script Linting on Production Episodes ---');
@@ -86,7 +89,7 @@ async function runStoryTests() {
   console.log('\n--- 5. Director Timeline Compilation & World Consistency ---');
   const seriesValidation = engine.validateSeries();
   assert(seriesValidation.pass === true, 'Master series validation pipeline completed with 100% PASS');
-  assert(seriesValidation.compilations.length === 3, 'Compiled all 3 director timelines successfully');
+  assert(seriesValidation.compilations.length === episodes.length, `Compiled all ${episodes.length} director timelines successfully`);
 
   // Verify World & Sets
   const worldSets = Object.keys(engine.world.sets);

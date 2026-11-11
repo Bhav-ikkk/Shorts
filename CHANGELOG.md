@@ -82,3 +82,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Procedural audio mixing with sidechain ducking and two-pass EBU R128 mastering.
 - Dense layout and collision linter for 2D DOM elements.
 - Multi-worker Chromium frame renderer producing 30 fps video.
+

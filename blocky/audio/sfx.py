@@ -262,3 +262,4 @@ if __name__ == '__main__':
         assert len(sample) > 0, f"Empty sample for {name}"
         assert not np.isnan(sample).any(), f"NaN detected in {name}"
         print(f"  ✓ {name:<16} : {len(sample)/SR:.2f}s | Peak: {np.abs(sample).max():.3f}")
+

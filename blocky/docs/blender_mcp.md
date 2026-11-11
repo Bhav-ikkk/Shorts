@@ -129,3 +129,4 @@ function seek(t) {
 ```
 
 By enforcing `mixer.setTime(t % clipDuration)` rather than advancing delta time (`mixer.update(dt)`), seeking backward, jumping to arbitrary frames, and parallel multi-worker rendering are guaranteed to produce identical pixels every time.
+

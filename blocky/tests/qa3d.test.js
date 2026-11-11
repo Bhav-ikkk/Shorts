@@ -196,7 +196,7 @@ async function runQA3DTests() {
 
   // Part B: Positive Verification on Production Episode
   console.log('\n--- Part B: Positive Verification on Valid Production Episode ---');
-  const prodLint = await runLint3D({ sampleStep: 1.0, throwOnError: false });
+  const prodLint = await runLint3D({ sampleStep: 0.5, throwOnError: false });
   assert(prodLint.passed === true, 'Production episode passes 3D spatial linting (0 critical errors)');
   assert(prodLint.failures.length === 0, 'Zero critical geometry violations in production timeline');
   assert(prodLint.checkpoints >= 30, `Evaluated >= 30 checkpoints across timeline (${prodLint.checkpoints} sampled)`);

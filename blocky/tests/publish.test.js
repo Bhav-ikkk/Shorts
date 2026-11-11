@@ -35,11 +35,10 @@ function runPublishTests() {
   console.log('  TEST SUITE: PUBLISH PACK & COMPLIANCE QA (Phase B8)');
   console.log('======================================================\n');
 
-  // 1. Build packs for all 3 episodes
+  // 1. Build packs for all episodes
+  const episodeSlugs = ['ep01-crumb-trail', 'ep02-floor-is-lava', 'ep03-secret-attic', 'ep04-red-streetlamp'];
   const results = buildAllPacks();
-  assert(results.length === 3, `buildAllPacks generated packs for all 3 episodes (received ${results.length})`);
-
-  const episodeSlugs = ['ep01-crumb-trail', 'ep02-floor-is-lava', 'ep03-secret-attic'];
+  assert(results.length === episodeSlugs.length, `buildAllPacks generated packs for all ${episodeSlugs.length} episodes (received ${results.length})`);
 
   for (const slug of episodeSlugs) {
     console.log(`\n--- Validating Publish Pack: ${slug} ---`);
@@ -203,3 +202,4 @@ if (require.main === module) {
 }
 
 module.exports = { runPublishTests };
+
